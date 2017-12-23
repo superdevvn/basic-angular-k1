@@ -1,0 +1,18 @@
+
+<div class="col-md-4">
+    <input-control [label]="'Username'" [(model)]="user.username"></input-control>
+</div>
+
+<div class="col-md-4">
+    <input-control [type]="'password'" [label]="'Password'" [(model)]="user.password"></input-control>
+</div>
+<!-- 
+<input class="form-control" [(ngModel)]="input1" />
+<input class="form-control" [(ngModel)]="user.username" />
+<input class="form-control" [(ngModel)]="user.password" />
+<button class="btn btn-primary" (click)="onClick()">Click me</button> -->
+
+<div class="col-md-12">
+    <br/>
+    <button class="btn btn-primary" (click)="onClick()">Click me</button>
+</div>

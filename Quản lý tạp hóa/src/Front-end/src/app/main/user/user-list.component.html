@@ -1,0 +1,55 @@
+<!-- This is User List Page
+<!-- <dashboard></dashboard> -->
+<!-- <test-selector></test-selector> -->
+<section class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions">
+            <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+            <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+        </div>
+        <h2 class="panel-title">Danh sách tài khoản</h2>
+    </header>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mb-md">
+                    <button class="btn btn-primary" [routerLink]="['../add-new-user']">Add
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped mb-none" id="datatable-default">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Họ và tên</th>
+                    <th>Vai trò</th>
+                    <th>Số điện thoại</th>
+                    <th>Email</th>
+                    <th class="hidden-phone"></th>
+                    <th class="hidden-phone"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="gradeX">
+                    <td>SE90954</td>
+                    <td>Lê Thị Cà Chua</td>
+                    <td>Admin</td>
+                    <td>0123456789</td>
+                    <td>cachua@gmail.com</td>
+                    <td align="center">
+                        <a>
+                            <i class="fa fa-pencil-square-o"></i>
+                        </a>
+                    </td>
+                    <td align="center">
+                        <a>
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

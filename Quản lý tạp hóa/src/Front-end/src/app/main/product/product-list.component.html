@@ -1,0 +1,29 @@
+<div class="col-md-12">
+    <strong class="text-primary">This is Role List Page</strong>
+    <button><i class="fa fa-plus"></i></button>
+    <a [routerLink]="['/main/role-detail']">Go to detail page</a>
+</div>
+
+<div class="col-md-12">
+    <table class="table table-bordered table-striped mb-none" id="datatable-default">
+        <thead>
+            <tr>
+                <th>Rendering engine</th>
+                <th>Browser</th>
+                <th>Platform(s)</th>
+                <th class="hidden-phone">Engine version</th>
+                <th class="hidden-phone">CSS grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="gradeX">
+                <td>Trident</td>
+                <td>Internet Explorer 4.0
+                </td>
+                <td>Win 95+</td>
+                <td class="center hidden-phone">4</td>
+                <td class="center hidden-phone">X</td>
+            </tr>        
+        </tbody>
+    </table>
+</div>
