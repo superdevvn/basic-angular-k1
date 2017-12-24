@@ -26,7 +26,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'role-list', component: RoleListComponent },
-      { path: 'role-detail', component: RoleDetailComponent },
+      { path: 'role-detail/:id/:name', component: RoleDetailComponent },
       { path: 'user-list', component: UserListComponent },
       { path: 'user-detail', component: UserDetailComponent },
       { path: 'product-list', component: ProductListComponent },
