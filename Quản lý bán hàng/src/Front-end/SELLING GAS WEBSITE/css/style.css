@@ -1,0 +1,254 @@
+@charset "UTF-8";
+/*
+Theme Name: NewSite
+Author: ProntoNet
+Author URI: http://www.prontonet.ne.jp/
+Version: 1.0
+*/
+/* ----------------------------- リセット */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, var, b, i, dl dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+body { line-height: 1; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; content: none; }
+a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+table { border-collapse: collapse; border-spacing: 0; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+input, select { vertical-align: middle; }
+img { vertical-align: top; font-size: 0; line-height: 0; }
+sup { font-size: 8px; }
+em { font-style: normal; }
+div:before, div:after, ul:before, ul:after, ol:before, ol:after, dl:before, dl:after { content: ""; display: block; }
+div:after, ul:after, ol:after, dl:after { clear: both; }
+div, ul, ol, dl { zoom: 1; }
+
+ul#wp-admin-bar-root-default:after { clear: none; }
+
+
+/* =======================================
+記事詳細
+========================================*/
+#entry { margin: 0 auto; }
+#entry_title { margin: 0 0 30px; border-bottom: 1px solid #ccc; padding: 0 0 12px; }
+#entry_title h3 { padding: 2px 0; font-size: 130%; }
+#entry_title span { font-size: 85%; padding: 2px 0; }
+#entrybody { font-size: 100%; margin-top: 0; word-break: break-all; }
+#entrybody ul, #entrybody ol { margin: 12px 0 12px 2em; list-style-position: inside; text-align: left; }
+#entrybody ul li { text-align: left; }
+#entrybody ol li { text-align: left; }
+#entrybody strong { font-weight: bold !important; }
+#entrybody strong span { font-weight: bold !important; }
+#entrybody span strong { font-weight: bold !important; }
+#entrybody del strong { font-weight: bold !important; }
+#entrybody em strong { font-weight: bold !important; }
+#entrybody em { font-style: italic; }
+#entrybody p { line-height: 170%; margin: 0 0 1.2em; }
+td #entrybody p { margin-bottom: 0; }
+#entrybody em { font-style: italic !important; }
+#entrybody blockquote { margin: 15px 0 15px 24px; }
+#entrybody img { margin: 0 0 1em; }
+#entrybody iframe { width: 100%; height: auto; }
+.alignleft, img.alignleft { display: inline; float: left; margin-right: 24px; margin-top: 4px; }
+.alignright, img.alignright { display: inline; float: right; margin-left: 24px; margin-top: 4px; }
+.aligncenter, img.aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto; }
+img.alignleft, img.alignright, img.aligncenter { margin-bottom: 12px; }
+.wp-caption { border: none; background: #f1f1f1; color: #888; font-size: 12px; line-height: 18px; text-align: center; margin-bottom: 20px; padding: 4px; -moz-border-radius: 0; -khtml-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; }
+.wp-caption img { margin: 5px; }
+.wp-caption p.wp-caption-text { margin: 0 0 4px; }
+.wp-smiley { margin: 0; }
+body#tinymce ul, body#tinymce ol { margin: 0 0 0 1.5em; }
+body#tinymce ul li { list-style: disc; }
+body#tinymce ol li { list-style: decimal; }
+#entrybody h1 { font-size: 200%; line-height: 150%; }
+#entrybody h2 { font-size: 180%; line-height: 150%; }
+#entrybody h3 { font-size: 150%; line-height: 150%; }
+#entrybody h4 { font-size: 132%; line-height: 150%; }
+#entrybody h5 { font-size: 116%; line-height: 150%; }
+#entrybody h6 { font-size: 108%; line-height: 150%; }
+
+
+/* ----------------------------- ページネーション */
+.pagination { clear: both; padding: 20px 0; position: relative; font-size: 14px; line-height: 14px; text-align: left; }
+.pagination span, .pagination a { display: inline-block; *display: inline; *zoom: 1; width: auto; padding: 10px 14px; margin: 0 8px 8px 0; background: #fff; border: 1px solid #ccc; color: #333; text-decoration: none !important; cursor: pointer; }
+.pagination span.current, .pagination a.current { background: #000; border-color: #000; color: #fff !important; }
+.pagination a:link, .pagination a:visited { color: #333; }
+.pagination a:hover { background: #000; border-color: #000; color: #fff; opacity: 1; -ms-filter: "alpha(opacity=100)"; filter: alpha(opacity=100); }
+.pagination a.next, .pagination a.prev { background: transparent; border-color: transparent; padding-right: 8px; padding-left: 8px; }
+.pagination a.next:hover, .pagination a.prev:hover { color: #333; }
+
+
+/* ----------------------------- 全体 */
+body { font-size: 14px; line-height: 1.8em; color: #333; font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ　Ｐゴシック", "MS PGothic", sans-serif; background: #fff; position: relative; min-width: 1200px; }
+
+a:link, a:visited { color: #333; text-decoration: underline; }
+a:hover, a:active { text-decoration: none;      opacity: 0.65; -ms-filter: "alpha(opacity=65)"; filter: alpha(opacity=65); }
+a, a img { -webkit-transition: 0.1s ease all; -moz-transition: 0.1s ease all; -ms-transition: 0.1s ease all; transition: 0.1s ease all; }
+a:hover img { opacity: 0.65; -ms-filter: "alpha(opacity=65)"; filter: alpha(opacity=65); }
+
+.sp-only { display: none !important; }
+
+img, .bx-wrapper img { max-width: 100%; height: auto; }
+
+
+
+.wid{ /*width:1560px;*/width:1355px; margin:0 auto; }
+input, select, textarea{ font-size: 15px; color:#101010; font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ　Ｐゴシック", "MS PGothic", sans-serif; }
+
+/* ----------------------------- ヘッダー */
+
+
+#header{ background:#202020;; padding: 15px 18px 13px; color: #FFF; }
+#header h2{ font-size: 1.3em; }
+#header span{ font-size: 0.85em;  padding-left: 10px; }
+
+
+#side{ width: 180px; float: left; 
+    background-color: gray;}
+
+#side a{ font-size: 1.2em; display:block; padding: 10px 18px; border-bottom: 1px #CCC dotted; color: #FFF;  opacity: 1.00; -ms-filter: "alpha(opacity=100)"; filter: alpha(opacity=100); text-decoration: none; }
+#side .active, #side a:hover{ background-color:#FF9326; color:#FFF; }
+
+
+
+#main{ background:#666666;    padding-left: 180px; }
+
+#main-area{ background:#FFF; min-height: calc(100vh - 65px); padding: 5px 20px; }
+
+.box{ width: 980px; float:left; margin-bottom: 10px; }
+
+#main-area .box_title { padding:15px 0 ; }
+#main-area .box_title h3{ font-size:1.3em; float:left; }
+
+
+.menu-list{ margin-right:-12px; }
+.menu-list li{ display:inline-block; margin-right:12px; text-align:center; }
+.menu-list li a{ color:#FFF; width:285px; display:block; padding: 85px 0 40px; font-size: 1.2em; background-repeat: no-repeat; background-position: center 43px;   }
+.menu-list .menu-01{ background-color:#09729F; background-image: url(../img/info/menu_01.png); }
+.menu-list .menu-02{ background-color:#5CB85C; background-image: url(../img/info/menu_02.png); }
+.menu-list .menu-03{ background-color:#D9534F; background-image: url(../img/info/menu_03.png); }
+
+
+.news-list{ border-top: 1px #666666 solid; }
+.news-list li{ border-bottom:1px #BBBBBB dotted; font-size:0.9em;  }
+.news-list a{ padding:12px 0; display:block; }
+.news-list .cate{ background:#EEEEEE; display:inline-block; width:90px; text-align:center; margin-right:10px; }
+
+.news-list .cate.ca-01{ color:#C71721; }
+.news-list .cate.ca-02{ color:#337AB7; }
+
+.news-list .date{ font-weight:bold; margin-right:10px; }
+
+
+
+.left--box_area{ width: 540px;   float: left; }
+.right--box_area{ width: 400px;   float: right; }
+
+.acdn-button{ background-color: #6298F1; font-size: 1.3em;  padding: 4px 7px;  color: #FFF; margin-top:10px; font-weight: normal; position:relative; cursor: pointer; }
+.acdn-button span{ border-left: 5px #FFF solid; line-height: 1.1em; display: inline-block;  padding-left: 8px; }
+.acdn-button i{ background-image:url(../img/toggle_img.png);     display: inline-block; width: 24px; height: 24px; position:absolute; right: 8px; 
+  -webkit-transition: 0.2s ease all; 
+  -moz-transition: 0.2s ease all; 
+  -ms-transition: 0.2s ease all; 
+  transition: 0.2s ease all;
+}
+.open i{
+  -moz-transform:    rotate( 90deg );  /* Firefox用 */
+  -webkit-transform: rotate( 90deg );  /* Chrome,Safari,新しいOpera用 */
+  -o-transform:      rotate( 90deg );  /* 古いOpera用 */
+  -ms-transform:     rotate( 90deg );  /* IE9用 */
+  transform:         rotate( 90deg );  /* CSS3の書き方 */
+}
+
+
+.acdn-area{ /*display:none;*/ padding: 6px 2px; margin-bottom: 20px; font-size: 1.1em; }
+
+.acdn-area a.conf_button{ float: right;  margin-top: 10px;  }
+.acdn-area li{float:left;     margin: 5px;  width: 47%;  }
+
+.acdn-area .quality_name{  display: inline-block; width: 147px; vertical-align: bottom;  }
+.acdn-area input[type="text"]{ width: 30px; text-align: right;  padding: 0px 2px; height: 22px; }
+
+
+
+
+
+
+.company-master{}
+
+.master--list table{ width: 100%;  }
+
+.master--list table thead{ background: #666666; color: #FFF; }
+.master--list table thead th{ font-weight: normal;  text-align: left;  border-top: 1px #333333 solid; border-bottom: 1px #333333 solid; padding: 3px 8px; font-size: 1.2em; }
+.master--list table tbody td{ border-bottom:1px #999999 dotted; padding: 5px 8px; font-size: 1.15em; }
+.master--list table tbody td input[type="button"]{ font-size: 0.9em;  padding: 0;  width: 60px; }
+.master--list table tbody td.view_cell{ padding-right: 1px; vertical-align: middle; }
+
+
+
+
+
+.personal-master .left--box_area {}
+.personal-master .left--box_area th{ width: 180px;  text-align: left;  font-size: 1.3em; font-weight: normal; }
+
+.left--box_area table{  width: 100%; margin-bottom: 30px; }
+.left--box_area td select{ width: 100%; padding: 3.5px 0; font-size: 1em; }
+.left--box_area td input[type="text"]{ width: 98.8%; font-size: 1em; }
+.left--box_area td, .left--box_area th{ padding: 10px 0; }
+.left--box_area td label { margin-right: 20px; }
+.left--box_area td{ font-size:1.2em;  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 登録や確定などのアクションボタンのフォーマット。デフォルトはグレー*/
+input[type="submit"], input[type="button"]{
+    background-color: #909090;
+    border: 0;
+    border-radius: 2px;
+    color: #fff;
+    padding: 5px 0px 4px;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    font-size: 115%;
+    width: 100px;
+}
+input[type="submit"]:hover, input[type="button"]:hover{ opacity: 0.70; -ms-filter: "alpha(opacity=70)"; filter: alpha(opacity=70); cursor: pointer; }
+
+
+/* アクションボタンの色 */
+input.form-submit{ background-color: #85CE36; }
+input.form-view{   background-color: #FF9326; }
+input.form-close{  background-color: #FE2E33; }
+input.form-master{ background-color: #2D75EC; }
+
+.add_new{ float: right;  font-size: 16px !important;  padding: 3px !important; }
+
+
+input[type="text"]:disabled { border: 2px #EEEEEE solid; background: #EEEEEE; color: #333; }
+
+.is--ellipsis{ overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+#side {
+    background-color: gray;
+}
+
+
+
+
+
+
+
