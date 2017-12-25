@@ -1,21 +1,33 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Http } from '@angular/http';
+import { Role } from '../shared/role.model';
+
 @Component({
     selector: 'role-detail',
-    templateUrl:'./role-detail.component.html'
+    templateUrl: './role-detail.component.html'
 })
 export class RoleDetailComponent {
-    name:string;
-    description:string;
-
-    constructor(private router: Router) {
-    }
-    
-    save(){
-        alert(`Name: ${this.name}, Description: ${this.description}`);
+    role = new Role();
+    routerSubcription: any;
+    id: number;
+    constructor(private route: ActivatedRoute, private router: Router, private http: Http) {
     }
 
-    back(){
+    ngOnInit() {
+        this.routerSubcription = this.route.params.subscribe(params => {
+            this.id = +params['id']; 
+            // +params convert string to number
+            let name = params['name'];
+            console.log(this.id);
+            console.log(name);
+        });
+    }
+    save() {
+
+    }
+
+    back() {
         this.router.navigate(['/main/role-list']);
     }
 }
