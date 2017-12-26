@@ -13,26 +13,31 @@ import { UserDetailComponent } from './main/user-detail.component';
 import { DashboardComponent } from './main/dashboard.component';
 import { RoleListComponent } from './main/role-list.component';
 import { RoleDetailComponent } from './main/role-detail.component';
-import { TestSelectorComponent } from './main/test-selector.component';
-import { InputControlComponent } from './main/input.control';
- const routes:Routes =[
+import { FishListComponent } from './products/fish-list.component';
+import { AccountsListComponent } from './customers/account-list.component';
+import { ProfileComponent } from './customers/profile.component';
+
+const routes: Routes = [
   { path: '', redirectTo:'main',pathMatch:'full' },
   {
     path: 'main', component: MainComponent,
     children: [
       { path: '', redirectTo:'dashboard',pathMatch:'full'},
       { path: 'dashboard', component:DashboardComponent},
+      { path: 'fish-list', component:FishListComponent},
+      { path: 'account-list', component:AccountsListComponent},
       { path: 'role-list', component:RoleListComponent},
-      { path: 'role-detail/:id/:name', component:RoleDetailComponent},
+      { path: 'role-detail', component:RoleDetailComponent},
       { path: 'user-list', component:UserListComponent},
-      { path: 'user-detail', component:UserDetailComponent}
+      { path: 'user-detail', component:UserDetailComponent},
+      { path: 'profile', component:ProfileComponent}
     ]
   },
   { path: 'login', component: LoginComponent },
-  { path: 'test-selector', component: TestSelectorComponent },
-  
   { path: 'login-test', component: LoginComponent },
+
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,15 +45,18 @@ import { InputControlComponent } from './main/input.control';
     MainComponent,
     UserListComponent,
     UserDetailComponent,
-    DashboardComponent,
+    RoleListComponent,
     RoleDetailComponent,
-    RoleListComponent,InputControlComponent,
-    TestSelectorComponent
+    DashboardComponent,
+    FishListComponent,
+    AccountsListComponent,
+    ProfileComponent,
   ],
   imports: [
-    BrowserModule,FormsModule
-   , RouterModule.forRoot(routes),HttpModule
-   
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
