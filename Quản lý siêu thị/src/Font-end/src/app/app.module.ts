@@ -16,6 +16,8 @@ import { RoleDetailComponent } from './main/role-detail.component';
 import { FishListComponent } from './products/fish-list.component';
 import { AccountsListComponent } from './customers/account-list.component';
 import { ProfileComponent } from './customers/profile.component';
+import { ShirtListComponent } from './products/shirt-list.component';
+import { TableListComponent } from './products/table-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'main',pathMatch:'full' },
@@ -30,7 +32,9 @@ const routes: Routes = [
       { path: 'role-detail', component:RoleDetailComponent},
       { path: 'user-list', component:UserListComponent},
       { path: 'user-detail', component:UserDetailComponent},
-      { path: 'profile', component:ProfileComponent}
+      { path: 'profile', component:ProfileComponent},
+      { path: 'table-list', component:TableListComponent},
+      { path: 'shirt-list', component:ShirtListComponent},
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -50,7 +54,8 @@ const routes: Routes = [
     DashboardComponent,
     FishListComponent,
     AccountsListComponent,
-    ProfileComponent,
+    ProfileComponent,ShirtListComponent,
+    TableListComponent
   ],
   imports: [
     BrowserModule,
