@@ -41,5 +41,8 @@ namespace SuperDev.Models
 
         [ForeignKey("RoleId")]
         public virtual Role Role { get; set; }
+
+        [ForeignKey("CreatedBy")]
+        public virtual User Creator { get; set; }
     }
 }
