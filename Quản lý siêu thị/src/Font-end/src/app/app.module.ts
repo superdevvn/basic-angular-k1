@@ -18,6 +18,8 @@ import { AccountsListComponent } from './customers/account-list.component';
 import { ProfileComponent } from './customers/profile.component';
 import { ShirtListComponent } from './products/shirt-list.component';
 import { TableListComponent } from './products/table-list.component';
+import { CardListComponent } from './customers/card-list.component';
+import { GoldCardComponent } from './customers/gold-card.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'main',pathMatch:'full' },
@@ -35,6 +37,8 @@ const routes: Routes = [
       { path: 'profile', component:ProfileComponent},
       { path: 'table-list', component:TableListComponent},
       { path: 'shirt-list', component:ShirtListComponent},
+      { path: 'card-list', component:CardListComponent},
+      { path: 'gold-card', component:GoldCardComponent},
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -55,7 +59,9 @@ const routes: Routes = [
     FishListComponent,
     AccountsListComponent,
     ProfileComponent,ShirtListComponent,
-    TableListComponent
+    TableListComponent,
+    CardListComponent,
+    GoldCardComponent
   ],
   imports: [
     BrowserModule,
