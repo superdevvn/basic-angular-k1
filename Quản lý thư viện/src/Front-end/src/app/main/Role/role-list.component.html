@@ -1,28 +1,31 @@
 <div class="col-md-12">
-    <strong class="text-primary">This is Role List Page</strong>
-    <a [routerLink]="['/main/role-detail']">Go to detail page</a>
+    <a class="btn btn-primary" [routerLink]="['/main/role-detail',0]">Thêm</a>
 </div>
-
 <div class="col-md-12">
+    <br />
     <table class="table table-bordered table-striped mb-none" id="datatable-default">
+        <colgroup>
+            <col style="width:100" />
+            <col style="width:150" />
+            <col />
+            <col style="width:150" />
+        </colgroup>
         <thead>
             <tr>
                 <th>Id</th>
-                <th class="hidden-phone">Name</th>
-                <th class="hidden-phone">Description</th>
-                <th>Detail</th>     
+                <th>Vai trò</th>
+                <th>Ghi chú</th>
+                <th>Action</th>    
             </tr>
         </thead>
         <tbody>
-            <tr class="gradeA">
-                <td>1</td>
-                <td class="center hidden-phone">Computer NetWorking</td>
-                <td class="center hidden-phone">is good</td>
-                <td> <a [routerLink]="['/main/role-detail']">Detail</a>
+            <tr *ngFor="let role of roles">
+                <td>{{role.Id}}</td>
+                <td>{{role.Name}}</td>
+                <td>{{role.Description}}</td>
+                <td><button class="btn btn-primary btn-xs" (click)="detail(role)">Chi tiết</button>
                 </td>
             </tr>
-            
-            
         </tbody>
     </table>
 </div>

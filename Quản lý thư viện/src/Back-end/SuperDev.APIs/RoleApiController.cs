@@ -7,7 +7,7 @@ namespace SuperDev.APIs
     public class RoleApiController : ApiController
     {
         [HttpGet]
-        [Route("api/getRole")]
+        [Route("api/getRole/{id}")]
         public IHttpActionResult GetRole(int id)
         {
             var roleService = new RoleService();
