@@ -8,16 +8,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './authorize/login.component';
 import { MainComponent } from './main/main.component';
-import { UserListComponent } from './main/user-list.component';
-import { UserDetailComponent } from './main/user-detail.component';
+import { UserListComponent } from './main/QLHT/user-list.component';
+import { UserDetailComponent } from './main/QLHT/user-detail.component';
 import { DashboardComponent } from './main/dashboard.component';
-import { RoleListComponent } from './main/role-list.component';
-import { RoleDetailComponent } from './main/role-detail.component';
-import { HomewordComponent } from './main/homework.component';
-import { Homewordmodel1page1Component } from './main/homewordmodel1page1.component';
-import { Homewordmodel1page2Component } from './main/homewordmodel1page2.component';
-import { Homewordmodel2page1Component } from './main/homewordmodel2page1.component';
-import { Homewordmodel2page2Component } from './main/homewordmodel2page2.component';
+import { RoleListComponent } from './main/QLHT/role-list.component';
+import { RoleDetailComponent } from './main/QLHT/role-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'main',pathMatch:'full' },
@@ -27,14 +22,9 @@ const routes: Routes = [
       { path: '', redirectTo:'dashboard',pathMatch:'full'},
       { path: 'dashboard', component:DashboardComponent},
       { path: 'role-list', component:RoleListComponent},
-      { path: 'homework', component:HomewordComponent},
       { path: 'role-detail', component:RoleDetailComponent},
       { path: 'user-list', component:UserListComponent},
-      { path: 'user-detail', component:UserDetailComponent},
-      { path: 'model1-page1', component:Homewordmodel1page1Component},
-      { path: 'model1-page2', component:Homewordmodel1page2Component },
-      { path: 'model2-page1', component:Homewordmodel2page1Component },
-      { path: 'model2-page2', component:Homewordmodel2page2Component },
+      { path: 'user-detail', component:UserDetailComponent}
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -50,12 +40,7 @@ const routes: Routes = [
     UserDetailComponent,
     RoleListComponent,
     RoleDetailComponent,
-    DashboardComponent,
-    HomewordComponent,
-    Homewordmodel1page1Component,
-    Homewordmodel1page2Component,
-    Homewordmodel2page1Component,
-    Homewordmodel2page2Component,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
