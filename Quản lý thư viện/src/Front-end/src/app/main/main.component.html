@@ -92,19 +92,63 @@
                             </li>
                             <li class="nav-parent">
                                 <a>
-                                    <i class="fa fa-columns" aria-hidden="true"></i>
-                                    <span>Hệ thống</span>
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Quản lí thư viện</span>
                                 </a>
                                 <ul class="nav nav-children">
+                                        <li>
+                                                <a [routerLink]="['/main/category-list']">
+                                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                                    <span>Category</span>
+                                                </a>
+                                            </li>
+
                                     <li>
                                         <a [routerLink]="['/main/role-list']">
-                                            <i class="fa fa-home" aria-hidden="true"></i>
-                                            <span>Vai trò</span>
+                                            <i class="fa fa-bars" aria-hidden="true"></i>
+                                            <span>Role</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                            <a [routerLink]="['/main/inout-list']">
+                                                <i class="fa fa-bars" aria-hidden="true"></i>
+                                                <span>InOut</span>
+                                            </a>
+                                        </li>
+                                  
+                                    <li>
+                                        <a [routerLink]="['/main/book-list']">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            <span>Quản lí bạn đọc</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a [routerLink]="['/main/user-list']">
+                                            <i class="fa fa-bars" aria-hidden="true"></i>
+                                            <span>Quản lí bồi thường</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/main/role-list']">
+                                            <i class="fa fa-bars" aria-hidden="true"></i>
+                                            <span>Quản lí mượn trả sách</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/main/role-list']">
                                             <i class="fa fa-user" aria-hidden="true"></i>
+                                            <span>Quản lí nhân viên</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/main/role-list']">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                            <span>Báo cáo thống kê</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/main/user-list']">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
                                             <span>Tài khoản</span>
                                         </a>
                                     </li>

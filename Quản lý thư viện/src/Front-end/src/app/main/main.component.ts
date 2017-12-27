@@ -16,7 +16,9 @@ export class MainComponent {
                 {
                     case "/main/dashboard": this.title = "Dashboard";
                     break;
-                    case "/main/role-list": this.title = "Danh sách vai trò";
+                    case "/main/role-list": this.title = "Danh sách role";
+                    break;
+                    case "/main/category-list": this.title = "Danh sách category";
                     break;
                     case "/main/role-detail": this.title = "Chi tiết vai trò";
                     break;
