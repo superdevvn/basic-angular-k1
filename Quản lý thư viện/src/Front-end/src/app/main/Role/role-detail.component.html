@@ -1,6 +1,16 @@
 <div class="col-md-4">
-    <span class="text-primary">Vai trò</span>
-    <input class="form-control" [(ngModel)]="role.Name" />
+    <div class="form-group">
+            <span class="control-label">Vai trò</span>
+            <div class="input-group input-group-icon">
+                
+                <input type="text" class="form-control" [(ngModel)]="role.Name">
+                <span class="input-group-addon">
+                        <span class="icon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </span>
+            </div>
+    </div>
 </div>
 <div class="col-md-12">
     <span class="text-primary">Ghi chú</span>
