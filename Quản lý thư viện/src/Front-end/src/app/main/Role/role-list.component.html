@@ -1,0 +1,31 @@
+<div class="col-md-12">
+    <a class="btn btn-primary" [routerLink]="['/main/role-detail',0]">Thêm</a>
+</div>
+<div class="col-md-12">
+    <br />
+    <table class="table table-bordered table-striped mb-none" id="datatable-default">
+        <colgroup>
+            <col style="width:100" />
+            <col style="width:150" />
+            <col />
+            <col style="width:150" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Vai trò</th>
+                <th>Ghi chú</th>
+                <th>Action</th>    
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let role of roles">
+                <td>{{role.Id}}</td>
+                <td>{{role.Name}}</td>
+                <td>{{role.Description}}</td>
+                <td><button class="btn btn-primary btn-xs" (click)="detail(role)">Chi tiết</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
