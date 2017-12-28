@@ -16,7 +16,8 @@ import { RoleDetailComponent } from './main/role/role-detail.component';
 import { TestSelectorComponent } from './test/test-selector.component';
 import { InputControlComponent } from './test/input.control';
 import { ProductListComponent } from './main/product/product-list.component';
-import { AddNewUserComponent } from './main/user/add-new-user.component';
+import { CategoryDetailComponent } from './main/category/category-detail.component';
+import { CategoryListComponent } from './main/category/category-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -30,7 +31,8 @@ const routes: Routes = [
       { path: 'user-list', component: UserListComponent },
       { path: 'user-detail', component: UserDetailComponent },
       { path: 'product-list', component: ProductListComponent },
-      { path: 'add-new-user', component: AddNewUserComponent }
+      { path: 'category-list', component: CategoryListComponent },
+      { path: 'category-detail', component: CategoryDetailComponent }
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -50,7 +52,8 @@ const routes: Routes = [
     TestSelectorComponent,
     InputControlComponent,
     ProductListComponent,
-    AddNewUserComponent
+    CategoryDetailComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,
