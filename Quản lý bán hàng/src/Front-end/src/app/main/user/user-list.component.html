@@ -1,0 +1,82 @@
+<div class="col-md-6">
+    <button class="btn btn-primary" (click)="onclick()">
+        <i class="fa fa-search"></i>
+    </button>
+    <button class="btn btn-default">
+        <i class="fa fa-refresh"></i>
+    </button>
+    <button class="btn btn-success">
+        <i class="fa fa-plus"></i>
+    </button>
+</div>
+<div class="col-md-6" style="opacity: 0;" id="searchBar">
+    <div class="input-group col-md-12">
+        <input type="text" class="form-control" />
+        <div class="input-group-btn">
+            <button class="btn btn-info">Search</button>
+        </div>
+    </div>
+</div>
+<div class="col-md-12" style="margin-top: 20px;">
+    <table class="table table-hover">
+        <colgroup>
+            <col style="width: 20px;" />
+            <col style="width: 20px;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="col-md-1">ID</th>
+                <th class="col-md-1">Role ID</th>
+                <th class="col-md-2">UserName</th>
+                <th class="col-md-2">Password</th>
+                <th class="col-md-2">Description</th>
+                <th class="col-md-1">IsActive</th>
+                <th class="col-md-1">IsDelete</th>
+                <th class="col-md-1">#</th>
+                <th class="col-md-1">#</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>#</td>
+                <td>Tuấn Anh</td>
+                <td>Đẹp Trai</td>
+                <td>45/4 Chợ Rẫy F11 Quận Bình Tân</td>
+                <td>
+                    <input type="checkbox" class="check-box" />
+                </td>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>
+                    <button class="btn btn-success">
+                        <i class="fa fa-pencil-square-o" style="width: 12px;"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger">
+                        <i class="fa fa-trash" style="width: 12px;"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>#</td>
+                <td>Trần Thuận Nghĩa</td>
+                <td>Đẹp Trai</td>
+                <td>45/4 Chợ Rẫy F11 Quận Bình Tân</td>
+                <td>
+                    <button class="btn btn-success">
+                        <i class="fa fa-pencil-square-o" style="width: 12px;"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger">
+                        <i class="fa fa-trash" style="width: 12px;"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,75 @@
+<div class="col-md-12" style="margin-bottom: 20px;">
+    <h3 style="color: blue; margin-left: 10px; ">You're signing up new User</h3>
+</div>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <label class="bonus">ID User</label>
+        <input type="text" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label class="bonus">Password</label>
+        <input type="text" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label class="bonus">Full Name</label>
+        <input type="text" class="form-control" disabled="disabled" />
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="col-md-6">
+        <label class="bonus">First Name</label>
+        <input type="text" class="form-control" />
+    </div>
+    <div class="col-md-6">
+        <label class="bonus">Last Name</label>
+        <input type="text" class="form-control" />
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="col-md-6">
+        <label class="bonus">Description</label>
+        <input type="text" class="form-control" />
+    </div>
+    <div class="col-md-6">
+        <label class="bonus">Year Of Birth</label>
+        <input type="date" class="form-control" />
+    </div>
+</div>
+<div class="col-md-2" style="margin-left: 16px;">
+    <label class="container">IsActive
+        <input type="checkbox">
+        <span class="checkmark"></span>
+    </label>
+</div>
+<div class="col-md-2" style="margin-left: 16px;">
+    <label class="container">IsDeleted
+        <input type="checkbox">
+        <span class="checkmark"></span>
+    </label>
+</div>
+<div class="col-md-12" style="margin-left: 15px;">
+    <label class="bonus">Note</label>
+    <textarea class="form-control" style="height: 60px;overflow: hidden;"></textarea>
+</div>
+<div class="col-md-12" style="margin-left: 15px;">
+    <button type="submit" class="btn btn-info" style="margin-right: 15px;" (click)="onclick()">
+        <i class="fa fa-floppy-o"></i>
+        Save
+    </button>
+    <button type="submit" class="btn btn-danger" style="margin-right: 15px;">
+        <i class="fa fa-back"></i>
+        Back
+    </button>
+</div>
+<div class="col-md-4" style="margin-left: 30px; opacity: 0; background-color: lawngreen; text-align: center; padding-bottom: 10px;" id="successTable">
+    <h2 style="color: white;">Sign up Successfully!!!!</h2>
+</div>
+<style>
+    div {
+        margin-bottom: 10px;
+    }
+    .bonus {
+        font-size: 15px;
+        color: black;
+    }
+</style>
