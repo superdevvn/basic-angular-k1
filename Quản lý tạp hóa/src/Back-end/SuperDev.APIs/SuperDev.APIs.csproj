@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SuperDevApiController.cs" />
+    <Compile Include="SupplierApiController.cs" />
     <Compile Include="RoleApiController.cs" />
     <Compile Include="UserApiController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

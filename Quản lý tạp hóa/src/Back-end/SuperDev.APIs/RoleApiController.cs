@@ -4,14 +4,30 @@ using SuperDev.Services;
 
 namespace SuperDev.APIs
 {
-    public class RoleApiController:ApiController
+    public partial class SuperDevApiController : ApiController
     {
+        [HttpGet]
+        [Route("api/getRole/{id}")]
+        public IHttpActionResult GetRole(int id)
+        {
+            var roleService = new RoleService();
+            return Ok(roleService.GetById(id));
+        }
+
         [HttpPost]
-        [Route("api/createRole")]
-        public IHttpActionResult PersistUser([FromBody]Role role)
+        [Route("api/saveRole")]
+        public IHttpActionResult SaveRole([FromBody]Role role)
         {
             var roleService = new RoleService();
             return Ok(roleService.PersistRole(role));
+        }
+
+        [HttpPost]
+        [Route("api/getRoles")]
+        public IHttpActionResult GetRoles()
+        {
+            var roleService = new RoleService();
+            return Ok(roleService.GetList());
         }
     }
 }
