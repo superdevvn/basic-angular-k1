@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 
 import { ApiService } from './../../../api.service';
-import { Role } from '../shared/role.model';
+import { User } from '../shared/user.model';
 
 @Injectable()// dùng để chưa sẽ tài nguyên khác dùng chung ví dụ: Role,.
-export class RoleService {
+export class UserService {
     constructor(private apiService: ApiService) { }
-    saveRole(role: Role) {
-        return new Promise((resolve, reject) => {
-            this.apiService.post('api/saveRole', role).then(res => {
+    saveUser(user: User) {
+        return new Promise<User>((resolve, reject) => {
+            this.apiService.post('api/saveUser', user).then((res:Response) => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);
@@ -17,8 +17,8 @@ export class RoleService {
     }
 
     getList() {
-        return new Promise((resolve, reject) => {
-            this.apiService.post('api/getRoles',{}).then(res => {
+        return new Promise<User[]>((resolve, reject) => {
+            this.apiService.post('api/getUsers',{}).then((res:Response) => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);
@@ -26,9 +26,9 @@ export class RoleService {
         });
     }
 
-    getRole(id) {
-        return new Promise((resolve, reject) => {
-            this.apiService.get(`api/getRole/${id}`).then((res:Response) => {
+    getUser(id) {
+        return new Promise<User>((resolve, reject) => {
+            this.apiService.get(`api/getUser/${id}`).then((res:Response) => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);
