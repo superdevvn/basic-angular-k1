@@ -22,6 +22,9 @@ import { CardListComponent } from './customers/card-list.component';
 import { GoldCardComponent } from './customers/gold-card.component';
 import { ApiService } from './api.service';
 import { RoleService } from './Role/service/role.service';
+import { ManufacturerService } from './Manufacturer/service/manufacturer.service';
+import { ManufacturerDetailComponent } from './Manufacturer/manufacturer-detail.component';
+import { ManufacturerListComponent } from './Manufacturer/manufacturer-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'main',pathMatch:'full' },
@@ -41,6 +44,8 @@ const routes: Routes = [
       { path: 'shirt-list', component:ShirtListComponent},
       { path: 'card-list', component:CardListComponent},
       { path: 'gold-card', component:GoldCardComponent},
+      { path: 'manufacturer-list', component:ManufacturerListComponent},
+      { path: 'manufacturer-detail/:id', component:ManufacturerDetailComponent},
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -63,7 +68,9 @@ const routes: Routes = [
     ProfileComponent,ShirtListComponent,
     TableListComponent,
     CardListComponent,
-    GoldCardComponent
+    GoldCardComponent,
+    ManufacturerDetailComponent,
+    ManufacturerListComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +78,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService,RoleService],
+  providers: [ApiService,RoleService,ManufacturerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
