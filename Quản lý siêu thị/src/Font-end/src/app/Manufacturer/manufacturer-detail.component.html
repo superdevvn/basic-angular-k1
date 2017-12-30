@@ -1,0 +1,32 @@
+<div class="col-md-4">
+    <div class="form-group">
+            <span class="control-label">Vai trò</span>
+            <div class="input-group input-group-icon">               
+                <input type="text" class="form-control" [(ngModel)]="manufacturer.Name">
+                <span class="input-group-addon">
+                        <span class="icon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </span>
+            </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <span class="text-primary">Code</span>
+    <textarea class="form-control" [(ngModel)]="manufacturer.Code"></textarea>
+</div>
+<div class="col-md-12">
+    <span class="text-primary">Ghi chú</span>
+    <textarea class="form-control" [(ngModel)]="manufacturer.Description"></textarea>
+</div>
+<div class="col-md-12">
+    <br />
+    <button class="btn btn-primary btn-sm" (click)="save()">
+        <i class="fa fa-floppy-o"></i>
+        Lưu
+    </button>
+    <button class="btn btn-default btn-sm" (click)="back()">
+        <i class="fa fa-back"></i>
+        Trở về
+    </button>
+</div>
