@@ -1,7 +1,7 @@
 export class Role {
-    id: number;
-    name: string;
-    description: string;
+    Id: number;
+    Name: string;
+    Description: string;
 
     constructor() {
     }
