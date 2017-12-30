@@ -76,7 +76,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService,RoleService],
+  providers: [ApiService, RoleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

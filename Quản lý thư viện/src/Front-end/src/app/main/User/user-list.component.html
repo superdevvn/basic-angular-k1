@@ -1,1 +1,54 @@
-This is User List Page
+<section class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions">
+            <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+            <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+        </div>
+
+        <h2 class="panel-title">Default</h2>
+    </header>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mb-md">
+                    <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/user-detail']">Add <i class="fa fa-plus"></i></button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped mb-none" id="datatable-editable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>RoleId</th>
+                    <th>Username</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Description</th>
+                    <th>IsActived</th>
+                    <th>CreateDate</th>
+                    <th>CreateBy</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="gradeX">
+                    <td>1</td>
+                    <td>Math</td>
+                    <td>Cong Son</td>
+                    <td>Cong</td>
+                    <td>Son</td>
+                    <td>Im a software engineering</td>
+                    <td>yes</td>
+                    <td>13/12/2017</td>
+                    <td>Sơn Nguyễn</td>
+                    <td class="actions">
+                        <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
+                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
+                        <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                        <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>

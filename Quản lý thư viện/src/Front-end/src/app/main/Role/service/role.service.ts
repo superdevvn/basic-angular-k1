@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './../../../api.service';
 import { Role } from '../shared/role.model';
 
-@Injectable()
+@Injectable()// dùng để chưa sẽ tài nguyên khác dùng chung ví dụ: Role,.
 export class RoleService {
     constructor(private apiService: ApiService) { }
     saveRole(role: Role) {

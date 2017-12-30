@@ -3,7 +3,7 @@ import { Http, Headers } from '@angular/http';
 
 @Injectable()
 export class ApiService {
-    host:string = 'http://localhost:8245/';
+    host:string = 'http://103.232.121.69:5101/';
     constructor(private http: Http) { }
     post(url: string, data: any) {
         return new Promise((resolve, reject) => {
