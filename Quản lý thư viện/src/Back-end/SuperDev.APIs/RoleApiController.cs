@@ -4,7 +4,7 @@ using SuperDev.Services;
 
 namespace SuperDev.APIs
 {
-    public class RoleApiController : ApiController
+    public partial class SuperDevApiController : ApiController
     {
         [HttpGet]
         [Route("api/getRole/{id}")]
