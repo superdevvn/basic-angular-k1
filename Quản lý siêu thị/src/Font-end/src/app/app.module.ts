@@ -8,8 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './authorize/login.component';
 import { MainComponent } from './main/main.component';
-import { UserListComponent } from './main/user-list.component';
-import { UserDetailComponent } from './main/user-detail.component';
+
 import { DashboardComponent } from './main/dashboard.component';
 import { RoleListComponent } from './Role/role-list.component';
 import { RoleDetailComponent } from './Role/role-detail.component';
@@ -22,6 +21,9 @@ import { CardListComponent } from './customers/card-list.component';
 import { GoldCardComponent } from './customers/gold-card.component';
 import { ApiService } from './api.service';
 import { RoleService } from './Role/service/role.service';
+import { UserDetailComponent } from './User/user-detail.component';
+import { UserListComponent } from './User/user-list.component';
+import { UserService } from './User/service/user.service';
 
 const routes: Routes = [
   { path: '', redirectTo:'main',pathMatch:'full' },
@@ -32,10 +34,10 @@ const routes: Routes = [
       { path: 'dashboard', component:DashboardComponent},
       { path: 'fish-list', component:FishListComponent},
       { path: 'account-list', component:AccountsListComponent},
-      { path: 'role-list', component:RoleListComponent},
-      { path: 'role-detail/:id', component:RoleDetailComponent},
+      { path: 'role-list/:id', component:RoleListComponent},
+      { path: 'role-detail', component:RoleDetailComponent},
       { path: 'user-list', component:UserListComponent},
-      { path: 'user-detail', component:UserDetailComponent},
+      { path: 'user-detail/:id', component:UserDetailComponent},
       { path: 'profile', component:ProfileComponent},
       { path: 'table-list', component:TableListComponent},
       { path: 'shirt-list', component:ShirtListComponent},
@@ -53,8 +55,8 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     MainComponent,
-    UserListComponent,
     UserDetailComponent,
+    UserListComponent,
     RoleListComponent,
     RoleDetailComponent,
     DashboardComponent,
@@ -71,7 +73,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService,RoleService],
+  providers: [ApiService,RoleService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
