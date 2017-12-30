@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
-import { Role } from '../shared/role.model';
+import { Role } from './shared/role.model';
 
 @Component({
     selector: 'role-detail',

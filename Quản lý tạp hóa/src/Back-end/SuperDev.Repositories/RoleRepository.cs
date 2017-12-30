@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SuperDev.Models;
 
 namespace SuperDev.Repositories
 {
     public class RoleRepository
-    { 
+    {
         public Role Create(Role role)
         {
             using (var context = new SuperDevDbContext())
@@ -29,6 +26,22 @@ namespace SuperDev.Repositories
                 context.SaveChanges();
                 context.Entry(entity).Reload();
                 return entity;
+            }
+        }
+
+        public IEnumerable<Role> GetEntities()
+        {
+            using (var context = new SuperDevDbContext())
+            {
+                return context.Roles.ToList();
+            }
+        }
+
+        public Role GetEntity(int id)
+        {
+            using (var context = new SuperDevDbContext())
+            {
+                return context.Roles.Find(id);
             }
         }
     }
