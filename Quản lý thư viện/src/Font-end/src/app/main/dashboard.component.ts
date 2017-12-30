@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 class User{
     username:string;
     password:string;
@@ -16,6 +17,7 @@ export class DashboardComponent {
         this.user.password = "123456";
         this.input1="This is input value";
     }
+    
     ngOnInit(){
         setTimeout(()=>{
             this.input1="Test Hello";
