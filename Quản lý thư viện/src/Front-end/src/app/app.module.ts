@@ -28,8 +28,12 @@ import { InOutListComponent } from './main/InOut/inout-list.component'
 import { InOutDetailComponent } from './main/InOut/inout-detail.component'
 import { ApiService } from './api.service';
 import { RoleService } from './main/Role/service/role.service';
-import { Category } from './main/Category/shared/category.model';
+
+
 import { CategoryService } from './main/Category/service/category.service';
+
+import { UserService } from './main/User/service/user.service';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -78,7 +82,8 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService,RoleService, CategoryService],
+
+  providers: [ApiService,RoleService, CategoryService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
