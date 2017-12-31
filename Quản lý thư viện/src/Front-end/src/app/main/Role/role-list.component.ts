@@ -5,30 +5,30 @@ import { Role } from './shared/role.model';
 
 @Component({
     selector: 'role-list',
-    templateUrl:'./role-list.component.html'
+    templateUrl: './role-list.component.html'
 })
 export class RoleListComponent {
 
-    roles:Role[] = [];
+    roles: Role[] = [];
 
     constructor(private router: Router, private roleService: RoleService) {
     }
 
-    ngOnInit(){
-        this.roleService.getList().then((res:Role[])=>{
+    ngOnInit() {
+        this.roleService.getList().then((res: Role[]) => {
             this.roles = res;
             console.log("B");
-        }).catch(err=>{
+        }).catch(err => {
             alert(err);
         });
 
         console.log("A");
     }
 
-    ngAfterViewInit(){
+    ngAfterViewInit() {
     }
 
-    detail(role:Role){
-        this.router.navigate(['/main/role-detail',role.Id]);
+    detail(role: Role) {
+        this.router.navigate(['/main/role-detail', role.Id]);
     }
 }

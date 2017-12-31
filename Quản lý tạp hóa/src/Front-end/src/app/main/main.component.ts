@@ -28,6 +28,8 @@ export class MainComponent {
                     break;
                     case "/main/add-new-user": this.title = "Bạn đang tạo mới tài khoản";
                     break;
+                    case "/main/supplier-list": this.title = "Danh sách nhà cung cấp";
+                    break;
                     default: this.title = "Dashboard";
                     break;
                 }
