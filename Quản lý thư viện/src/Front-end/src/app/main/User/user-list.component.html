@@ -34,6 +34,7 @@
                     <th>LastName</th>
                     <th>RoleName</th>
                     <th>Description</th>
+                    <th>Ngày tạo</th>
                     <th>IsActived</th>
                 </tr>
             </thead>
@@ -45,6 +46,7 @@
                     <td>{{user.LastName}}</td>
                     <td>{{user.RoleName}}</td>
                     <td>{{user.Description}}</td>
+                    <td>{{user.CreatedDate | date:'dd/MM/yyyy HH:mm'}}</td>
                     <!-- <td>
                         <input [disabled]="true" type="checkbox" [ngModel]="user.IsActived"/>
                     </td> -->
