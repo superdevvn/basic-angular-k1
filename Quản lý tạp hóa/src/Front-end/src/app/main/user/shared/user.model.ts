@@ -1,5 +1,6 @@
 export class User {
     Id: number;
+    RoleName:string;
     RoleId: number;
     Username: string;
     Password: string;
@@ -12,6 +13,6 @@ export class User {
     CreatedBy: number;
 
     constructor(){
-
+       this.CreatedDate = new Date();
     }
 }

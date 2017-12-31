@@ -23,6 +23,7 @@ import { SupplierDetailComponent } from './main/supplier/supplier-detail.compone
 import { ApiService } from './api.service';
 import { SupplierService } from './main/supplier/service/supplier.service';
 import { RoleService } from './main/role/service/role.service';
+import { UserService } from './main/user/service/user.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -34,7 +35,7 @@ const routes: Routes = [
       { path: 'role-list', component: RoleListComponent },
       { path: 'role-detail/:id', component: RoleDetailComponent },
       { path: 'user-list', component: UserListComponent },
-      { path: 'user-detail', component: UserDetailComponent },
+      { path: 'user-detail/:id', component: UserDetailComponent },
       { path: 'product-list', component: ProductListComponent },
       { path: 'category-list', component: CategoryListComponent },
       { path: 'category-detail', component: CategoryDetailComponent },
@@ -70,7 +71,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService, SupplierService, RoleService],
+  providers: [ApiService, SupplierService, RoleService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

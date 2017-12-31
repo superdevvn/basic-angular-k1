@@ -26,6 +26,6 @@ export class SupplierListComponent {
     }
 
     detail(suppiler:Suppiler){
-        this.router.navigate(['/main/supplier-detail',suppiler.id]);
+        this.router.navigate(['/main/supplier-detail',suppiler.Id]);
     }
 }
