@@ -1,8 +1,8 @@
 export class Menufactuer {
-    id: number;
-    code: string;
-    name: string;
-    description: string;
+    Id: number;
+    Code: string;
+    Name: string;
+    Description: string;
 
     constructor(){
         
