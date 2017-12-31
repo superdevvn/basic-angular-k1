@@ -1,0 +1,36 @@
+<div class="col-md-12">
+    <table class="table table-bordered table-striped table-hover table-responsive table-sm table-light">
+        <thead class="thread-dark">
+            <tr class="dark">
+                <th>ID</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let manufacturer of manufacturers">
+                <td>{{manufacturer.Id}}</td>
+                <td>{{manufacturer.Code}}</td>
+                <td>{{manufacturer.Name}}</td>
+                <td>{{manufacturer.Description}}</td>
+                <td>
+                    <button class="btn btn-success">
+                        <i class="fa fa-pencil-square-o" style="width: 12px;"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="detail(manufacturer)">
+                        <i class="fa fa-file" style="width: 12px;"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger">
+                        <i class="fa fa-trash" style="width: 12px;"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

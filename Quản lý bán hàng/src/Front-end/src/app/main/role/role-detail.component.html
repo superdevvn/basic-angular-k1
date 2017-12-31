@@ -1,0 +1,38 @@
+<div class="col-md-12">
+    <div class="col-md-4">
+        <label>Role ID</label>
+        <input class="form-control" [(ngModel)] = "role.Id" disabled="disabled"/>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <label>Name</label>
+        <input class="form-control" [(ngModel)] = "role.Name" />
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <label>Description</label>
+        <input class="form-control" [(ngModel)] = "role.Description"/>
+    </div>
+</div>
+<div class="col-md-12" style="margin-left: 15px;">
+    <button type="submit" class="btn btn-info" style="margin-right: 15px;" (click)="onclick(); save()">
+        <i class="fa fa-floppy-o"></i>
+        Save
+    </button>
+    <button type="submit" class="btn btn-danger" style="margin-right: 15px;" (click)="back()">
+        <i class="fa fa-backward"></i>
+        Back
+    </button>
+</div>
+<div class="col-md-4" style="margin-left: 30px; opacity: 0; background-color: lawngreen; text-align: center; padding-bottom: 10px;"
+    id="successTable">
+    <h2 style="color: white;">Save Successfully!!!!</h2>
+</div>
+
+<style>
+    div {
+        margin-bottom: 20px;
+    }
+</style>

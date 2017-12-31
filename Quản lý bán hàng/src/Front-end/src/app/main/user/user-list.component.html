@@ -9,7 +9,29 @@
         <i class="fa fa-plus"></i>
     </button>
 </div>
-<div class="col-md-6" style="opacity: 0;" id="searchBar">
+<div class="col-md-3" style="opacity: 1;" id="searchBar">
+    <label>From Date</label>
+    <div class="input-group col-md-12">
+        <input type="date" class="form-control" />
+        <div class="input-group-btn">
+            <button class="btn btn-info">
+                <i class="fa fa-calendar"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="col-md-3" style="opacity: 1;" id="searchBar">
+    <label>To Date</label>
+    <div class="input-group col-md-12">
+        <input type="date" class="form-control" />
+        <div class="input-group-btn">
+            <button class="btn btn-info" id="btn-datepicker">
+                <i class="fa fa-calendar"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="col-md-3" style="opacity: 0;" id="searchBar">
     <div class="input-group col-md-12">
         <input type="text" class="form-control" />
         <div class="input-group-btn">
@@ -20,11 +42,18 @@
 <div class="col-md-12" style="margin-top: 20px;">
     <table class="table table-hover">
         <colgroup>
-            <col style="width: 20px;" />
-            <col style="width: 20px;" />
+            <col style="width: 100px;" />
+            <col style="width: 100px;" />
+            <col style="width: 100px;" />
+            <col style="width: 100px;" />
+            <col style="width: 100px;" />
+            <col style="width: 100px;" />
+            <col style="width: 100px;" />
+            <col style="width: 100px;" />
+            <col style="width: 100px;" />
         </colgroup>
         <thead>
-            <tr>
+            <tr class="danger">
                 <th class="col-md-1">ID</th>
                 <th class="col-md-1">Role ID</th>
                 <th class="col-md-2">UserName</th>
@@ -32,8 +61,8 @@
                 <th class="col-md-2">Description</th>
                 <th class="col-md-1">IsActive</th>
                 <th class="col-md-1">IsDelete</th>
-                <th class="col-md-1">#</th>
-                <th class="col-md-1">#</th>
+                <th class="col-md-1">CreatedDate</th>
+                <th class="col-md-1">CreatedBy</th>
             </tr>
         </thead>
         <tbody>
@@ -43,8 +72,14 @@
                 <td>Tuấn Anh</td>
                 <td>Đẹp Trai</td>
                 <td>45/4 Chợ Rẫy F11 Quận Bình Tân</td>
-                <td>
-                    <input type="checkbox" class="check-box" />
+                <td class="col-md-1">
+
+                    <label class="container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+
                 </td>
                 <td>
                     <input type="checkbox" />

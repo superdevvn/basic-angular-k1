@@ -1,5 +1,5 @@
 <div class="col-md-6">
-    <button class="btn btn-primary" (click) = "onclick()">
+    <button class="btn btn-primary" (click)="onclick()">
         <i class="fa fa-search"></i>
     </button>
     <button class="btn btn-default">
@@ -9,7 +9,7 @@
         <i class="fa fa-plus"></i>
     </button>
 </div>
-<div class="col-md-6" style="opacity: 0;" id="searchBar">
+<div class="col-md-6" style="opacity: 1;" id="searchBar">
     <div class="input-group col-md-12">
         <input type="text" class="form-control" />
         <div class="input-group-btn">
@@ -22,41 +22,26 @@
         <thead>
             <tr class="danger">
                 <th class="col-md-1">ID</th>
-                <th class="col-md-1">Code</th>
-                <th class="col-md-2">Name</th>
+                <th class="col-md-1">Name</th>
                 <th class="col-md-3">Description</th>
-                <th class="col-md-4">Address</th>
-                <th class="col-md-0.5">Edit</th>
-                <th class="col-md-0.5">Delete</th>
+                <th class="col-md-1">Edit</th>
+                <th class="col-md-1">Detail</th>
+                <th class="col-md-1">Delete</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>#</td>
-                <td>Tuấn Anh</td>
-                <td>Đẹp Trai</td>
-                <td>45/4 Chợ Rẫy F11 Quận Bình Tân</td>
+            <tr *ngFor="let role of roles">
+                <td>{{role.Id}}</td>
+                <td>{{role.Name}}</td>
+                <td>{{role.Description}}</td>
                 <td>
                     <button class="btn btn-success">
                         <i class="fa fa-pencil-square-o" style="width: 12px;"></i>
                     </button>
                 </td>
                 <td>
-                    <button class="btn btn-danger">
-                        <i class="fa fa-trash" style="width: 12px;"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>#</td>
-                <td>Trần Thuận Nghĩa</td>
-                <td>Đẹp Trai</td>
-                <td>45/4 Chợ Rẫy F11 Quận Bình Tân</td>
-                <td>
-                    <button class="btn btn-success">
-                        <i class="fa fa-pencil-square-o" style="width: 12px;"></i>
+                    <button class="btn btn-primary" (click)="detail(role)">
+                        <i class="fa fa-file" style="width: 12px;"></i>
                     </button>
                 </td>
                 <td>

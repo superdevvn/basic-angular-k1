@@ -3,43 +3,52 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-<<<<<<< HEAD
 import { ChartsModule } from 'ng2-charts';
-=======
->>>>>>> e92edc2b4f919b4790202b211eb86f06c91561e7
 
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-<<<<<<< HEAD
 import { addNewUserComponent } from './main/user/add-new-user.component';
 import { CustomerListComponent } from './main/customer/customer-list.component';
 import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { UserListComponent } from './main/user/user-list.component';
-import { BarChartComponent } from './main/shared/bar-chart.directive';
-import { CategoryComponent } from './main/category/category.component';
 
-=======
-import { NewRoleComponent } from './main/new-role.component';
->>>>>>> e92edc2b4f919b4790202b211eb86f06c91561e7
+import { CategoryComponent } from './main/category/category.component';
+import { RoleDetailComponent } from './main/role/role-detail.component';
+import { RoleListComponent } from './main/role/role-list.component';
+
+import { LoginComponent } from './authorize/login.component';
+import { ApiService } from './api.service';
+import { RoleService } from './main/role/service/role.service';
+import { ManufacturerService } from './main/manufaturer/service/manufacturer.service';
+import { ManufacturerListComponent } from './main/manufaturer/manufacturer-list.component';
+import { ManufacturerDetailComponent } from './main/manufaturer/manufacturer-detail.component';
+
+
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   {
     path: 'main', component: MainComponent,
     children: [
-<<<<<<< HEAD
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'manufacturer-list', pathMatch: 'full' },
+      //dashboard
       { path: 'dashboard', component: DashboardComponent },
+      //customer-list
       { path: 'customer-list', component: CustomerListComponent },
+      //user
       { path: 'add-new-user', component: addNewUserComponent },
       { path: 'user-list', component: UserListComponent },
-      { path: 'category', component: CategoryComponent }
-=======
-      { path: '', redirectTo: 'new-role', pathMatch: 'full' },
-      { path: 'new-role', component: NewRoleComponent }
->>>>>>> e92edc2b4f919b4790202b211eb86f06c91561e7
+      //user
+      { path: 'category', component: CategoryComponent },
+      //role
+      { path: 'role-detail/:id', component: RoleDetailComponent },
+      { path: 'role-list', component: RoleListComponent },
+      //manufacturer
+      { path: 'manufacturer-detail/:id', component: ManufacturerDetailComponent },
+      { path: 'manufacturer-list', component: ManufacturerListComponent },
     ]
   }
 
@@ -52,28 +61,25 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     MainComponent,
-<<<<<<< HEAD
     addNewUserComponent,
     CustomerListComponent,
     DashboardComponent,
     UserListComponent,
-    BarChartComponent,
-    CategoryComponent
-=======
-    NewRoleComponent
->>>>>>> e92edc2b4f919b4790202b211eb86f06c91561e7
+    CategoryComponent,
+    RoleDetailComponent,
+    RoleListComponent,
+    LoginComponent,
+    ManufacturerListComponent,
+    ManufacturerDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-<<<<<<< HEAD
     ChartsModule,
-=======
->>>>>>> e92edc2b4f919b4790202b211eb86f06c91561e7
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [RoleService, ApiService, ManufacturerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
