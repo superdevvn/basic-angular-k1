@@ -41,7 +41,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let user of users">
+                <tr *ngFor="let user of users" class="{'success':user.IsActived}">
                     <td>{{user.Id}}</td>
                     <td>{{user.Username}}</td>
                     <td>{{user.FirstName}}</td>
