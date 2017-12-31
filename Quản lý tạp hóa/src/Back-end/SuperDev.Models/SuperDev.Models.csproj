@@ -54,6 +54,7 @@
       <DependentUpon>201712141838238_Init001.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Supplier.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="Manufacturer.cs" />
     <Compile Include="InOut.cs" />

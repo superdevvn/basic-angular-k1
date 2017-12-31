@@ -1,0 +1,21 @@
+From 5181175a546583a98e29b22336ec8a94841f8c36 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ch=C3=AD=20Trung?= <trung.ktpm@gmail.com>
+Date: Sun, 24 Dec 2017 21:50:20 +0700
+Subject: [PATCH] - Test commit
+
+---
+ .../src/Font-end/src/app/main/user-list.component.html                   | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Quản lý siêu thị/src/Font-end/src/app/main/user-list.component.html b/Quản lý siêu thị/src/Font-end/src/app/main/user-list.component.html
+index 254df2e..8e31841 100644
+--- a/Quản lý siêu thị/src/Font-end/src/app/main/user-list.component.html	
++++ b/Quản lý siêu thị/src/Font-end/src/app/main/user-list.component.html	
+@@ -1,2 +1,3 @@
+ This is my app
++Test Commit & Push
+ <test-selector></test-selector>
+\ No newline at end of file
+-- 
+2.14.1.windows.1
+

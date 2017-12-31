@@ -1,0 +1,39 @@
+<div style="margin-left:-25px;margin-right:-25px">
+    <div class="col-md-12">
+        <a class="btn btn-primary" [routerLink]="['/main/category-detail',0]">Thêm</a>
+    </div>
+    <div class="col-md-12">
+        <br />
+        <table class="table table-bordered table-striped table-condensed mb-none">
+            <colgroup>
+                <col style="width:50px" />
+                <col style="width:150px" />
+                <col />
+                <col style="width:50px" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Vai trò</th>
+                    <th>Ghi chú</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of categories">
+                    <td>{{category.Id}}</td>
+                    <td>{{category.Name}}</td>
+                    <td>{{category.Description}}</td>
+                    <td class="actions">
+                        <a style="cursor:pointer" (click)="detail(category)">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                        <a style="cursor:pointer" (click)="delete(category)">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

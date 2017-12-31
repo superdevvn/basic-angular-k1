@@ -42,4 +42,31 @@ namespace SuperDev.Models
         [ForeignKey("RoleId")]
         public virtual Role Role { get; set; }
     }
+
+    public class UserComplex
+    {
+        public int Id { get; set; }
+
+        public int RoleId { get; set; }
+
+        public string RoleName { get; set; }
+
+        public string Username { get; set; }
+
+        public string Password { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string Description { get; set; }
+
+        public bool IsActived { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public DateTime CreatedDate { get; set; }
+
+        public int? CreatedBy { get; set; }
+    }
 }
