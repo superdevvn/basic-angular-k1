@@ -28,22 +28,22 @@
                     <th>Họ</th>
                     <th>Vai trò</th>
                     <th>Mô tả</th>
-                    <th>Ngày tạo</th>
+                    <th class="text-center">Ngày tạo</th>
                     <th class="hidden-phone">Tình trạng</th>
                     <th class="hidden-phone">Chỉnh sửa</th>
                     <th class="hidden-phone">Xóa</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let user of users" class="gradeX">
+                <tr *ngFor="let user of users" class="gradeX" [ngClass]="{'success':user.IsActived,'danger':!user.IsActived}">
                     <td>{{user.Id}}</td>
                     <td>{{user.Username}}</td>
                     <td>{{user.FirstName}}</td>
                     <td>{{user.LastName}}</td>
                     <td>{{user.RoleName}}</td>
                     <td>{{user.Description}}</td>
-                    <td>{{user.CreatedDate | date:'dd/MM/yyyy HH:mm'}}</td>
-                    <td>
+                    <td class="text-center">{{user.CreatedDate | date:'dd/MM/yyyy HH:mm'}}</td>
+                    <td class="text-center">
                         <span [ngClass]="{'label label-success':user.IsActived,'label label-danger':!user.IsActived}">
                             {{user.IsActived?'Hoạt động':'Khóa'}}
                         </span>
