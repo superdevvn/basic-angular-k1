@@ -32,6 +32,6 @@ export class RoleListComponent {
     }
 
     detail(role:Role){
-        this.router.navigate(['/main/role-detail', role.id]);
+        this.router.navigate(['/main/role-detail', role.Id]);
     }
 }

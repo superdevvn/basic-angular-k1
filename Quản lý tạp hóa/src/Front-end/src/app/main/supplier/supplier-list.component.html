@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-md">
-                    <button class="btn btn-primary" [routerLink]="['../supplier-detail']">Thêm
+                    <button class="btn btn-primary" [routerLink]="['/main/supplier-detail',0]">Thêm
                         <i class="fa fa-plus"></i>
                     </button>
                 </div>
@@ -20,9 +20,8 @@
         <table class="table table-bordered table-striped mb-none" id="datatable-default">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Họ và tên</th>
-                    <th>Vai trò</th>
+                    <th>Nhà sản xuất</th>
+                    <th>Địa chỉ</th>
                     <th>Số điện thoại</th>
                     <th>Email</th>
                     <th class="hidden-phone"></th>
@@ -30,15 +29,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="gradeX">
-                    <td>SE90954</td>
-                    <td>Lê Thị Cà Chua</td>
-                    <td>Admin</td>
-                    <td>0123456789</td>
-                    <td>cachua@gmail.com</td>
+                <tr class="gradeX" *ngFor="let supplier of suppliers">
+                    <td>{{supplier.Name}}</td>
+                    <td>{{supplier.Address}}</td>
+                    <td>{{supplier.Phone}}</td>
+                    <td>{{supplier.Email}}</td>
                     <td align="center">
                         <a>
-                            <i class="fa fa-pencil-square-o"></i>
+                            <i class="fa fa-pencil-square-o" (click)="detail(supplier)"></i>
                         </a>
                     </td>
                     <td align="center">
