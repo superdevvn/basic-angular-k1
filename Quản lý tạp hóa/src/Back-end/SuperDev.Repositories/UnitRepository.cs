@@ -4,44 +4,44 @@ using SuperDev.Models;
 
 namespace SuperDev.Repositories
 {
-    public class SupplierRepository
-    { 
-        public Supplier Create(Supplier supplier)
+    public class UnitRepository
+    {
+        public Unit Create(Unit unit)
         {
             using (var context = new SuperDevDbContext())
             {
-                context.Suppliers.Add(supplier);
+                context.Units.Add(unit);
                 context.SaveChanges();
-                context.Entry(supplier).Reload();
-                return supplier;
+                context.Entry(unit).Reload();
+                return unit;
             }
         }
 
-        public Supplier Update(Supplier supplier)
+        public Unit Update(Unit unit)
         {
             using (var context = new SuperDevDbContext())
             {
-                var entity = context.Suppliers.Find(supplier.Id);
-                context.CloneObject(entity, supplier);
+                var entity = context.Units.Find(unit.Id);
+                context.CloneObject(entity, unit);
                 context.SaveChanges();
                 context.Entry(entity).Reload();
                 return entity;
             }
         }
 
-        public Supplier GetEntity(int id)
+        public IEnumerable<Unit> GetEntities()
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.Suppliers.Find(id);
+                return context.Units.ToList();
             }
         }
 
-        public IEnumerable<Supplier> GetEntities()
+        public Unit GetEntity(int id)
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.Suppliers.ToList();
+                return context.Units.Find(id);
             }
         }
     }
