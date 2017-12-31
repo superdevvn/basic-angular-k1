@@ -5,7 +5,7 @@
             <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
         </div>
 
-        <h2 class="panel-title">Default</h2>
+        <h2 class="panel-title"></h2>
     </header>
     <div class="panel-body">
         <div class="row">
@@ -17,25 +17,27 @@
         </div>
         <table class="table table-bordered table-striped mb-none" id="datatable-default">
             <colgroup>
-                <col style="width:100" />
+                <col style="width:10px" />
+                <col  />
+                <col  />
+                <col  />
+                <col  />
+                <col  />
+                <col  />
+                <col  style="width: 10px"/>
                 <col />
-                <col style="width:150" />
-                <col style="width:150" />
-                <col style="width:150" />
-                <col style="width:150" />
-                <col style="width:150" />
-                <col style="width:150" />
             </colgroup>
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>UserName</th>
-                    <th>FirstName</th>
-                    <th>LastName</th>
-                    <th>RoleName</th>
-                    <th>Description</th>
-                    <th>IsActived</th>
-                    <th>Action</th>
+                    <th>Mã</th>
+                    <th>Tên đăng nhập</th>
+                    <th>Họ</th>
+                    <th>Tên</th>
+                    <th>Tên Role</th>
+                    <th>Mô tả</th>
+                    <th>Ngày Tạo</th>
+                    <th>Hoạt động</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -46,12 +48,27 @@
                     <td>{{user.LastName}}</td>
                     <td>{{user.RoleName}}</td>
                     <td>{{user.Description}}</td>
+                    <td>{{user.CreatedDate | date:'dd/MM/yyy HH:mm'}}</td>
                     <!-- <td>
                         <input [disabled]="true" type="checkbox" [ngModel]="user.IsActived"/>
                     </td> -->
                     <td>
-                        <span [ngClass]="{'label label-success':user.IsActived, 'label label-danger': !user.IsActived}">
-                            {{user.IsActived?'Hoạt động':'Khóa'}}
+                        <span [ngClass]="{'text-success':user.IsActived, 'text-danger': !user.IsActived}">
+                            <div class="form-group">
+                                
+                                <div class="col-md-6">
+                                    <div class="input-group input-group-icon">
+                                        <input [disabled]="true" type="checkbox" [(ngModel)]="user.IsActived" id="checkboxExample3">
+        
+                                    </div>
+                                    <!-- <div class="switch switch-dark">
+                                        <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                    </div>
+                                    <div class="switch switch-lg switch-primary">
+                                        <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                    </div> -->
+                                </div>
+                            </div>
                         </span>
                     </td>
                     <td>
