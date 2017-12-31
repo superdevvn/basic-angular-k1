@@ -14,21 +14,25 @@ export class MainComponent {
                 let url = this.router.url.toString();
                 switch(url)
                 {
-                    case "/main/dashboard": this.title = "Dashboard";
+                    case "/main/dashboard": this.title = "Trang chủ";
                     break;
-                    case "/main/role-list": this.title = "Danh sách role";
+                    case "/main/role-list": this.title = "Quản lí vai trò";
                     break;
-                    case "/main/category-list": this.title = "Danh sách category";
+                    case "/main/category-list": this.title = "Quản lí thể loại sách";
                     break;
-                    case "/main/role-detail": this.title = "Chi tiết vai trò";
+                    case "/main/category-detail": this.title = "Quản lí thể loại sách";
                     break;
-                    case "/main/user-list": this.title = "Danh sách người dùng";
+                    case "/main/role-detail": this.title = "Quản lí vai trò";
                     break;
-                    case "/main/user-detail": this.title = "Chi tiết người dùng";
+                    case "/main/user-list": this.title = "Danh sách bạn đọc";
                     break;
-                    case "/main/homework": this.title = " Bài tập về nhà";
+                    case "/main/user-detail": this.title = "quản lí bạn đọc";
                     break;
-                    default: this.title = "Dashboard";
+                    case "/main/inout-list": this.title = "Quản lí mượn trả sách";
+                    break;
+                    case "/main/inout-detail": this.title = "Quản lí mượn trả sách";
+                    break;
+                    default: this.title = "Trang chủ";
                     break;
                 }
             }
