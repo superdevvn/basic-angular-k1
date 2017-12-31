@@ -13,6 +13,6 @@ export class User {
     CreatedBy: number;
 
     constructor(){
-
+       this.CreatedDate = new Date();
     }
 }
