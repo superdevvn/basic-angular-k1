@@ -8,14 +8,15 @@
             <col style="width:100" />
             <col style="width:150" />
             <col />
-            <col style="width:150" />
+            <col style="width:50" />
         </colgroup>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Vai trò</th>
-                <th>Ghi chú</th>
-                <th>Action</th>    
+                <th>Name</th>
+                <th>Description</th>
+                <th>Action</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -23,7 +24,13 @@
                 <td>{{role.Id}}</td>
                 <td>{{role.Name}}</td>
                 <td>{{role.Description}}</td>
-                <td><button class="btn btn-primary btn-xs" (click)="detail(role)">Chi tiết</button>
+                <td>
+                    <a class="on-default edit-row">
+                        <i class="fa fa-pencil" (click)="detail(role)"></i>
+                    </a>
+                    <a class="on-default remove-row">
+                        <i class="fa fa-trash-o"></i>
+                    </a>
                 </td>
             </tr>
         </tbody>
