@@ -4,13 +4,13 @@
             <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
             <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
         </div>
-        <h2 class="panel-title">Danh sách hàng hóa</h2>
+        <h2 class="panel-title">Danh sách đơn vị</h2>
     </header>
     <div class="panel-body">
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-md">
-                    <button class="btn btn-primary" [routerLink]="['/main/product-detail',0]">Thêm
+                    <button class="btn btn-primary" [routerLink]="['/main/unit-detail',0]">Thêm
                         <i class="fa fa-plus"></i>
                     </button>
                 </div>
@@ -18,35 +18,29 @@
         </div>
         <table class="table table-bordered table-striped mb-none">
             <colgroup>
-                <col width="50px" />
-                <col width="150px" />
-                <col width="150px" />
-                <col width="150px" />
-                <col />
-                <col width="100px" />
-                <col width="100px" />
+                <col width="50px"/>
+                <col width="250px"/>
+                <col width="250px"/>
+                <col width="50px"/>
+                <col width="50px"/>
             </colgroup>
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Mã hàng hóa</th>
-                    <th>Tên</th>
-                    <th>Giá</th>
+                    <th>Tên đơn vị</th>
                     <th>Mô tả</th>
                     <th class="hidden-phone">Chỉnh sửa</th>
                     <th class="hidden-phone">Xóa</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let product of products" class="gradeX">
-                    <td>{{product.Id}}</td>
-                    <td>{{product.Code}}</td>
-                    <td>{{product.Name}}</td>
-                    <td>{{product.Price}}</td>
-                    <td>{{product.Description}}</td>                
+                <tr *ngFor="let unit of units" class="gradeX">
+                    <td>{{unit.Id}}</td>
+                    <td>{{unit.Name}}</td>
+                    <td>{{unit.Description}}</td>
                     <td align="center">
                         <a>
-                            <i style="cursor:pointer" class="fa fa-pencil-square-o" (click)="detail(product)"></i>
+                            <i style="cursor:pointer" class="fa fa-pencil-square-o" (click)="detail(unit)"></i>
                         </a>
                     </td>
                     <td align="center">

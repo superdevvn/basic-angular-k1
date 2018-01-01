@@ -11,64 +11,37 @@
                     </div>
 
                     <h2 class="panel-title">{{title}}</h2>
-                    <!-- <p class="panel-subtitle">
-                        Basic validation will display a label with the error after the form control.
-                    </p> -->
                 </header>
-                <div class="panel-body" style="padding-right: 200px">
+                <div class="panel-body" style="padding-right:350px;">
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Mã nhà cung cấp
+                        <label class="col-sm-3 control-label">Mà hàng hóa
                             <span class="required">*</span>
                         </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Eg.: Se62039" [(ngModel)]="supplier.Code" required/>
+                            <input type="text" [(ngModel)]="product.Code" class="form-control" required/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Tên nhà cung cấp
+                        <label class="col-sm-3 control-label">Tên
                             <span class="required">*</span>
                         </label>
                         <div class="col-sm-9">
-                            <input type="text" [(ngModel)]="supplier.Name" class="form-control" required/>
+                            <input type="text" [(ngModel)]="product.Name" class="form-control" required/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Địa chỉ
+                        <label class="col-sm-3 control-label">Gía
                             <span class="required">*</span>
                         </label>
                         <div class="col-sm-9">
-                            <input type="text" [(ngModel)]="supplier.Address" class="form-control"  required/>
+                            <input type="text" [(ngModel)]="product.Price" class="form-control" required/>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">Số điện thoại
-                            <span class="required">*</span>
-                        </label>
-                        <div class="col-sm-9">
-                            <input type="text" [(ngModel)]="supplier.Phone" class="form-control"  required/>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">Email
-                            <span class="required">*</span>
-                        </label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="fa fa-envelope"></i>
-                                </span>
-                                <input type="email" [(ngModel)]="supplier.Email" class="form-control" placeholder="eg.: email@email.com" required/>
-                            </div>
-                        </div>
-                        <div class="col-sm-9">
-
-                        </div>
-                    </div>
+                  
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Mô tả</label>
                         <div class="col-sm-9">
-                            <textarea [(ngModel)]="supplier.Description" rows="5" class="form-control" required></textarea>
+                            <textarea [(ngModel)]="product.Description" rows="5" class="form-control" required></textarea>
                         </div>
                     </div>
                 </div>

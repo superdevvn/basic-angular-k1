@@ -26,7 +26,7 @@ export class SupplierDetailComponent {
                     console.log(err);
                 });
             } else {
-                this.title = "Bạn đang tạo mới vai trò";
+                this.title = "Bạn đang tạo mới nhà cung cấp";
             }
         });
     }

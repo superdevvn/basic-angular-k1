@@ -24,6 +24,11 @@ import { ApiService } from './api.service';
 import { SupplierService } from './main/supplier/service/supplier.service';
 import { RoleService } from './main/role/service/role.service';
 import { UserService } from './main/user/service/user.service';
+import { UnitDetailComponent } from './main/unit/unit-detail.component';
+import { UnitListComponent } from './main/unit/unit-list.component';
+import { UnitService } from './main/unit/service/unit.service';
+import { ProductService } from './main/product/service/product.service';
+import { ProductDetailComponent } from './main/product/product-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -37,10 +42,13 @@ const routes: Routes = [
       { path: 'user-list', component: UserListComponent },
       { path: 'user-detail/:id', component: UserDetailComponent },
       { path: 'product-list', component: ProductListComponent },
+      { path: 'product-detail/:id', component: ProductDetailComponent},
       { path: 'category-list', component: CategoryListComponent },
       { path: 'category-detail', component: CategoryDetailComponent },
       { path: 'supplier-list', component: SupplierListComponent },
-      { path: 'supplier-detail/:id', component: SupplierDetailComponent }
+      { path: 'supplier-detail/:id', component: SupplierDetailComponent },
+      { path: 'unit-list', component: UnitListComponent},
+      { path: 'unit-detail/:id', component: UnitDetailComponent}
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -60,10 +68,13 @@ const routes: Routes = [
     TestSelectorComponent,
     InputControlComponent,
     ProductListComponent,
+    ProductDetailComponent,
     CategoryDetailComponent,
     CategoryListComponent,
     SupplierListComponent,
-    SupplierDetailComponent
+    SupplierDetailComponent,
+    UnitDetailComponent,
+    UnitListComponent   
   ],
   imports: [
     BrowserModule,
@@ -71,7 +82,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService, SupplierService, RoleService,UserService],
+  providers: [ApiService, SupplierService, RoleService,UserService, UnitService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -18,6 +18,14 @@
         </div>
         <table class="table table-bordered table-striped mb-none" >
         <!-- id="datatable-default"> -->
+            <colgroup >
+                <col width="50"/>
+                <col width="350"/>
+                <col />
+                <col width="50"/>
+                <col width="50"/>
+                <!-- <col style="width:150"/> -->
+            </colgroup>
             <thead>
                 <tr>
                     <th>Id</th>
@@ -34,7 +42,7 @@
                     <td>{{role.Description}}</td>
                     <td align="center">
                         <a>
-                            <i class="fa fa-pencil-square-o" (click)="detail(role)"></i>
+                            <i style="cursor:pointer" class="fa fa-pencil-square-o" (click)="detail(role)"></i>
                         </a>
                     </td>
                     <td align="center">

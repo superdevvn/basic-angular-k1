@@ -20,6 +20,18 @@
             </div>
         </div>
         <table class="table table-bordered table-striped mb-none">
+            <colgroup>
+                <col width="50px"/>
+                <col width="150px"/>
+                <col width="100px"/>
+                <col width="100px"/>
+                <col width="150px"/>
+                <col />
+                <col width="200px"/>
+                <col width="150px"/>
+                <col width="100px"/>
+                <col width="100px"/>
+            </colgroup>
             <thead>
                 <tr>
                     <th>Id</th>
@@ -51,12 +63,12 @@
                     </td>
                     <td align="center">
                         <a>
-                            <i class="fa fa-pencil-square-o"></i>
+                            <i style="cursor:pointer" class="fa fa-pencil-square-o" (click)="detail(user)"></i>
                         </a>
                     </td>
                     <td align="center">
                         <a>
-                            <i class="fa fa-trash-o"></i>
+                            <i style="cursor:pointer" class="fa fa-trash-o"></i>
                         </a>
                     </td>
                 </tr>
