@@ -53,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ManufacturerApiController.cs" />
+    <Compile Include="CategoryApiController.cs" />
+    <Compile Include="ProductApiController.cs" />
+    <Compile Include="InOutApiController.cs" />
     <Compile Include="UnitApiController.cs" />
     <Compile Include="SuperDevApiController.cs" />
     <Compile Include="SupplierApiController.cs" />

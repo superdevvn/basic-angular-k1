@@ -26,6 +26,7 @@ namespace SuperDev.Models.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         ManufacturerId = c.Int(),
+                        SupplierId = c.Int(),
                         CategoryId = c.Int(nullable: false),
                         UnitId = c.Int(nullable: false),
                         Code = c.String(),
@@ -36,8 +37,10 @@ namespace SuperDev.Models.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Category", t => t.CategoryId)
                 .ForeignKey("dbo.Manufacturer", t => t.ManufacturerId)
+                .ForeignKey("dbo.Supplier", t => t.SupplierId)
                 .ForeignKey("dbo.Unit", t => t.UnitId)
                 .Index(t => t.ManufacturerId)
+                .Index(t => t.SupplierId)
                 .Index(t => t.CategoryId)
                 .Index(t => t.UnitId);
             
@@ -48,6 +51,20 @@ namespace SuperDev.Models.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Code = c.String(),
                         Name = c.String(),
+                        Description = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Supplier",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Code = c.String(),
+                        Name = c.String(),
+                        Address = c.String(),
+                        Phone = c.String(),
+                        Email = c.String(),
                         Description = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
@@ -118,6 +135,7 @@ namespace SuperDev.Models.Migrations
             DropForeignKey("dbo.User", "RoleId", "dbo.Role");
             DropForeignKey("dbo.InOut", "ProductId", "dbo.Product");
             DropForeignKey("dbo.Product", "UnitId", "dbo.Unit");
+            DropForeignKey("dbo.Product", "SupplierId", "dbo.Supplier");
             DropForeignKey("dbo.Product", "ManufacturerId", "dbo.Manufacturer");
             DropForeignKey("dbo.Product", "CategoryId", "dbo.Category");
             DropForeignKey("dbo.Category", "ParentId", "dbo.Category");
@@ -126,12 +144,14 @@ namespace SuperDev.Models.Migrations
             DropIndex("dbo.InOut", new[] { "UserId" });
             DropIndex("dbo.Product", new[] { "UnitId" });
             DropIndex("dbo.Product", new[] { "CategoryId" });
+            DropIndex("dbo.Product", new[] { "SupplierId" });
             DropIndex("dbo.Product", new[] { "ManufacturerId" });
             DropIndex("dbo.Category", new[] { "ParentId" });
             DropTable("dbo.Role");
             DropTable("dbo.User");
             DropTable("dbo.InOut");
             DropTable("dbo.Unit");
+            DropTable("dbo.Supplier");
             DropTable("dbo.Manufacturer");
             DropTable("dbo.Product");
             DropTable("dbo.Category");
