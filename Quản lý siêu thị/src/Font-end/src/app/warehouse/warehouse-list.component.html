@@ -1,6 +1,6 @@
 <div style="margin-left:-25px;margin-right:-25px">
     <div class="col-md-12">
-            <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/unit-detail',0]">Thêm <i class="fa fa-plus"></i></button>
+            <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/warehouse-detail',0]">Thêm <i class="fa fa-plus"></i></button>
     </div>
     <div class="col-md-12">
         <br />
@@ -14,19 +14,21 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Quyền Truy Cập</th>
+                    <th>Tên</th>
+                    <th>Địa Chỉ</th>
                     <th>Ghi chú</th>
                     <th>Sửa/Xóa</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let unit of units">
-                    <td>{{unit.Id}}</td>
-                    <td>{{unit.Name}}</td>
-                    <td>{{unit.Description}}</td>
+                <tr *ngFor="let warehouse of warehouses">
+                    <td>{{warehouse.Id}}</td>
+                    <td>{{warehouse.Name}}</td>
+                    <td>{{warehouse.Address}}</td>
+                    <td>{{warehouse.Description}}</td>
                     <td class="text-center">
                             <a class="on-default edit-row">          
-                                <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-pencil" (click)="detail(unit)"></i></button>
+                                <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-pencil" (click)="detail(warehouse)"></i></button>
                             </a>
                             <a class="on-default remove-row">     
                                 <button type="button" class="btn btn-success btn-xs"><i class="fa fa-trash-o"></i></button>

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../../api.service';
-import { Unit } from '../shared/unit.model';
+import { Warehouse } from '../shared/warehouse.model';
 
 @Injectable()// dùng để chưa sẽ tài nguyên khác dùng chung ví dụ: Role,.
-export class UnitService {
+export class WarehouseService {
     constructor(private apiService: ApiService) { }
-    saveUnit(unit: Unit) {
-        return new Promise<Unit>((resolve, reject) => {
-            this.apiService.post('api/saveUnit', unit).then((res:Response) => {
+    saveWarehouse(warehouse: Warehouse) {
+        return new Promise<Warehouse>((resolve, reject) => {
+            this.apiService.post('api/saveWarehouse', warehouse).then((res:Response) => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);
@@ -16,8 +16,8 @@ export class UnitService {
     }
 
     getList() {
-        return new Promise<Unit[]>((resolve, reject) => {
-            this.apiService.post('api/getUnits',{}).then((res:Response) => {
+        return new Promise<Warehouse[]>((resolve, reject) => {
+            this.apiService.post('api/getWarehouses',{}).then((res:Response) => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);
@@ -25,9 +25,9 @@ export class UnitService {
         });
     }
 
-    getUnit(id) {
-        return new Promise<Unit>((resolve, reject) => {
-            this.apiService.get(`api/getUnit/${id}`).then((res:Response) => {
+    getWarehouse(id) {
+        return new Promise<Warehouse>((resolve, reject) => {
+            this.apiService.get(`api/getWarehouse/${id}`).then((res:Response) => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);

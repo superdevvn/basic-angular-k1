@@ -30,6 +30,14 @@ import { ManufacturerService } from './manufacturer/service/manufacturer.service
 import { ManufacturerDetailComponent } from './manufacturer/manufacturer-detail.component';
 import { ManufacturerListComponent } from './manufacturer/manufacturer-list.component';
 
+import { UnitDetailComponent } from './unit/unit-detail.component';
+import { UnitListComponent } from './unit/unit-list.component';
+import { UnitService } from './unit/service/unit.service';
+
+import { WarehouseService } from './warehouse/service/warehouse.service';
+import { WarehouseDetailComponent } from './warehouse/warehouse-detail.component';
+import { WarehouseListComponent } from './warehouse/warehouse-list.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo:'main',pathMatch:'full' },
@@ -48,6 +56,10 @@ const routes: Routes = [
       { path: 'gold-card', component:GoldCardComponent},
       { path: 'manufacturer-list', component:ManufacturerListComponent},
       { path: 'manufacturer-detail/:id', component:ManufacturerDetailComponent},
+      { path: 'unit-list', component:UnitListComponent},
+      { path: 'unit-detail/:id', component:UnitDetailComponent},
+      { path: 'warehouse-list', component:WarehouseListComponent},
+      { path: 'warehouse-detail/:id', component:WarehouseDetailComponent},
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -71,6 +83,10 @@ const routes: Routes = [
     GoldCardComponent,
     ManufacturerDetailComponent,
     ManufacturerListComponent,
+    UnitDetailComponent,
+    UnitListComponent,
+    WarehouseDetailComponent,
+    WarehouseListComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,7 +95,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
-  providers: [ApiService,RoleService,UserService,ManufacturerService],
+  providers: [ApiService,RoleService,UserService,ManufacturerService,UnitService,WarehouseService],
 
   bootstrap: [AppComponent]
 })
