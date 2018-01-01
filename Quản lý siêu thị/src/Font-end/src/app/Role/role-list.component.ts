@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { RoleService } from './../Role/service/role.service';
-import { Role } from './../Role/shared/role.model';
+import { RoleService } from './../role/service/role.service';
+import { Role } from './../role/shared/role.model';
 
 @Component({
     selector: 'role-list',

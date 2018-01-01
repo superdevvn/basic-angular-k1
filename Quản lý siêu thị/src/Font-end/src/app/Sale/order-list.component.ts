@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'order-list',
-    templateUrl:'./fish-list.component.html'
+    templateUrl:'./order-list.component.html'
 })
-export class FishListComponent {
+export class OrderListComponent {
     ngAfterViewInit(){
     }
 }

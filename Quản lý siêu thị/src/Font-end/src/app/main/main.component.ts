@@ -22,7 +22,7 @@ export class MainComponent {
                     break;
                     case "/main/user-list": this.title = "Danh sách người dùng";
                     break;
-                    case "/main/user-detail": this.title = "Chi tiết người dùng";
+                    case "/main/user-detail/0": this.title = "Chi Tiết Người Dùng";
                     break;
                     case "/main/manufacturer-list": this.title = "Danh sách nhà sản xuất";
                     break;

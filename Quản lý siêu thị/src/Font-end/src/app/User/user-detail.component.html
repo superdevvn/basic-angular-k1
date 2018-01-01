@@ -1,32 +1,36 @@
+<meta charset="utf-8">
 <div class="col-md-4">
-    <span class="text-primary">Username</span>
+    <span class="text-primary">Tên Người Dùng</span>
     <input class="form-control" [(ngModel)]="user.Username" />
 </div>
 <div class="col-md-4">
-    <span class="text-primary">FirstName</span>
+    <span class="text-primary">Tên</span>
     <input class="form-control" [(ngModel)]="user.FirstName" />
 </div>
 <div class="col-md-4">
-    <span class="text-primary">Vai trò</span>
+    <span class="text-primary">Quyền Truy Cập</span>
     <select class="form-control" [(ngModel)]="user.RoleId">
         <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
     </select>
 </div>
 <div class="col-md-4">
-    <span class="text-primary">LastName</span>
+    <span class="text-primary">Họ Tên</span>
     <input class="form-control" [(ngModel)]="user.LastName" />
 </div>
 <div class="col-md-4">
-    <span class="text-primary">Password</span>
+    <span class="text-primary">Mật Khẩu</span>
     <input type="password" class="form-control" [(ngModel)]="user.Password" />
 </div>
 <div class="col-md-4">
-    <span class="text-primary">Description</span>
+    <span class="text-primary">Ghi Chú</span>
     <input class="form-control" [(ngModel)]="user.Description" />
 </div>
-<div class="col-md-4">
-    <span class="text-primary">IsActived</span>
-    <input type="checkbox" class="form-control" [(ngModel)]="user.IsActived" />
+<div class="col-md-4">   
+    <span class="text-primary">Trạng Thái</span>
+    <div class="checkbox-custom" >
+    <input type="checkbox" class="form-control" [(ngModel)]="user.IsActived" />   
+    <label></label>
+    </div>
 </div>
 
 <div class="col-md-12">

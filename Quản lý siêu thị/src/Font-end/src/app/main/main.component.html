@@ -98,7 +98,7 @@
                                         </a>
                                         <ul class="nav nav-children">
                                             <li>
-                                                <a [routerLink]="['/main/fish-list']">
+                                                <a>
                                                     <i class="fa fa-money" aria-hidden="true"></i>
                                                     <span>Cá</span>
                                                 </a>
@@ -112,7 +112,7 @@
                                         </a>
                                         <ul class="nav nav-children">
                                                 <li>
-                                                    <a [routerLink]="['/main/table-list']">
+                                                    <a>
                                                         <i class="fa fa-table" aria-hidden="true"></i>
                                                         <span>Bàn</span>
                                                     </a>
@@ -120,13 +120,14 @@
                                             </ul>
                                     </li>
                                     <li class="nav-parent">
-                                            <a [routerLink]="['/main/user-list']">
+                                            <a>
                                                 <i class="fa fa-male" aria-hidden="true"></i>
                                                 <span>Thời Trang</span>
                                             </a>
                                             <ul class="nav nav-children">
                                                     <li>
-                                                        <a [routerLink]="['/main/shirt-list']">
+                                                        <a>
+                                                             <!-- [routerLink]="['/main/shirt-list']" -->
                                                             <i class="fa fa-heart" aria-hidden="true"></i>
                                                             <span>Áo</span>
                                                         </a>
@@ -143,7 +144,7 @@
                                 </a>
                                 <ul class="nav nav-children">                                                                                                 
                                     <li>
-                                        <a [routerLink]="['/main/user-list']">
+                                        <a>
                                             <i class="fa fa-send" aria-hidden="true"></i>
                                             <span>Đơn Hàng</span>
                                         </a>
@@ -170,9 +171,9 @@
                                 </a>
                                 <ul class="nav nav-children">                                                                                                 
                                     <li>
-                                        <a [routerLink]="['/main/role-list']">
+                                        <a [routerLink]="['/main/user-list']">
                                             <i class="fa fa-sign-in" aria-hidden="true"></i>
-                                            <span>Tài khoản</span>
+                                            <span>TK Người Dùng</span>
                                         </a>
                                     </li>
                                     <li>
@@ -190,6 +191,12 @@
                                     <span>Thiết Lập</span>
                                 </a>
                                 <ul class="nav nav-children">                                                                                                 
+                                        <li>
+                                                <a [routerLink]="['/main/role-list']">
+                                                    <i class="fa fa-tag" aria-hidden="true"></i>
+                                                    <span>Tài Khoản</span>
+                                                </a>
+                                   </li>
                                     <li>
                                         <a [routerLink]="['/main/role-list']">
                                             <i class="fa fa-sign-in" aria-hidden="true"></i>

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Role } from './../Role/shared/role.model';
-import { RoleService } from './../Role/service/role.service';
+import { Role } from './../role/shared/role.model';
+import { RoleService } from './../role/service/role.service';
 
 @Component({
     selector: 'role-detail',
@@ -34,6 +34,7 @@ export class RoleDetailComponent {
             //Nếu là tạo role mới thì res sẽ có giá trị id mới thay vì 0
             this.role = res;
             alert("Save Success");
+            this.router.navigate(['/main/role-list']);
         }).catch(err => {
             alert(err);
         })
