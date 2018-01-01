@@ -21,15 +21,15 @@ import { CardListComponent } from './customers/card-list.component';
 import { GoldCardComponent } from './customers/gold-card.component';
 import { ApiService } from './api.service';
 import { RoleService } from './Role/service/role.service';
-<<<<<<< HEAD
+
 import { UserDetailComponent } from './User/user-detail.component';
 import { UserListComponent } from './User/user-list.component';
 import { UserService } from './User/service/user.service';
-=======
+
 import { ManufacturerService } from './Manufacturer/service/manufacturer.service';
 import { ManufacturerDetailComponent } from './Manufacturer/manufacturer-detail.component';
 import { ManufacturerListComponent } from './Manufacturer/manufacturer-list.component';
->>>>>>> 71013672dfb4e9a1a293749fb741df5757f67760
+
 
 const routes: Routes = [
   { path: '', redirectTo:'main',pathMatch:'full' },
@@ -40,8 +40,8 @@ const routes: Routes = [
       { path: 'dashboard', component:DashboardComponent},
       { path: 'fish-list', component:FishListComponent},
       { path: 'account-list', component:AccountsListComponent},
-      { path: 'role-list/:id', component:RoleListComponent},
-      { path: 'role-detail', component:RoleDetailComponent},
+      { path: 'role-list', component:RoleListComponent},
+      { path: 'role-detail/:id', component:RoleDetailComponent},
       { path: 'user-list', component:UserListComponent},
       { path: 'user-detail/:id', component:UserDetailComponent},
       { path: 'profile', component:ProfileComponent},
@@ -83,11 +83,9 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-<<<<<<< HEAD
-  providers: [ApiService,RoleService,UserService],
-=======
-  providers: [ApiService,RoleService,ManufacturerService],
->>>>>>> 71013672dfb4e9a1a293749fb741df5757f67760
+
+  providers: [ApiService,RoleService,UserService,ManufacturerService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
