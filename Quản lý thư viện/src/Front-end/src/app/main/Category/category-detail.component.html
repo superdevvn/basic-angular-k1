@@ -1,0 +1,19 @@
+<div class="col-md-4">
+    <span class="text-primary">Name</span>
+    <input class="form-control" [(ngModel)]="category.Name" />
+</div>
+<div class="col-md-12">
+    <span class="text-primary">Description</span>
+    <textarea class="form-control" [(ngModel)]="category.Description"></textarea>
+</div>
+<div class="col-md-12">
+    <br />
+    <button class="btn btn-primary btn-sm" (click)="save()">
+        <i class="fa fa-floppy-o"></i>
+        Lưu
+    </button>
+    <button class="btn btn-default btn-sm" (click)="back()">
+        <i class="fa fa-back"></i>
+        Trở về
+    </button>
+</div>

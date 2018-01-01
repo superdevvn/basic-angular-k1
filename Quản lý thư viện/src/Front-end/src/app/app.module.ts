@@ -29,6 +29,7 @@ import { InOutDetailComponent } from './main/InOut/inout-detail.component'
 import { ApiService } from './api.service';
 import { RoleService } from './main/Role/service/role.service';
 import { UserService } from './main/User/service/user.service';
+import { CategoryService } from './main/Category/service/category.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -46,7 +47,7 @@ const routes: Routes = [
       { path: 'user-detail/:id', component: UserDetailComponent },
       //category
       { path: 'category-list', component: CategoryListComponent },
-      { path: 'category-detail', component: CategoryDetailComponent },
+      { path: 'category-detail/:id', component: CategoryDetailComponent },
       //inout
       { path: 'inout-list', component: InOutListComponent },
       { path: 'inout-detail', component: InOutDetailComponent },
@@ -77,7 +78,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService, RoleService, UserService],
+  providers: [ApiService, RoleService, UserService, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
