@@ -26,7 +26,7 @@ export class MainComponent {
                     break;
                     case "/main/manufacturer-list": this.title = "Danh sách nhà sản xuất";
                     break;
-                    case "/main/manufacturer-detail": this.title = "Chi tiết nhà sản xuất";
+                    case "/main/manufacturer-detail/0": this.title = "Chi tiết nhà sản xuất";
                     break;
                     case "/main/unit-list": this.title = "Danh sách Đơn vị";
                     break;
@@ -34,7 +34,7 @@ export class MainComponent {
                     break;
                     case "/main/warehouse-list": this.title = "Danh sách Kho";
                     break;
-                    case "/main/warehouse-detail": this.title = "Chi tiết Kho";
+                    case "/main/warehouse-detail/0": this.title = "Chi tiết Kho";
                     break;
                     default: this.title = "Dashboard";
                     break;

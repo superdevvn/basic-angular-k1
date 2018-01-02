@@ -1420,11 +1420,14 @@ html.fixed .visible-xl-inline-block {
 
 .header .logo {
 	float: left;
-	margin: 10px 0 0 15px;
+	margin: 2px 0 0 15px;
+
 }
 
 .header .logo img {
 	color: transparent;
+	height:55px;
+	width: 200px;
 }
 
 .header .separator {
