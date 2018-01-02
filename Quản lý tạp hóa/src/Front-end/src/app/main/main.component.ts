@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+declare var $:any;
 @Component({
     selector: 'main',
     templateUrl: './main.component.html'
@@ -7,9 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class MainComponent {
     private routerSubcription: any;
     title: string;
-    // 
     constructor(private route: ActivatedRoute, private router: Router) {
-        this.routerSubcription = this.router.events.subscribe(event => {
+        var a = this.router.events.subscribe(event => {
             if (event.constructor.name === "NavigationEnd") {
                 let url = this.router.url.toString();
                 if (url.includes("dashboard")) {
@@ -35,9 +35,16 @@ export class MainComponent {
 
     }
     ngAfterViewInit() {
+        // Lazy load js
+        $.getScript("assets/porto/javascripts/theme.js", function(){
+            $.getScript("assets/porto/javascripts/theme.custom.js", function(){
+                $.getScript("assets/porto/javascripts/theme.init.js", function(){
 
+                });
+            });
+        });
     }
     ngOnDestroy() {
-        // this.routerSubcription.unsubcribe();
+        if (this.routerSubcription) this.routerSubcription.unsubscribe();
     }
 }

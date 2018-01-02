@@ -29,6 +29,7 @@ import { UnitListComponent } from './main/unit/unit-list.component';
 import { UnitService } from './main/unit/service/unit.service';
 import { ProductService } from './main/product/service/product.service';
 import { ProductDetailComponent } from './main/product/product-detail.component';
+import { LoginService } from './authorize/service/login.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -82,7 +83,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService, SupplierService, RoleService,UserService, UnitService, ProductService],
+  providers: [LoginService, ApiService, SupplierService, RoleService,UserService, UnitService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
