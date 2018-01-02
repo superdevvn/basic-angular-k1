@@ -32,6 +32,14 @@
                             <input type="password" [(ngModel)]="user.Password" class="form-control" required/>
                         </div>
                     </div>
+                    <!-- <div class="form-group">
+                        <label class="col-sm-3 control-label">Nhập lại mật khẩu
+                            <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="password" [(ngModel)]="user.Password" class="form-control" required/>
+                        </div>
+                    </div> -->
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Tên
                             <span class="required">*</span>
@@ -71,7 +79,19 @@
                         </label>
                         <div class="col-sm-9">
                             <select [(ngModel)]="user.RoleId" class="form-control">
-                              <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
+                                <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Trạng thái
+                            <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <select [(ngModel)]="user.IsActived" class="form-control">
+                                <option value="0">Khóa</option>
+                                <option value="1">Hoạt động</option>
                             </select>
                         </div>
                     </div>

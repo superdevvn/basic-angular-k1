@@ -1,4 +1,4 @@
-export class Menufactuer {
+export class Manufacturer {
     Id: number;
     Code: string;
     Name: string;

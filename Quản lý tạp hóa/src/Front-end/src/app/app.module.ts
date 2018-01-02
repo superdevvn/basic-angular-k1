@@ -16,7 +16,6 @@ import { RoleDetailComponent } from './main/role/role-detail.component';
 import { TestSelectorComponent } from './test/test-selector.component';
 import { InputControlComponent } from './test/input.control';
 import { ProductListComponent } from './main/product/product-list.component';
-import { CategoryDetailComponent } from './main/category/category-detail.component';
 import { CategoryListComponent } from './main/category/category-list.component';
 import { SupplierListComponent } from './main/supplier/supplier-list.component';
 import { SupplierDetailComponent } from './main/supplier/supplier-detail.component';
@@ -29,6 +28,8 @@ import { UnitListComponent } from './main/unit/unit-list.component';
 import { UnitService } from './main/unit/service/unit.service';
 import { ProductService } from './main/product/service/product.service';
 import { ProductDetailComponent } from './main/product/product-detail.component';
+import { CategoryService } from './main/category/service/category.service';
+import { CategoryDetailComponent } from './main/category/category-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -43,12 +44,12 @@ const routes: Routes = [
       { path: 'user-detail/:id', component: UserDetailComponent },
       { path: 'product-list', component: ProductListComponent },
       { path: 'product-detail/:id', component: ProductDetailComponent},
-      { path: 'category-list', component: CategoryListComponent },
-      { path: 'category-detail', component: CategoryDetailComponent },
       { path: 'supplier-list', component: SupplierListComponent },
       { path: 'supplier-detail/:id', component: SupplierDetailComponent },
       { path: 'unit-list', component: UnitListComponent},
-      { path: 'unit-detail/:id', component: UnitDetailComponent}
+      { path: 'unit-detail/:id', component: UnitDetailComponent},
+      { path: 'category-list', component: CategoryListComponent},
+      { path: 'category-detail/:id', component: CategoryDetailComponent}
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -74,7 +75,9 @@ const routes: Routes = [
     SupplierListComponent,
     SupplierDetailComponent,
     UnitDetailComponent,
-    UnitListComponent   
+    UnitListComponent,
+    CategoryListComponent,
+    CategoryDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService, SupplierService, RoleService,UserService, UnitService, ProductService],
+  providers: [ApiService, SupplierService, RoleService,UserService, UnitService, ProductService, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,10 @@ import { Component } from "@angular/core";
 import { ProductService } from "./service/product.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Product } from "./shared/product.model";
+import { CategoryService } from "../category/service/category.service";
+import { Category } from "../category/shared/category.model";
+import { UnitService } from "../unit/service/unit.service";
+import { Unit } from "../unit/shared/unit.model";
 
 @Component({
     selector: 'product-detail',
@@ -12,9 +16,24 @@ export class ProductDetailComponent {
     id: number = 0;
     routeSubcription: any;
     title: string;
-    constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) { }
+    categories: Category[] = [];
+    units: Unit[] = [];
+    constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService, 
+        private categoryService: CategoryService, private unitService: UnitService) { }
 
     ngOnInit() {
+        this.categoryService.getList().then((res: Category[]) => {
+            this.categories = res;
+            console.log(this.categories);
+        }).catch(err => {
+            alert(err);
+        });
+        this.unitService.getList().then((res: Unit[]) => {
+            this.units = res;
+            console.log(this.units);
+        }).catch(err => {
+            alert(err);
+        });
         this.routeSubcription = this.route.params.subscribe(params => {
             this.id = +params['id'];
             if (this.id > 0) {
