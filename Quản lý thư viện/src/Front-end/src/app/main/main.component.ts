@@ -20,13 +20,13 @@ export class MainComponent {
                     break;
                     case "/main/category-list": this.title = "Quản lí thể loại sách";
                     break;
-                    case "/main/category-detail/0": this.title = "Quản lí thể loại sách";
+                    case "/main/category-detail": this.title = "Quản lí thể loại sách";
                     break;
-                    case "/main/role-detail/0": this.title = "Quản lí vai trò";
+                    case "/main/role-detail": this.title = "Quản lí vai trò";
                     break;
-                    case "/main/user-list": this.title = "Danh sách tài khoản người dùng";
+                    case "/main/user-list": this.title = "Danh sách nhân viên";
                     break;
-                    case "/main/user-detail": this.title = "quản lí tài khoản người dùng";
+                    case "/main/user-detail": this.title = "quản lí nhân viên";
                     break;
                     case "/main/inout-list": this.title = "Quản lí mượn trả sách";
                     break;

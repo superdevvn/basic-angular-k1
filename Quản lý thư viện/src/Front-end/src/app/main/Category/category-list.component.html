@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section class="panel" style="margin-top: -20px; margin-left: -20px">
     <header class="panel-heading">
         <!-- <div class="panel-actions">
@@ -7,10 +8,14 @@
 
         <h2 class="panel-title">Danh sách thể loại</h2>
     </header>
+=======
+<section class="panel"  style="margin-top: -20px; margin-left: -20px">
+>>>>>>> 442cdc924ec0a2b367715de6033461d3d3f3b565
     <div class="panel-body">
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-md">
+<<<<<<< HEAD
                     <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/category-detail', 0]">Thêm
                         <i class="fa fa-plus"></i>
                     </button>
@@ -28,19 +33,55 @@
             </thead>
             <tbody>
                 <tr class="gradeX" *ngFor="let category of categories">
+=======
+                    <button id="addToTable" class="btn btn-info" [routerLink]="['/main/category-detail',0]">Thêm <i class="fa fa-plus"></i></button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped table-condensed mb-none table-hover">
+            <colgroup>
+                <col style="width:50px" />
+                <col style="width:150px" />
+                <col />
+                <col style="width:50px" />
+            </colgroup>
+            <thead>
+                <tr class="primary">
+                    <th>Mã</th>
+                    <th>Tên</th>
+                    <th>Nội dung</th>
+                    <th>Sửa/xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of categories">
+>>>>>>> 442cdc924ec0a2b367715de6033461d3d3f3b565
                     <td>{{category.Id}}</td>
                     <td>{{category.Name}}</td>
                     <td>{{category.Description}}</td>
                     <td class="actions">
+<<<<<<< HEAD
                         <a class="on-default edit-row text-primary">
                             <i class="fa fa-pencil" (click)="detail(category)"></i>
                         </a>
                         <a class="on-default remove-row text-primary">
                             <i class="fa fa-trash-o"></i>
+=======
+                        <a style="cursor:pointer" (click)="detail(category)">
+                            <i class="fa fa-pencil text-primary"></i>
+                        </a>
+                        <a style="cursor:pointer" (click)="delete(category)">
+                            <i class="fa fa-trash text-danger"></i>
+>>>>>>> 442cdc924ec0a2b367715de6033461d3d3f3b565
                         </a>
                     </td>
                 </tr>
             </tbody>
         </table>
+<<<<<<< HEAD
     </div>
+=======
+    </div>  
+
+>>>>>>> 442cdc924ec0a2b367715de6033461d3d3f3b565
 </section>

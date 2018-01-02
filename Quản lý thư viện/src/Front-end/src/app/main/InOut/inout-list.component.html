@@ -1,48 +1,44 @@
-<section class="panel"  style="margin-top: -20px; margin-left: -20px">
-        <header class="panel-heading">
-            <!-- <div class="panel-actions">
-                <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
-                <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
-            </div> -->
-    
-            <h2 class="panel-title">Danh sách mượn trả sách</h2>
-        </header>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="mb-md">
-                        <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/inout-detail']">Add <i class="fa fa-plus"></i></button>
-                    </div>
+<section class="panel" style="margin-top: -20px; margin-left: -20px">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mb-md">
+                    <button id="addToTable" class="btn btn-info" [routerLink]="['/main/inout-detail',0]">Thêm
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </div>
             </div>
-            <table class="table table-bordered table-striped mb-none" id="datatable-editable">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>UserId</th>
-                        <th>CustomerId</th>
-                        <th>BookId</th>
-                        <th>FromDate</th>
-                        <th>ToDate</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="gradeX">
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>13/1/2017</td>
-                        <td>15/12/2017</td>
-                        <td class="actions">
-                            <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                            <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                            <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                            <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        </div>
+        <table class="table table-bordered table-striped mb-none" id="datatable-editable">
+            <thead>
+                <tr class="primary">
+                    <th>Mã</th>
+                    <th>Tên nhân viên</th>
+                    <th>Tên người mượn</th>
+                    <th>Tên sách</th>
+                    <th>Từ ngày</th>
+                    <th>Đến ngày</th>
+                    <th>Sửa/xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let inout of inouts">
+                    <td>{{inout.Id}}</td>
+                    <td>{{user.Id}}</td>
+                    <td>{{customer.Id}}</td>
+                    <td>{{book.Id}}</td>
+                    <td>{{inout.fromDate | date:'dd/MM/yyy HH:mm'}}</td>
+                    <td>{{inout.toDate | date:'dd/MM/yyy HH:mm'}}</td>
+                    <td class="actions">
+                        <a class="on-default text-primary edit-row">
+                            <i class="fa fa-pencil" (click)="detail(inout)"></i>
+                        </a>
+                        <a class="on-default text-danger remove-row">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
