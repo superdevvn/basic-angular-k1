@@ -30,6 +30,7 @@ import { ProductService } from './main/product/service/product.service';
 import { ProductDetailComponent } from './main/product/product-detail.component';
 import { CategoryService } from './main/category/service/category.service';
 import { CategoryDetailComponent } from './main/category/category-detail.component';
+import { LoginService } from './authorize/service/login.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -85,7 +86,8 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService, SupplierService, RoleService,UserService, UnitService, ProductService, CategoryService],
+
+  providers: [LoginService, ApiService, SupplierService, RoleService,UserService, UnitService, ProductService, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
