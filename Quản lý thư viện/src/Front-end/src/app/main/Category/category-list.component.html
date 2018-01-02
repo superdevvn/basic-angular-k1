@@ -1,44 +1,46 @@
 <section class="panel" style="margin-top: -20px; margin-left: -20px">
-        <header class="panel-heading">
-            <!-- <div class="panel-actions">
+    <header class="panel-heading">
+        <!-- <div class="panel-actions">
                 <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
                 <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
             </div> -->
-    
-            <h2 class="panel-title">Danh sách thể loại</h2>
-        </header>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="mb-md">
-                        <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/category-detail', 0]">Thêm <i class="fa fa-plus"></i></button>
-                    </div>
+
+        <h2 class="panel-title">Danh sách thể loại</h2>
+    </header>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mb-md">
+                    <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/category-detail', 0]">Thêm
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </div>
             </div>
-            <table class="table table-bordered table-striped mb-none" id="datatable-editable">
-                <thead>
-                    <tr>
-                        <th>Stt</th>
-                        <th>Tên thể loại</th>
-                        <th>Mô tả</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="gradeX" *ngFor="let category of categories">
-                        <td>{{category.Id}}</td>
-                        <td>{{category.Name}}</td>
-                        <td>{{category.Description}}</td>
-                        <td class="actions">
-                            <a class="on-default edit-row text-primary">
-                                <i class="fa fa-pencil" (click)="detail(category)"></i>
-                            </a>
-                            <a class="on-default remove-row text-primary">
-                                <i class="fa fa-trash-o"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        </div>
+        <table class="table table-bordered table-striped mb-none" id="datatable-editable">
+            <thead>
+                <tr>
+                    <th>Stt</th>
+                    <th>Tên thể loại</th>
+                    <th>Mô tả</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="gradeX" *ngFor="let category of categories">
+                    <td>{{category.Id}}</td>
+                    <td>{{category.Name}}</td>
+                    <td>{{category.Description}}</td>
+                    <td class="actions">
+                        <a class="on-default edit-row text-primary">
+                            <i class="fa fa-pencil" (click)="detail(category)"></i>
+                        </a>
+                        <a class="on-default remove-row text-primary">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

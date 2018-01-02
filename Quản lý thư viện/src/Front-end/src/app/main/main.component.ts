@@ -12,7 +12,7 @@ export class MainComponent {
         this.routerSubcription = this.router.events.subscribe(event=> {
             if(event.constructor.name === "NavigationEnd") {
                 let url = this.router.url.toString();
-                switch(url)
+                switch (url)
                 {
                     case "/main/dashboard": this.title = "Trang chủ";
                     break;
