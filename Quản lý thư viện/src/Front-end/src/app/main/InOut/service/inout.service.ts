@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './../../../api.service';
- import { InOut } from '../Shared/inout.model';
+import { InOut } from '../Shared/inout.model';
 import { Response } from '@angular/http/src/static_response';
 
 

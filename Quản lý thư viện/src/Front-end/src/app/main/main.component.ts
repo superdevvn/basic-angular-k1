@@ -32,6 +32,14 @@ export class MainComponent {
                     break;
                     case "/main/inout-detail": this.title = "Quản lí mượn trả sách";
                     break;
+                    case "/main/book-detail": this.title = "Quản lí sách";
+                    break;
+                    case "/main/book-list": this.title = "Quản lí sách";
+                    break;
+                    case "/main/customer-list": this.title = "Quản lí bạn đọc";
+                    break;
+                    case "/main/customer-detail": this.title = "Quản lí bạn đọc";
+                    break;
                     default: this.title = "Trang chủ";
                     break;
                 }
