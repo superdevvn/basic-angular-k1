@@ -38,6 +38,7 @@ import { BookListComponent } from './main/Book/book-list.component';
 import { BookDetailComponent } from './main/Book/book-detail.component';
 import { BookService } from './main/Book/service/book.service';
 //customer
+
 import { CustomerListComponent } from './main/Customer/customer-list.component';
 import { CustomerDetailComponent } from './main/Customer/customer-detail.component';
 import { CustomerService } from './main/Customer/service/customer.service';
