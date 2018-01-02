@@ -16,7 +16,6 @@ constructor(private router: Router, private categoryService: CategoryService) {
 ngOnInit(){
     this.categoryService.getList().then((res:Category[])=>{
         this.categories = res;
-        console.log("B");
     }).catch(err=>{
         alert(err);
     });

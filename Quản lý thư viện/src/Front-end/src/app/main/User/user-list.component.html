@@ -1,31 +1,25 @@
-<section class="panel">
-    <header class="panel-heading">
-        <div class="panel-actions">
-            <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
-            <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
-        </div>
-
-        <h2 class="panel-title"></h2>
-    </header>
+<section class="panel" style="margin-top: -20px; margin-left: -20px">
     <div class="panel-body">
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-md">
-                    <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/user-detail',0]">Add <i class="fa fa-plus"></i></button>
+                    <button id="addToTable" class="btn btn-warning" [routerLink]="['/main/user-detail',0]">Thêm
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </div>
             </div>
         </div>
         <table class="table table-bordered table-striped mb-none" id="datatable-default">
             <colgroup>
                 <col style="width:10px" />
-                <col  />
-                <col  />
-                <col  />
-                <col  />
-                <col  />
-                <col  />
-                <col  style="width: 10px"/>
                 <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col style="width: 130px" />
+                <col style="width: 80px" />
+                <col style="width: 50px" />
             </colgroup>
             <thead>
                 <tr>
@@ -33,16 +27,17 @@
                     <th>Tên đăng nhập</th>
                     <th>Họ</th>
                     <th>Tên</th>
-                    <th>Tên Role</th>
+                    <th>Vai trò</th>
                     <th>Mô tả</th>
                     <th>Ngày Tạo</th>
                     <th>Hoạt động</th>
-                    <th></th>
+                    <th>Sửa/xóa</th>
+
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let user of users" class="{'success':user.IsActived}">
-                    <td>{{user.Id}}</td>
+                <tr *ngFor="let user of users" [ngClass]="{'warning':!user.IsActived}">
+                    <td class="text-center">{{user.Id}}</td>
                     <td>{{user.Username}}</td>
                     <td>{{user.FirstName}}</td>
                     <td>{{user.LastName}}</td>
@@ -53,34 +48,27 @@
                         <input [disabled]="true" type="checkbox" [ngModel]="user.IsActived"/>
                     </td> -->
                     <td>
-                        <span [ngClass]="{'text-success':user.IsActived, 'text-danger': !user.IsActived}">
+                        <span [ngClass]="{'success':user.IsActived, 'danger': !user.IsActived}">
                             <div class="form-group">
-                                
+
                                 <div class="col-md-6">
                                     <div class="input-group input-group-icon">
                                         <input [disabled]="true" type="checkbox" [(ngModel)]="user.IsActived" id="checkboxExample3">
-        
                                     </div>
-                                    <!-- <div class="switch switch-dark">
-                                        <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
-                                    </div>
-                                    <div class="switch switch-lg switch-primary">
-                                        <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
-                                    </div> -->
                                 </div>
                             </div>
                         </span>
                     </td>
                     <td>
                         <a class="on-default edit-row">
-                            <i class="fa fa-pencil" (click)="detail(user)"></i>
+                            <i class="fa fa-pencil text-success" style="cursor:pointer" (click)="detail(user)"></i>
                         </a>
-                        <a class="on-default remove-row">
-                            <i class="fa fa-trash-o"></i>
+                        <a class="on-default text-danger remove-row">
+                            <i class="fa fa-trash-o" style="cursor:pointer"></i>
                         </a>
                     </td>
                 </tr>
             </tbody>
         </table>
-        </div>
-    </section>
+    </div>
+</section>

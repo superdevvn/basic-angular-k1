@@ -33,6 +33,7 @@ import { RoleService } from './main/Role/service/role.service';
 import { CategoryService } from './main/Category/service/category.service';
 
 import { UserService } from './main/User/service/user.service';
+import { InOutService } from './main/InOut/service/inout.service';
 
 
 const routes: Routes = [
@@ -83,7 +84,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
-  providers: [ApiService,RoleService, CategoryService,UserService],
+  providers: [ApiService,RoleService, CategoryService,UserService, InOutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

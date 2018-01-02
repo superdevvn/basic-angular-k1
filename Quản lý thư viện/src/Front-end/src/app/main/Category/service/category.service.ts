@@ -11,7 +11,7 @@ constructor(private apiService: ApiService){}
 
 saveCategory(category: Category){
 return new Promise<Category> ((resolve, reject)=>{
-this.apiService.post('api/saveCategory', category).then((res:Response)=>{
+this.apiService.post('api/saveCategory', category).then(res=>{
 resolve(res.json());
 }).catch(err=>{
     reject(err);
@@ -22,7 +22,7 @@ resolve(res.json());
 }
 getList() {
     return new Promise((resolve, reject) => {
-        this.apiService.post('api/getCategories',{}).then((res:Response) => {
+        this.apiService.post('api/getCategories',{}).then(res=> {
             resolve(res.json());
         }).catch(err => {
             reject(err);
