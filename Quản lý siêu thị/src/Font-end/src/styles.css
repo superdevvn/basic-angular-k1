@@ -10,3 +10,7 @@ th{text-align: center;}
     background-color: white;
     border-top : solid 1px rgba(229,229,229,1.00) ; 
 }
+.login-layout{
+    background-image: url(assets/ace-master/images/background.jpg);
+    height: 850px;
+}

@@ -37,6 +37,7 @@ import { UnitService } from './unit/service/unit.service';
 import { WarehouseService } from './warehouse/service/warehouse.service';
 import { WarehouseDetailComponent } from './warehouse/warehouse-detail.component';
 import { WarehouseListComponent } from './warehouse/warehouse-list.component';
+import { CalendarComponent } from './main/calendar.component';
 
 
 const routes: Routes = [
@@ -60,6 +61,7 @@ const routes: Routes = [
       { path: 'unit-detail/:id', component:UnitDetailComponent},
       { path: 'warehouse-list', component:WarehouseListComponent},
       { path: 'warehouse-detail/:id', component:WarehouseDetailComponent},
+      { path: 'calendar', component:CalendarComponent},
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -87,6 +89,7 @@ const routes: Routes = [
     UnitListComponent,
     WarehouseDetailComponent,
     WarehouseListComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
