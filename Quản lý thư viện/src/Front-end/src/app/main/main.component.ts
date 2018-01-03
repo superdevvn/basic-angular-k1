@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+declare var $: any;
 @Component({
     selector: 'main',
     templateUrl:'./main.component.html'
@@ -51,9 +52,14 @@ export class MainComponent {
         
     }
     ngAfterViewInit(){
-        
+$.getScript('assets/porto/javascripts/theme.js', function(){
+          $.getScript('assets/porto/javascripts/theme.custom.js', function(){
+            $.getScript('assets/porto/javascripts/theme.init.js', function(){
+              });
+          });
+        });
     }
-    ngOnDestroy(){
+    ngOnDestroy() {
         this.routerSubcription.unsubcribe();
     }
 }

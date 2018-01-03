@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './authorize/login.component';
+import { LoginService } from './authorize/service/login.service';
 import { MainComponent } from './main/main.component';
 
 //Dashboard
@@ -42,8 +43,9 @@ import { BookService } from './main/Book/service/book.service';
 import { CustomerListComponent } from './main/Customer/customer-list.component';
 import { CustomerDetailComponent } from './main/Customer/customer-detail.component';
 import { CustomerService } from './main/Customer/service/customer.service';
+
 const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'main', component: MainComponent,
     children: [
@@ -101,7 +103,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
-  providers: [ApiService, RoleService, CategoryService, UserService, InOutService, BookService, CustomerService],
+  providers: [ApiService, RoleService, CategoryService, UserService, InOutService, BookService, CustomerService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

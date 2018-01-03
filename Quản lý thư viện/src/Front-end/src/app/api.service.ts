@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
+import { Token } from '@angular/compiler';
 
 @Injectable()
 export class ApiService {
-    host:string = 'http://103.232.121.69:5101/';
+    token: string = "none";
+    host: string = 'http://103.232.121.69:5102/';
     constructor(private http: Http) { }
     post(url: string, data: any) {
         return new Promise<Response>((resolve, reject) => {
             let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
+            headers.append('Auth-Library', this.token);
             this.http.post(this.host + url, data, { headers: headers })
                 .toPromise()
                 .then(res => {
