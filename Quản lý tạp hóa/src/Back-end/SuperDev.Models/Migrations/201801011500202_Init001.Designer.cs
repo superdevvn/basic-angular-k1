@@ -13,7 +13,7 @@ namespace SuperDev.Models.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201712141838238_Init001"; }
+            get { return "201801011500202_Init001"; }
         }
         
         string IMigrationMetadata.Source
