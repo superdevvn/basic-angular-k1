@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+declare var $:any;
 @Component({
     selector: 'main',
     templateUrl:'./main.component.html'
@@ -47,8 +48,14 @@ export class MainComponent {
         
     }
     ngAfterViewInit(){
-        
-    }
+       $.getScript("assets/ace-master/js/ace-elements.min.js", function(){
+        $.getScript("assets/ace-master/js/ace.min.js",function(){
+        //   $.getScript("app/main/load.main.min.js",function(){
+
+        //   });  
+        });
+       });
+     }
     ngOnDestroy(){
         this.routerSubcription.unsubcribe();
     }
