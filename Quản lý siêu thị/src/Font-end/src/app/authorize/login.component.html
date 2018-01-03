@@ -24,18 +24,18 @@
 
 											<div class="space-6"></div>
 
-											<form>
+											
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" />
+															<input type="text" class="form-control" placeholder="Username" [(ngModel)]="username" />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" />
+															<input type="password" class="form-control" placeholder="Password" [(ngModel)]="password"/>
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
 													</label>
@@ -56,7 +56,7 @@
 
 													<div class="space-4"></div>
 												</fieldset>
-											</form>
+											
 
 											<div class="social-or-login center">
 												<span class="bigger-110">Or Login Using</span>

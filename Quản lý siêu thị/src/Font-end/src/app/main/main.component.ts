@@ -60,6 +60,6 @@ export class MainComponent {
         });
     }
     ngOnDestroy(){
-        this.routerSubcription.unsubcribe();
+        if(this.routerSubcription) this.routerSubcription.unsubscribe();
     }
 }

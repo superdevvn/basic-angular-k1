@@ -12,9 +12,10 @@ password:string;
 constructor(private router:Router,private LoginService:LoginService){
 
 }
-llogin(){
+login(){    console.log(this.username,this.password);
     this.LoginService.login(this.username,this.password).then(()=>{
         this.router.navigate(["main/dashboard"]);
+
     }).catch(err=>{
         alert(err);
     });
