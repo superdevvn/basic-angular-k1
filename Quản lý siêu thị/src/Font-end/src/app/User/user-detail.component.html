@@ -1,42 +1,114 @@
-<div class="col-md-4">
-    <span class="text-primary">Username</span>
-    <input class="form-control" [(ngModel)]="user.Username" />
-</div>
-<div class="col-md-4">
-    <span class="text-primary">FirstName</span>
-    <input class="form-control" [(ngModel)]="user.FirstName" />
-</div>
-<div class="col-md-4">
-    <span class="text-primary">Vai trò</span>
-    <select class="form-control" [(ngModel)]="user.RoleId">
-        <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
-    </select>
-</div>
-<div class="col-md-4">
-    <span class="text-primary">LastName</span>
-    <input class="form-control" [(ngModel)]="user.LastName" />
-</div>
-<div class="col-md-4">
-    <span class="text-primary">Password</span>
-    <input type="password" class="form-control" [(ngModel)]="user.Password" />
-</div>
-<div class="col-md-4">
-    <span class="text-primary">Description</span>
-    <input class="form-control" [(ngModel)]="user.Description" />
-</div>
-<div class="col-md-4">
-    <span class="text-primary">IsActived</span>
-    <input type="checkbox" class="form-control" [(ngModel)]="user.IsActived" />
-</div>
+<section class="panel form-wizard" id="w4">
+        <header class="panel-heading">
+            <div class="panel-actions">
+                <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+                <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+            </div>
 
-<div class="col-md-12">
-    <br />
-    <button class="btn btn-primary btn-sm" (click)="save()">
-        <i class="fa fa-floppy-o"></i>
-        Lưu
-    </button>
-    <button class="btn btn-default btn-sm" (click)="back()">
-        <i class="fa fa-back"></i>
-        Trở về
-    </button>
-</div>
+            <h2 class="panel-title">Form Wizard</h2>
+        </header>
+        <div class="panel-body">
+            <div class="wizard-progress wizard-progress-lg">
+                <div class="steps-progress">
+                    <div class="progress-indicator"></div>
+                </div>
+                <ul class="wizard-steps">
+                    <li class="active">
+                        <a href="#w4-account" data-toggle="tab"><span>1</span>Account Info</a>
+                    </li>
+                    <li>
+                        <a href="#w4-profile" data-toggle="tab"><span>2</span>Profile Info</a>
+                    </li>
+                    <li>
+                        <a href="#w4-billing" data-toggle="tab"><span>3</span>Billing Info</a>
+                    </li>
+                    <li>
+                        <a href="#w4-confirm" data-toggle="tab"><span>4</span>Confirmation</a>
+                    </li>
+                </ul>
+            </div>
+
+            <form class="form-horizontal" novalidate="novalidate">
+                <div class="tab-content">
+                    <div id="w4-account" class="tab-pane active">
+                        <div class="form-group">
+                                <span class="text-primary">Tên Người Dùng</span>
+                                <input class="form-control" name="user.Username" />
+                            
+                        </div>
+                        <div class="form-group">
+                                <span class="text-primary">Tên</span>
+                                    <input class="form-control" name="user.LastName" />	
+                            
+                        </div>
+                    </div>
+                    <div id="w4-profile" class="tab-pane">
+                        <div class="form-group">
+                                <span class="text-primary">Quyền Truy Cập</span>
+                                <select class="form-control" [(ngModel)]="user.RoleId">
+                                    <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
+                                </select>
+                            
+                        </div>
+                        <div class="form-group">
+                                <span class="text-primary">Họ Tên</span>
+                                <input class="form-control" [(ngModel)]="user.LastName" />
+                               
+                        </div>
+                    </div>
+                    <div id="w4-billing" class="tab-pane">
+                        <div class="form-group">
+                                <span class="text-primary">Mật Khẩu</span>
+                                <input type="password" class="form-control" [(ngModel)]="user.Password" /></div>
+                        <div class="form-group">
+                                <span class="text-primary">Ghi Chú</span>
+                                <input class="form-control" [(ngModel)]="user.Description" />
+                        </div>
+                    </div>
+                    <div id="w4-confirm" class="tab-pane">
+                        <div class="form-group">
+                                <span class="text-primary">Trạng Thái</span>
+                                <div class="checkbox-custom" >
+                                <input type="checkbox" class="form-control" [(ngModel)]="user.IsActived" />   
+                                <label></label>
+                                </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9">
+                                <div class="checkbox-custom">
+                                    <input type="checkbox" name="terms" id="w4-terms" required>
+                                    <label for="w4-terms">I agree to the terms of service</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                        <br />
+                        <button class="btn btn-primary btn-sm" (click)="save()">
+                            <i class="fa fa-floppy-o"></i>
+                            Lưu
+                        </button>
+                        <button class="btn btn-default btn-sm" (click)="back()">
+                            <i class="fa fa-back"></i>
+                            Trở về
+                        </button>
+                    </div>
+            </form>
+        </div>
+        <div class="panel-footer">
+            <ul class="pager">
+                <li class="previous disabled">
+                    <a><i class="fa fa-angle-left"></i> Previous</a>
+                </li>
+                <li class="finish hidden pull-right">
+                    <a>Finish</a>
+                </li>
+                <li class="next">
+                    <a>Next <i class="fa fa-angle-right"></i></a>
+                </li>
+            </ul>
+        </div>
+    </section>

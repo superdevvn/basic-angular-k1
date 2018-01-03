@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Manufacturer } from './../Manufacturer/shared/manufacturer.model';
-import { ManufacturerService } from './../Manufacturer/service/manufacturer.service';
+import { Manufacturer } from './../manufacturer/shared/manufacturer.model';
+import { ManufacturerService } from './../manufacturer/service/manufacturer.service';
 
 @Component({
     selector: 'manufacturer-detail',
@@ -34,6 +34,7 @@ export class ManufacturerDetailComponent {
             //Nếu là tạo role mới thì res sẽ có giá trị id mới thay vì 0
             this.manufacturer = res;
             alert("Save Success");
+            this.router.navigate(['/main/manufacturer-list']);
         }).catch(err => {
             alert(err);
         })

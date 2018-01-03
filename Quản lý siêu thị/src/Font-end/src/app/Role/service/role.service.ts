@@ -15,7 +15,6 @@ export class RoleService {
         });
     }
    
-
     getList() {
         return new Promise((resolve, reject) => {
             this.apiService.post('api/getRoles',{}).then((res:Response) => {
@@ -35,13 +34,5 @@ export class RoleService {
             });
         });
     }
-    deleteRole(role: Role[]) {
-        return new Promise((resolve, reject) => {
-            this.apiService.post('api/deleteRole', role).then((res:Response) => {
-                resolve(res.json());
-            }).catch(err => {
-                reject(err);
-            });
-        });
-    }
+
 }

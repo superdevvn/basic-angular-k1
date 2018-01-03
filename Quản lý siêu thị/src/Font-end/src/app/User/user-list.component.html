@@ -1,64 +1,69 @@
+<meta charset="utf-8">
 <section class="panel">
     <header class="panel-heading">
-        <div class="panel-actions">
+        <!-- <div class="panel-actions">
             <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
             <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
-        </div>
-
-        <h2 class="panel-title">Default</h2>
+        </div> -->
+        <h2 class="panel-title">Danh Sách</h2>
     </header>
     <div class="panel-body">
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-md">
-                    <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/user-detail',0]">Add <i class="fa fa-plus"></i></button>
+                    <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/user-detail',0]">Thêm <i class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
         <table class="table table-bordered table-striped mb-none" id="datatable-default">
-            <colgroup>
-                <col style="width:100" />
+            <colgroup >
                 <col />
-                <col style="width:150" />
-                <col style="width:150" />
-                <col style="width:150" />
-                <col style="width:150" />
-                <col style="width:150" />
-                <col style="width:150" />
+                <col />            
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col style="width:66px" />
+                
             </colgroup>
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>UserName</th>
-                    <th>FirstName</th>
-                    <th>LastName</th>
-                    <th>RoleName</th>
-                    <th>Description</th>
-                    <th>IsActived</th>
+                    <th>Tên Tài Khoản</th>
+                    <th>Tên</th>
+                    <th>Họ Tên</th>
+                    <th>Quyền Truy Cập</th>
+                    <th>Ghi Chú</th>
+                    <th>Ngày Tạo</th>
+                    <th>Trạng Thái</th>
+                    <th>Sửa/Xóa</th>
+
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let user of users">
-                    <td>{{user.Id}}</td>
-                    <td>{{user.UserName}}</td>
+                <!-- <tr *ngFor="let user of users" [ngClass]="{'success':user.IsActived, 'danger': !user.IsActived}" > -->
+                        <tr *ngFor="let user of users">
+                    <!-- <td>{{user.Id}}</td> -->
+                    <td>{{user.Username}}</td>
                     <td>{{user.FirstName}}</td>
                     <td>{{user.LastName}}</td>
                     <td>{{user.RoleName}}</td>
                     <td>{{user.Description}}</td>
+                    <td class="text-center">{{user.CreatedDate | date:'dd/MM/yyyy HH:mm'}}</td>
                     <!-- <td>
                         <input [disabled]="true" type="checkbox" [ngModel]="user.IsActived"/>
                     </td> -->
-                    <td>
-                        <span [ngClass]="{'label label-success':user.IsActived, 'label label-danger': !user.IsActived}">
-                            {{user.IsActived?'Hoạt động':'Khóa'}}
+                    <td class="text-center">
+                        <span [ngClass]="{'label label-danger' : !user.IsActived,'label label-success' : user.IsActived}">
+                            {{user.IsActived? 'Hoạt Động':'Khóa'}}
                         </span>
                     </td>
-                    <td>
-                        <a class="on-default edit-row">
-                            <i class="fa fa-pencil" (click)="detail(user)"></i>
+                    <td class="text-center">
+                        <a class="on-default edit-row">          
+                            <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-pencil" (click)="detail(user)"></i></button>
                         </a>
-                        <a class="on-default remove-row">
-                            <i class="fa fa-trash-o"></i>
+                        <a class="on-default remove-row">     
+                            <button type="button" class="btn btn-success btn-xs"><i class="fa fa-trash-o"></i></button>
                         </a>
                     </td>
                 </tr>

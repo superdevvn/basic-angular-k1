@@ -14,15 +14,15 @@ export class UserDetailComponent {
     roles: Role[] = [];
     id: number = 0;
     routerSubscription: any;
-    constructor(private route: ActivatedRoute, 
-        private router: Router, 
+    constructor(private route: ActivatedRoute,
+        private router: Router,
         private userService: UserService,
         private roleService: RoleService) {
     }
 
     ngOnInit() {
-        this.roleService.getList().then((roles:Role[])=>{
-            this.roles=roles;
+        this.roleService.getList().then((roles: Role[]) => {
+            this.roles = roles;
             console.log(this.roles);
         });
         this.routerSubscription = this.route.params.subscribe(params => {
@@ -38,7 +38,7 @@ export class UserDetailComponent {
     }
 
     save() {
-        this.userService.saveUser(this.user).then((res: User ) => {
+        this.userService.saveUser(this.user).then((res: User) => {
             //Server trả về role sau khi save
             //Nếu là tạo role mới thì res sẽ có giá trị id mới thay vì 0
             this.user = res;

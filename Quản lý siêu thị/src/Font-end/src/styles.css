@@ -1,0 +1,13 @@
+th{
+    text-align: center;
+    color: black;
+}
+.sidebar-header{
+    color: red;
+}
+#sidebar-left{
+    background-color: red;
+}
+aside{
+     background-color: red;
+}
