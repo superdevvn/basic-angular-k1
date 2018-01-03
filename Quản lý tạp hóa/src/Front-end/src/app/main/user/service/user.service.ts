@@ -29,7 +29,7 @@ export class UserService {
 
     getUser(id) {
         return new Promise((resolve, reject) => {
-            this.apiService.get(`api/getUser/${id}`).then((res:Response) => {
+            this.apiService.get(`api/getUser/${id}`).then((res) => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);

@@ -31,6 +31,12 @@ import { ProductDetailComponent } from './main/product/product-detail.component'
 import { CategoryService } from './main/category/service/category.service';
 import { CategoryDetailComponent } from './main/category/category-detail.component';
 import { LoginService } from './authorize/service/login.service';
+import { InOutListComponent } from './main/in-out/in-out-list.component';
+import { InOutDetailComponent } from './main/in-out/in-out-detail.component';
+import { InOutService } from './main/in-out/service/in-out.service';
+import { ManufacturerService } from './main/manufacturer/service/manufacturer.service';
+import { ManufacturerListComponent } from './main/manufacturer/manufacturer-list.component';
+import { ManufacturereDetailComponent } from './main/manufacturer/manufacturer-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -44,13 +50,17 @@ const routes: Routes = [
       { path: 'user-list', component: UserListComponent },
       { path: 'user-detail/:id', component: UserDetailComponent },
       { path: 'product-list', component: ProductListComponent },
-      { path: 'product-detail/:id', component: ProductDetailComponent},
+      { path: 'product-detail/:id', component: ProductDetailComponent },
       { path: 'supplier-list', component: SupplierListComponent },
       { path: 'supplier-detail/:id', component: SupplierDetailComponent },
-      { path: 'unit-list', component: UnitListComponent},
-      { path: 'unit-detail/:id', component: UnitDetailComponent},
-      { path: 'category-list', component: CategoryListComponent},
-      { path: 'category-detail/:id', component: CategoryDetailComponent}
+      { path: 'unit-list', component: UnitListComponent },
+      { path: 'unit-detail/:id', component: UnitDetailComponent },
+      { path: 'category-list', component: CategoryListComponent },
+      { path: 'category-detail/:id', component: CategoryDetailComponent },
+      { path: 'in-out-list', component: InOutListComponent },
+      { path: 'in-out-detail/:id', component: InOutDetailComponent },
+      { path: 'manufacturer-list', component: ManufacturerListComponent},
+      { path: 'manufacturer-detail/:id', component: ManufacturereDetailComponent}
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -78,7 +88,11 @@ const routes: Routes = [
     UnitDetailComponent,
     UnitListComponent,
     CategoryListComponent,
-    CategoryDetailComponent
+    CategoryDetailComponent,
+    InOutListComponent,
+    InOutDetailComponent,
+    ManufacturerListComponent,
+    ManufacturereDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +101,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
-  providers: [LoginService, ApiService, SupplierService, RoleService,UserService, UnitService, ProductService, CategoryService],
+  providers: [LoginService, ApiService, SupplierService, RoleService, UserService, UnitService, ProductService,
+    CategoryService, InOutService, ManufacturerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

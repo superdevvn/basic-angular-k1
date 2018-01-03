@@ -19,7 +19,7 @@ export class MainComponent {
                 } else if (url.includes("user")) {
                     this.title = "Tài khoản";
                 } else if (url.includes("product")) {
-                    this.title = "Hàng hóa";
+                    this.title = "Sản phẩm";
                 } else if (url.includes("supplier")) {
                     this.title = "Nhà cung cấp";
                 } else if (url.includes("manufacturer")) {
