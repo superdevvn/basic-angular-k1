@@ -1,13 +1,12 @@
-th{
-    text-align: center;
-    color: black;
+th{text-align: center;}
+.navbar{
+    background-color: white;
 }
-.sidebar-header{
-    color: red;
+.navbar-brand img{
+    width: 161px;
+    height: 50px;
 }
-#sidebar-left{
-    background-color: red;
-}
-aside{
-     background-color: red;
+.breadcrumbs {
+    background-color: white;
+    border-top : solid 1px rgba(229,229,229,1.00) ; 
 }

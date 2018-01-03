@@ -1,279 +1,776 @@
-<section class="body">
-    <!-- start: header -->
-    <header class="header">
-        <div class="logo-container">
-            <a href="../" class="logo">
-                <img src="assets/porto/images/logo.png" height="35" alt="Porto Admin" />
-            </a>
-            <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
-                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+<body class="no-skin">
+    <div id="navbar" class="navbar navbar-default          ace-save-state">
+        <div class="navbar-container ace-save-state" id="navbar-container">
+            <button type="button" class="navbar-toggle menu-toggler pull-left display" id="menu-toggler" data-target="#sidebar">
+                <span class="sr-only">Toggle sidebar</span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="navbar-header pull-left">
+                <a href="index.html" class="navbar-brand">
+                    
+                         <img src="assets/ace-master/images/market.png" />
+                 
+                </a>
+            </div>
+
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav" style="">
+                    <li class="grey dropdown-modal">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-tasks"></i>
+                            <span class="badge badge-grey">4</span>
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-header">
+                                <i class="ace-icon fa fa-check"></i>
+                                4 Yêu Cầu Cần Hoàn Thành
+                            </li>
+
+                            <li class="dropdown-content ace-scroll" style="position: relative;">
+                                <div class="scroll-track" style="display: none;">
+                                    <div class="scroll-bar"></div>
+                                </div>
+                                <div class="scroll-content" style="max-height: 200px;">
+                                    <ul class="dropdown-menu dropdown-navbar">
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <span class="pull-left">Cập Nhật Phần mềm</span>
+                                                    <span class="pull-right">65%</span>
+                                                </div>
+
+                                                <div class="progress progress-mini">
+                                                    <div style="width:65%" class="progress-bar"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <span class="pull-left">Cập Nhật Phần Cứng </span>
+                                                    <span class="pull-right">35%</span>
+                                                </div>
+
+                                                <div class="progress progress-mini">
+                                                    <div style="width:35%" class="progress-bar progress-bar-danger"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <span class="pull-left">Đơn Vị Kiểm Tra</span>
+                                                    <span class="pull-right">15%</span>
+                                                </div>
+
+                                                <div class="progress progress-mini">
+                                                    <div style="width:15%" class="progress-bar progress-bar-warning"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <span class="pull-left">Sửa Lỗi</span>
+                                                    <span class="pull-right">90%</span>
+                                                </div>
+
+                                                <div class="progress progress-mini progress-striped active">
+                                                    <div style="width:90%" class="progress-bar progress-bar-success"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <li>
+
+                            <li class="dropdown-footer">
+                                <a href="#">
+                             Xem Chi Tiết
+                                    <i class="ace-icon fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="purple dropdown-modal">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-bell icon-animated-bell"></i>
+                            <span class="badge badge-important">8</span>
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-header">
+                                <i class="ace-icon fa fa-exclamation-triangle"></i>
+                                8 Thông Báo
+                            </li>
+
+                            <li class="dropdown-content ace-scroll" style="position: relative;">
+                                <div class="scroll-track" style="display: none;">
+                                    <div class="scroll-bar"></div>
+                                </div>
+                                <div class="scroll-content" style="max-height: 200px;">
+                                    <ul class="dropdown-menu dropdown-navbar navbar-pink">
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+                                                        Bình Luận mới
+                                                   </span>
+                                                    <span class="pull-right badge badge-info">+12</span>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <i class="btn btn-xs btn-primary fa fa-user"></i>
+                                             Thành viên vừa nhắn tin đến....
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+                                                        Đơn Hàng mới
+                                                    </span>
+                                                    <span class="pull-right badge badge-success">+8</span>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <span class="pull-left">
+                                                        <i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+                                                        Người Theo Dõi 
+                                                    </span>
+                                                    <span class="pull-right badge badge-info">+11</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="dropdown-footer">
+                                <a href="#">
+                                    Xem Tất Cả
+                                    <i class="ace-icon fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="green dropdown-modal">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+                            <span class="badge badge-success">5</span>
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-header">
+                                <i class="ace-icon fa fa-envelope-o"></i>
+                                5 Tin Nhắn
+                            </li>
+
+                            <li class="dropdown-content ace-scroll" style="position: relative;">
+                                <div class="scroll-track" style="display: none;">
+                                    <div class="scroll-bar"></div>
+                                </div>
+                                <div class="scroll-content" style="max-height: 200px;">
+                                    <ul class="dropdown-menu dropdown-navbar">
+                                        <li>
+                                            <a href="#" class="clearfix">
+                                                <img src="assets/ace-master/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar">
+                                                <span class="msg-body">
+                                                    <span class="msg-title">
+                                                        <span class="blue">Hiền:</span>
+                                                       Em Muốn Mua Son cho ny....
+                                                    </span>
+
+                                                    <span class="msg-time">
+                                                        <i class="ace-icon fa fa-clock-o"></i>
+                                                        <span>a moment ago</span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="clearfix">
+                                                <img src="assets/ace-master/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar">
+                                                <span class="msg-body">
+                                                    <span class="msg-title">
+                                                        <span class="blue">Vương:</span>
+                                                        Em muốn làm thẻ thành viên thì lên làm như thế nào vậy  ...
+                                                    </span>
+
+                                                    <span class="msg-time">
+                                                        <i class="ace-icon fa fa-clock-o"></i>
+                                                        <span>20 minutes ago</span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="clearfix">
+                                                <img src="assets/ace-master/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar">
+                                                <span class="msg-body">
+                                                    <span class="msg-title">
+                                                        <span class="blue">Duy:</span>
+                                                        Hi vọng sẽ đc giải quyết sớm ...
+                                                    </span>
+
+                                                    <span class="msg-time">
+                                                        <i class="ace-icon fa fa-clock-o"></i>
+                                                        <span>3:15 pm</span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="clearfix">
+                                                <img src="assets/ace-master/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar">
+                                                <span class="msg-body">
+                                                    <span class="msg-title">
+                                                        <span class="blue">Sơn:</span>
+                                                        Mình Vừa order đơn hàng vậy thì bao lâu có vậy ......
+                                                    </span>
+
+                                                    <span class="msg-time">
+                                                        <i class="ace-icon fa fa-clock-o"></i>
+                                                        <span>1:33 pm</span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="clearfix">
+                                                <img src="assets/ace-master/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar">
+                                                <span class="msg-body">
+                                                    <span class="msg-title">
+                                                        <span class="blue">Trung:</span>
+                                                        Cảm ơn siêu thị rất nhiều ...
+                                                    </span>
+
+                                                    <span class="msg-time">
+                                                        <i class="ace-icon fa fa-clock-o"></i>
+                                                        <span>10:09 am</span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="dropdown-footer">
+                                <a href="inbox.html">
+                                    Xem tất cả tin nhắn
+                                    <i class="ace-icon fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="light-blue dropdown-modal">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img class="nav-user-photo" src="assets/ace-master/images/avatars/user.jpg" alt="Jason's Photo">
+                            <span class="user-info">
+                                <small>Welcome,</small>
+                                Jason
+                            </span>
+
+                            <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="#">
+                                    <i class="ace-icon fa fa-cog"></i>
+                                    Settings
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="profile.html">
+                                    <i class="ace-icon fa fa-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+
+                            <li class="divider"></li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="ace-icon fa fa-power-off"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
-        <!-- start: search & user box -->
-        <div class="header-right">
-            <form action="pages-search-results.html" class="search nav-form">
-                <div class="input-group input-search">
-                    <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </span>
+        <!-- /.navbar-container -->
+    </div>
+
+    <div class="main-container ace-save-state" id="main-container">
+        <script type="text/javascript">
+            try { ace.settings.loadState('main-container') } catch (e) { }
+        </script>
+
+        <div id="sidebar" class="sidebar                  responsive                    ace-save-state display" data-sidebar="true"
+            data-sidebar-scroll="true" data-sidebar-hover="true">
+            <script type="text/javascript">
+                try { ace.settings.loadState('sidebar') } catch (e) { }
+            </script>
+
+            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                    <button class="btn btn-success">
+                        <i class="ace-icon fa fa-signal"></i>
+                    </button>
+
+                    <button class="btn btn-info">
+                        <i class="ace-icon fa fa-pencil"></i>
+                    </button>
+
+                    <button class="btn btn-warning">
+                        <i class="ace-icon fa fa-users"></i>
+                    </button>
+
+                    <button class="btn btn-danger">
+                        <i class="ace-icon fa fa-cogs"></i>
+                    </button>
                 </div>
-            </form>
 
-            <span class="separator"></span>
+                <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                    <span class="btn btn-success"></span>
 
-            <div id="userbox" class="userbox">
-                <a href="#" data-toggle="dropdown">
-                    <figure class="profile-picture">
-                        <img src="assets/porto/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg"
-                        />
-                    </figure>
-                    <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-                        <span class="name">John Doe Junior</span>
-                        <span class="role">administrator</span>
-                    </div>
+                    <span class="btn btn-info"></span>
 
-                    <i class="fa custom-caret"></i>
-                </a>
+                    <span class="btn btn-warning"></span>
 
-                <div class="dropdown-menu">
-                    <ul class="list-unstyled">
-                        <li class="divider"></li>
-                        <li>
-                            <a role="menuitem" tabindex="-1" href="pages-user-profile.html">
-                                <i class="fa fa-user"></i> My Profile</a>
+                    <span class="btn btn-danger"></span>
+                </div>
+            </div>
+            <!-- /.sidebar-shortcuts -->
+
+            <ul class="nav nav-list" style="top: 0px;">
+                <li class="active">
+                    <a href="index.html">
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text"> Cửa Hàng</span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-desktop"></i>
+                        <span class="menu-text">
+                            Loại Hàng
+                        </span>
+
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <b class="arrow"></b>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="menu-icon fa fa-caret-right"></i>
+
+                                Thực Phẩm
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+
+                            <b class="arrow"></b>
+
+                            <ul class="submenu">
+                                <li class="">
+                                    <a >
+                                        <i class="menu-icon fa fa-caret-right"></i>
+                                        Cá
+                                    </a>
+
+                                    <b class="arrow"></b>
+                                </li>
+
+                                <li class="">
+                                    <a href="two-menu-1.html">
+                                        <i class="menu-icon fa fa-caret-right"></i>
+                                        Thịt
+                                    </a>
+
+                                    <b class="arrow"></b>
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true">
-                                <i class="fa fa-lock"></i> Lock Screen</a>
+
+                        <li class="">
+                            <a href="typography.html">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Đồ Gia Dụng
+                            </a>
+
+                            <b class="arrow"></b>
                         </li>
-                        <li>
-                            <a role="menuitem" tabindex="-1" href="login.component.html">
-                                <i class="fa fa-power-off"></i> Logout</a>
+
+                        <li class="">
+                            <a href="elements.html">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Thời Trang
+                            </a>
+                            <b class="arrow"></b>
                         </li>
                     </ul>
+                </li>
+
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-list"></i>
+                        <span class="menu-text"> Bán Hàng </span>
+
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <b class="arrow"></b>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="tables.html">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Đơn Hàng
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+
+                        <li class="">
+                            <a href="jqgrid.html">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Đổi Hàng
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="jqgrid.html">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Trả Hàng
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-pencil-square-o"></i>
+                        <span class="menu-text"> Khách Hàng </span>
+
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <b class="arrow"></b>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a [routerLink]="['/main/user-list']">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                TK Người Dùng
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+
+                        <li class="">
+                            <a href="form-elements-2.html">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Thẻ Ưu Đãi
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-list-alt"></i>
+                        <span class="menu-text"> Quản Lí </span>
+
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <b class="arrow"></b>
+
+                    <ul class="submenu">
+                        <li class="">
+                            <a [routerLink]="['/main/role-list']">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Tài Khoản
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+
+                        <li class="">
+                            <a [routerLink]="['/main/unit-list']">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Đơn Vị
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a [routerLink]="['/main/warehouse-list']">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Kho
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="calendar.html">
+                        <i class="menu-icon fa fa-calendar"></i>
+
+                        <span class="menu-text">
+                            Lịch
+
+                            <span class="badge badge-transparent tooltip-error" title="" data-original-title="2 Important Events">
+                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                            </span>
+                        </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <a href="gallery.html">
+                        <i class="menu-icon fa fa-question"></i>
+                        <span class="menu-text"> Hỗ Trợ </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <a href="gallery.html">
+                        <i class="menu-icon fa fa-cog"></i>
+                        <span class="menu-text"> Báo Cáo </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <a [routerLink]="['/main/manufacturer-list']">
+                        <i class="menu-icon fa fa-university"></i>
+                        <span class="menu-text"> Nhà Cung Cấp
+                            <span class="badge badge-primary">5</span>
+                        </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+            <!-- /.nav-list -->
+
+            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                <i id="sidebar-toggle-icon" class="ace-save-state ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left"
+                    data-icon2="ace-icon fa fa-angle-double-right"></i>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="main-content-inner">
+                <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="ace-icon fa fa-home home-icon"></i>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="active">Cửa Hàng</li>
+                    </ul>
+                    <!-- /.breadcrumb -->
+
+                    <div class="nav-search" id="nav-search">
+                        <form class="form-search">
+                            <span class="input-icon">
+                                <input type="text" placeholder="Tìm Kiếm ..." class="nav-search-input" id="nav-search-input" autocomplete="off">
+                                <i class="ace-icon fa fa-search nav-search-icon"></i>
+                            </span>
+                        </form>
+                    </div>
+                    <!-- /.nav-search -->
+                </div>
+
+                <div class="page-content">
+                    <div class="ace-settings-container" id="ace-settings-container">
+                        <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                            <i class="ace-icon fa fa-cog bigger-130"></i>
+                        </div>
+
+                        <div class="ace-settings-box clearfix" id="ace-settings-box">
+                            <div class="pull-left width-50">
+                                <div class="ace-settings-item">
+                                    <div class="pull-left">
+                                        <select id="skin-colorpicker" class="hide">
+                                            <option data-skin="no-skin" value="#438EB9">#438EB9</option>
+                                            <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                                            <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                                            <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                                        </select>
+                                        <div class="dropdown dropdown-colorpicker">
+                                            <!-- <a data-toggle="dropdown" class="dropdown-toggle">
+                                                <span class="btn-colorpicker" style="background-color:#438EB9"></span>
+                                            </a> -->
+                                            <ul class="dropdown-menu dropdown-caret">
+                                                <li>
+                                                    <a class="colorpick-btn selected" style="background-color:#438EB9;" data-color="#438EB9"></a>
+                                                </li>
+                                                <li>
+                                                    <a class="colorpick-btn" style="background-color:#222A2D;" data-color="#222A2D"></a>
+                                                </li>
+                                                <li>
+                                                    <a class="colorpick-btn" style="background-color:#C6487E;" data-color="#C6487E"></a>
+                                                </li>   
+                                                <li>
+                                                    <a class="colorpick-btn" style="background-color:#D0D0D0;" data-color="#D0D0D0"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span>&nbsp; Chọn Màu</span>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-navbar" autocomplete="off">
+                                    <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-sidebar" autocomplete="off">
+                                    <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-breadcrumbs" autocomplete="off">
+                                    <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" autocomplete="off">
+                                    <label class="lbl" for="ace-settings-rtl"> Phải sang Tra (rtl)</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-add-container" autocomplete="off">
+                                    <label class="lbl" for="ace-settings-add-container">
+                                        Inside
+                                        <b>.container</b>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- /.pull-left -->
+
+                            <div class="pull-left width-50">
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off">
+                                    <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off">
+                                    <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off">
+                                    <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+                                </div>
+                            </div>
+                            <!-- /.pull-left -->
+                        </div>
+                        <!-- /.ace-settings-box -->
+                    </div>
+                    <!-- /.ace-settings-container -->
+
+                    <div class="page-header">
+                        <h1>
+                            Cửa Hàng
+                            <small>
+                                <i class="ace-icon fa fa-angle-double-right"></i>
+                            Tổng quan &amp; Thông kê
+                            </small>
+                        </h1>
+                    </div>
+                    <!-- /.page-header -->
+
+                    <div class="row">
+                        <router-outlet></router-outlet>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.page-content -->
+            </div>
+        </div>
+        <!-- /.main-content -->
+
+        <div class="footer">
+            <div class="footer-inner">
+                <div class="footer-content">
+                    <span class="bigger-120">
+                        <span class="blue bolder">Ace</span>
+                        Application © 2013-2014
+                    </span>
+
+                    &nbsp; &nbsp;
+                    <span class="action-buttons">
+                        <a href="#">
+                            <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>
-        <!-- end: search & user box -->
-    </header>
-    <!-- end: header -->
 
-    <div class="inner-wrapper">
-        <!-- start: sidebar -->
-        <aside id="sidebar-left" class="sidebar-left">
-
-            <div class="sidebar-header">
-                <div class="sidebar-title">
-                    Navigation
-                </div>
-                <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
-                    <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
-                </div>
-            </div>
-
-            <div class="nano">
-                <div class="nano-content">
-                    <nav id="menu" class="nav-main" role="navigation">
-                        <ul class="nav nav-main">
-                            <li class="nav-active">
-                                <a [routerLink]="['/main/dashboard']">
-                                    <i class="fa fa-home" aria-hidden="true"></i>
-                                    <span>Cửa Hàng</span>
-                                </a>
-                            </li>
-                            <!-- Loại Hàng -->
-                            <li class="nav-parent">
-                                <a>
-                                    <i class="fa fa-columns" aria-hidden="true"></i>
-                                    <span>Loại Hàng</span>
-                                </a>
-                                <ul class="nav nav-children">
-                                    <li class="nav-parent">
-                                        <a>
-                                            <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                            <span>Thực Phẩm</span>
-                                        </a>
-                                        <ul class="nav nav-children">
-                                            <li>
-                                                <a>
-                                                    <i class="fa fa-money" aria-hidden="true"></i>
-                                                    <span>Cá</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-parent">
-                                        <a>
-                                            <i class="fa fa-user" aria-hidden="true"></i>
-                                            <span>Đồ Gia Dụng</span>
-                                        </a>
-                                        <ul class="nav nav-children">
-                                                <li>
-                                                    <a>
-                                                        <i class="fa fa-table" aria-hidden="true"></i>
-                                                        <span>Bàn</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                    </li>
-                                    <li class="nav-parent">
-                                            <a>
-                                                <i class="fa fa-male" aria-hidden="true"></i>
-                                                <span>Thời Trang</span>
-                                            </a>
-                                            <ul class="nav nav-children">
-                                                    <li>
-                                                        <a>
-                                                             <!-- [routerLink]="['/main/shirt-list']" -->
-                                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            <span>Áo</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                        </li>
-                                </ul>
-                            </li>
-                            <!-- Bán Hàng -->
-                            <li class="nav-parent">
-                                <a>
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <span>Bán Hàng</span>
-                                </a>
-                                <ul class="nav nav-children">                                                                                                 
-                                    <li>
-                                        <a>
-                                            <i class="fa fa-send" aria-hidden="true"></i>
-                                            <span>Đơn Hàng</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a [routerLink]="['/main/user-list']">
-                                            <i class="fa fa-minus-circle" aria-hidden="true"></i>
-                                            <span>Đổi Hàng</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a [routerLink]="['/main/user-list']">
-                                            <i class="fa fa-remove" aria-hidden="true"></i>
-                                            <span>Trả Hàng</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- Khách Hàng -->
-                            <li class="nav-parent">
-                                <a>
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                    <span>Khách Hàng</span>
-                                </a>
-                                <ul class="nav nav-children">                                                                                                 
-                                    <li>
-                                        <a [routerLink]="['/main/user-list']">
-                                            <i class="fa fa-sign-in" aria-hidden="true"></i>
-                                            <span>TK Người Dùng</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a [routerLink]="['/main/card-list']">
-                                            <i class="fa fa-tag" aria-hidden="true"></i>
-                                            <span>Thẻ Ưu Đãi</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- Thiết Lập -->
-                            <li class="nav-parent">
-                                <a>
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                    <span>Quản Lí</span>
-                                </a>
-                                <ul class="nav nav-children">                                                                                                 
-                                        <li>
-                                                <a [routerLink]="['/main/role-list']">
-                                                    <i class="fa fa-tag" aria-hidden="true"></i>
-                                                    <span>Tài Khoản</span>
-                                                </a>
-                                   </li>
-                                    <li>
-                                        <a [routerLink]="['/main/unit-list']">
-                                            <i class="fa fa-sign-in" aria-hidden="true"></i>
-                                            <span>Đơn Vị</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a [routerLink]="['/main/warehouse-list']">
-                                            <i class="fa fa-sign-in" aria-hidden="true"></i>
-                                            <span>Kho</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        <!-- Hỗ Trợ -->
-                        <li class="nav-parent">
-                                <a>
-                                    <i class="fa fa-cogs" aria-hidden="true"></i>
-                                    <span>Hỗ Trợ</span>
-                                </a>
-                                <ul class="nav nav-children">
-                                    <li>
-                                        <a [routerLink]="['/main/role-list']">
-                                            <i class="fa fa-car" aria-hidden="true"></i>
-                                            <span>Giao Hàng</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a [routerLink]="['/main/user-list']">
-                                            <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <span>Hotline</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                            <a>
-                                <i class="fa fa-pie-chart" aria-hidden="true"></i>
-                                <span>Báo Cáo</span>
-                            </a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/main/manufacturer-list']">
-                                    <i class="fa fa-pie-chart" aria-hidden="true"></i>
-                                    <span>Nhà Cung Cấp</span>
-                                </a>
-                                </li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <script>
-                    // Preserve Scroll Position
-                    if (typeof localStorage !== 'undefined') {
-                        if (localStorage.getItem('sidebar-left-position') !== null) {
-                            var initialPosition = localStorage.getItem('sidebar-left-position'),
-                                sidebarLeft = document.querySelector('#sidebar-left .nano-content');
-
-                            sidebarLeft.scrollTop = initialPosition;
-                        }
-                    }
-                </script>
-
-            </div>
-
-        </aside>
-        <!-- end: sidebar -->
-
-        <section role="main" class="content-body">
-            <header class="page-header">
-                <h2>{{title}}</h2>
-            </header>
-
-            <!-- start: page -->
-            <router-outlet></router-outlet>
-            <!-- end: page -->
-        </section>
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+        </a>
     </div>
-</section>
+    <!-- /.main-container -->
+
+</body>
+
+<!-- [routerLink]="['/main/user']" -->

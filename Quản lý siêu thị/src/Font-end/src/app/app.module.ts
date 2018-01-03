@@ -22,8 +22,6 @@ import { GoldCardComponent } from './customers/gold-card.component';
 import { ApiService } from './api.service';
 
 
-
-
 import { UserDetailComponent } from './user/user-detail.component';
 import { UserListComponent } from './user/user-list.component';
 import { UserService } from './user/service/user.service';

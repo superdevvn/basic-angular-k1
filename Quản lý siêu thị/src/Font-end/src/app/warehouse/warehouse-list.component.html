@@ -1,14 +1,18 @@
-<div style="margin-left:-25px;margin-right:-25px">
-    <div class="col-md-12">
-            <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/warehouse-detail',0]">Thêm <i class="fa fa-plus"></i></button>
-    </div>
-    <div class="col-md-12">
-        <br />
-        <table class="table table-bordered table-striped table-condensed mb-none">
+
+        <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="mb-md">
+                            <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/warehouse-detail',0]">Thêm <i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+        <table class="table table-bordered table-striped mb-none" id="datatable-default">
             <colgroup>
                 <col style="width:50px" />
                 <col style="width:150px" />
                 <col style="width:150px"/>
+                <col style="width:50px" />
                 <col style="width:50px" />
             </colgroup>
             <thead>
@@ -38,4 +42,4 @@
             </tbody>
         </table>
     </div>
-</div>
+

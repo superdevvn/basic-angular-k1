@@ -1,12 +1,12 @@
 <meta charset="utf-8">
 <section class="panel">
-    <header class="panel-heading">
-        <!-- <div class="panel-actions">
+    <!-- <header class="panel-heading">
+        <div class="panel-actions">
             <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
             <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
-        </div> -->
+        </div>
         <h2 class="panel-title">Danh Sách</h2>
-    </header>
+    </header> -->
     <div class="panel-body">
         <div class="row">
             <div class="col-sm-6">
@@ -29,7 +29,7 @@
             </colgroup>
             <thead>
                 <tr>
-                    <th>Tên Tài Khoản</th>
+                    <th>Tên Người Dùng</th>
                     <th>Tên</th>
                     <th>Họ Tên</th>
                     <th>Quyền Truy Cập</th>
@@ -54,7 +54,7 @@
                         <input [disabled]="true" type="checkbox" [ngModel]="user.IsActived"/>
                     </td> -->
                     <td class="text-center">
-                        <span [ngClass]="{'label label-danger' : !user.IsActived,'label label-success' : user.IsActived}">
+                        <span [ngClass]="{'label label-danger arrowed' : !user.IsActived,'label label-info arrowed-right arrowed-in' : user.IsActived}">
                             {{user.IsActived? 'Hoạt Động':'Khóa'}}
                         </span>
                     </td>
@@ -70,4 +70,5 @@
             </tbody>
         </table>
         </div>
+        
     </section>
