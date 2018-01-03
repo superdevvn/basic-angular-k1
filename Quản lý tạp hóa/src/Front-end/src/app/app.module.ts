@@ -31,6 +31,7 @@ import { ProductDetailComponent } from './main/product/product-detail.component'
 import { CategoryService } from './main/category/service/category.service';
 import { CategoryDetailComponent } from './main/category/category-detail.component';
 import { LoginService } from './authorize/service/login.service';
+import { CookieService } from 'ngx-cookie-service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -87,7 +88,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
-  providers: [LoginService, ApiService, SupplierService, RoleService,UserService, UnitService, ProductService, CategoryService],
+  providers: [CookieService, LoginService, ApiService, SupplierService, RoleService,UserService, UnitService, ProductService, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

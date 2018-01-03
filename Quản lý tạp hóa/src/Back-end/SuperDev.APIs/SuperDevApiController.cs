@@ -8,19 +8,8 @@ using System.Threading;
 
 namespace SuperDev.APIs
 {
+    [AuthorizeFilter]
     public partial class SuperDevApiController : ApiController
     {
-        //public override Task<HttpResponseMessage> ExecuteAsync(HttpControllerContext controllerContext, CancellationToken cancellationToken)
-        //{
-        //    return base
-        //        .ExecuteAsync(controllerContext, cancellationToken)
-        //        .ContinueWith(t =>
-        //        {
-        //    // the controller action has finished executing, 
-        //    // your custom code could come here ...
-
-        //    return t.Result;
-        //        });
-        //}
     }
 }

@@ -28,7 +28,7 @@ export class RoleService {
 
     getRole(id) {
         return new Promise((resolve, reject) => {
-            this.apiService.get(`api/getRole/${id}`).then((res:Response) => {
+            this.apiService.get(`api/getRole/${id}`).then(res => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);

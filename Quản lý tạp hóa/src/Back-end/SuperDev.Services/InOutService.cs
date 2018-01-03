@@ -10,7 +10,12 @@ namespace SuperDev.Services
         {
             var inOutRepository = new InOutRepository();
             if (inOut.Id > 0) return inOutRepository.Update(inOut);
-            return inOutRepository.Create(inOut);
+            else
+            {
+                var userService = new UserService();
+                inOut.UserId = userService.GetCurrentUser().Id;
+                return inOutRepository.Create(inOut);
+            }
         }
 
         public IEnumerable<InOut> GetList()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using SuperDev.Models;
 using SuperDev.Repositories;
 
@@ -36,7 +37,7 @@ namespace SuperDev.Services
 
         public string Encrypt(User user)
         {
-            return user.Username +";"+ user.Password;
+            return user.Username + ";" + user.Password;
         }
 
         public User Decrypt(string token)
@@ -45,6 +46,12 @@ namespace SuperDev.Services
             string username = token.Split(';')[0];
             string password = token.Split(';')[1];
             return userRepository.GetEntity(username, password);
+        }
+
+        public User GetCurrentUser()
+        {
+            var token = HttpContext.Current.Request.Headers.Get("Auth-SuperDev").ToString();
+            return Decrypt(token);
         }
     }
 }
