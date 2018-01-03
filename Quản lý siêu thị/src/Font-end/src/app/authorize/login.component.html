@@ -1,239 +1,80 @@
-<section class="login-layout">
-		<div class="main-container">
-			<div class="main-content">
-				<div class="row">
-					<div class="col-sm-10 col-sm-offset-1">
-						<div class="login-container">
-							<div class="center">
-								<h1>
-									<span class="red">Super Market</span>
-									<span class="white" id="id-text2">Application</span>
-								</h1>
-							</div>
+<!-- start: page -->
+<section class="body-sign">
+    <div class="center-sign">
+        <a href="/" class="logo pull-left">
+            <img src="assets/images/logo.png" height="54" alt="Porto Admin" />
+        </a>
 
-							<div class="space-6"></div>
+        <div class="panel panel-sign">
+            <div class="panel-title-sign mt-xl text-right">
+                <h2 class="title text-uppercase text-weight-bold m-none">
+                    <i class="fa fa-user mr-xs"></i> Sign In</h2>
+            </div>
+            <div class="panel-body">
+                <form action="index.html" method="post">
+                    <div class="form-group mb-lg">
+                        <label>Username</label>
+                        <div class="input-group input-group-icon">
+                            <input name="username" type="text" class="form-control input-lg" />
+                            <span class="input-group-addon">
+                                <span class="icon icon-lg">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
 
-							<div class="position-relative">
-								<div id="login-box" class="login-box visible widget-box no-border">
-									<div class="widget-body">
-										<div class="widget-main">
-											<h4 class="header blue lighter bigger">
-												<i class="ace-icon fa fa-coffee green"></i>
-												Please Enter Your Information
-											</h4>
+                    <div class="form-group mb-lg">
+                        <div class="clearfix">
+                            <label class="pull-left">Password</label>
+                            <a href="pages-recover-password.html" class="pull-right">Lost Password?</a>
+                        </div>
+                        <div class="input-group input-group-icon">
+                            <input name="pwd" type="password" class="form-control input-lg" />
+                            <span class="input-group-addon">
+                                <span class="icon icon-lg">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
 
-											<div class="space-6"></div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="checkbox-custom checkbox-default">
+                                <input id="RememberMe" name="rememberme" type="checkbox" />
+                                <label for="RememberMe">Remember Me</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-right">                           
+                            <button type="submit" class="btn btn-primary hidden-xs">Sign In</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button>
+                      
+                        </div>
+                    </div>
 
-											<form>
-												<fieldset>
-													<label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" />
-															<i class="ace-icon fa fa-user"></i>
-														</span>
-													</label>
+                    <span class="mt-lg mb-lg line-thru text-center text-uppercase">
+                        <span>or</span>
+                    </span>
 
-													<label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" />
-															<i class="ace-icon fa fa-lock"></i>
-														</span>
-													</label>
+                    <div class="mb-xs text-center">
+                        <a class="btn btn-facebook mb-md ml-xs mr-xs">Connect with
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a class="btn btn-twitter mb-md ml-xs mr-xs">Connect with
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
 
-													<div class="space"></div>
+                    <p class="text-center">Don't have an account yet?
+                        <a href="pages-signup.html">Sign Up!</a>
+                    </p>
 
-													<div class="clearfix">
-														<label class="inline">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"> Remember Me</span>
-														</label>
+                </form>
+            </div>
+        </div>
 
-														<button type="button" class="width-35 pull-right btn btn-sm btn-primary">
-															<i class="ace-icon fa fa-key"></i>
-															<span class="bigger-110">Login</span>
-														</button>
-													</div>
-
-													<div class="space-4"></div>
-												</fieldset>
-											</form>
-
-											<div class="social-or-login center">
-												<span class="bigger-110">Or Login Using</span>
-											</div>
-
-											<div class="space-6"></div>
-
-											<div class="social-login center">
-												<a class="btn btn-primary">
-													<i class="ace-icon fa fa-facebook"></i>
-												</a>
-
-												<a class="btn btn-info">
-													<i class="ace-icon fa fa-twitter"></i>
-												</a>
-
-												<a class="btn btn-danger">
-													<i class="ace-icon fa fa-google-plus"></i>
-												</a>
-											</div>
-										</div><!-- /.widget-main -->
-
-										<div class="toolbar clearfix">
-											<div>
-												<a href="#" data-target="#forgot-box" class="forgot-password-link">
-													<i class="ace-icon fa fa-arrow-left"></i>
-													I forgot my password
-												</a>
-											</div>
-
-											<div>
-												<a href="#" data-target="#signup-box" class="user-signup-link">
-													I want to register
-													<i class="ace-icon fa fa-arrow-right"></i>
-												</a>
-											</div>
-										</div>
-									</div><!-- /.widget-body -->
-								</div><!-- /.login-box -->
-
-								<div id="forgot-box" class="forgot-box widget-box no-border">
-									<div class="widget-body">
-										<div class="widget-main">
-											<h4 class="header red lighter bigger">
-												<i class="ace-icon fa fa-key"></i>
-												Retrieve Password
-											</h4>
-
-											<div class="space-6"></div>
-											<p>
-												Enter your email and to receive instructions
-											</p>
-
-											<form>
-												<fieldset>
-													<label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
-															<i class="ace-icon fa fa-envelope"></i>
-														</span>
-													</label>
-
-													<div class="clearfix">
-														<button type="button" class="width-35 pull-right btn btn-sm btn-danger">
-															<i class="ace-icon fa fa-lightbulb-o"></i>
-															<span class="bigger-110">Send Me!</span>
-														</button>
-													</div>
-												</fieldset>
-											</form>
-										</div><!-- /.widget-main -->
-
-										<div class="toolbar center">
-											<a href="#" data-target="#login-box" class="back-to-login-link">
-												Back to login
-												<i class="ace-icon fa fa-arrow-right"></i>
-											</a>
-										</div>
-									</div><!-- /.widget-body -->
-								</div><!-- /.forgot-box -->
-
-								<div id="signup-box" class="signup-box widget-box no-border">
-									<div class="widget-body">
-										<div class="widget-main">
-											<h4 class="header green lighter bigger">
-												<i class="ace-icon fa fa-users blue"></i>
-												New User Registration
-											</h4>
-
-											<div class="space-6"></div>
-											<p> Enter your details to begin: </p>
-
-											<form>
-												<fieldset>
-													<label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
-															<i class="ace-icon fa fa-envelope"></i>
-														</span>
-													</label>
-
-													<label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" />
-															<i class="ace-icon fa fa-user"></i>
-														</span>
-													</label>
-
-													<label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" />
-															<i class="ace-icon fa fa-lock"></i>
-														</span>
-													</label>
-
-													<label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Repeat password" />
-															<i class="ace-icon fa fa-retweet"></i>
-														</span>
-													</label>
-
-													<label class="block">
-														<input type="checkbox" class="ace" />
-														<span class="lbl">
-															I accept the
-															<a href="#">User Agreement</a>
-														</span>
-													</label>
-
-													<div class="space-24"></div>
-
-													<div class="clearfix">
-														<button type="reset" class="width-30 pull-left btn btn-sm">
-															<i class="ace-icon fa fa-refresh"></i>
-															<span class="bigger-110">Reset</span>
-														</button>
-
-														<button type="button" class="width-65 pull-right btn btn-sm btn-success">
-															<span class="bigger-110">Register</span>
-
-															<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-														</button>
-													</div>
-												</fieldset>
-											</form>
-										</div>
-
-										<div class="toolbar center">
-											<a href="#" data-target="#login-box" class="back-to-login-link">
-												<i class="ace-icon fa fa-arrow-left"></i>
-												Back to login
-											</a>
-										</div>
-									</div><!-- /.widget-body -->
-								</div><!-- /.signup-box -->
-							</div><!-- /.position-relative -->
-
-							<div class="navbar-fixed-top align-right">
-								<br />
-								&nbsp;
-								<a id="btn-login-dark" href="#">Dark</a>
-								&nbsp;
-								<span class="blue">/</span>
-								&nbsp;
-								<a id="btn-login-blur" href="#">Blur</a>
-								&nbsp;
-								<span class="blue">/</span>
-								&nbsp;
-								<a id="btn-login-light" href="#">Light</a>
-								&nbsp; &nbsp; &nbsp;
-							</div>
-						</div>
-					</div><!-- /.col -->
-				</div><!-- /.row -->
-			</div><!-- /.main-content -->
-		</div><!-- /.main-container -->
-
-		
+        <p class="text-center text-muted mt-md mb-md">&copy; Copyright 2014. All Rights Reserved.</p>
+    </div>
 </section>
+<!-- end: page -->
