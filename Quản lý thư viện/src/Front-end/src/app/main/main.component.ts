@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from '../authorize/service/login.service';
+
+
 declare var $: any;
 @Component({
     selector: 'main',
@@ -8,10 +11,14 @@ declare var $: any;
 export class MainComponent {
     private routerSubcription:any;
     title:string;
-    
-    constructor(private route: ActivatedRoute, private router:Router) {
+    ngOnInit() {
+        this.loginService.getAuthorize().catch(err => {
+            this.router.navigate(['login']);
+        });
+    }
+    constructor(private route: ActivatedRoute, private router:Router, private loginService: LoginService) {
         this.routerSubcription = this.router.events.subscribe(event=> {
-            if(event.constructor.name === "NavigationEnd") {
+            if (event.constructor.name === "NavigationEnd") {
                 let url = this.router.url.toString();
                 switch (url)
                 {
@@ -48,11 +55,9 @@ export class MainComponent {
          });
     }
 
-    ngOnInit(){
-        
-    }
+  
     ngAfterViewInit(){
-$.getScript('assets/porto/javascripts/theme.js', function(){
+        $.getScript('assets/porto/javascripts/theme.js', function(){
           $.getScript('assets/porto/javascripts/theme.custom.js', function(){
             $.getScript('assets/porto/javascripts/theme.init.js', function(){
               });
@@ -60,6 +65,6 @@ $.getScript('assets/porto/javascripts/theme.js', function(){
         });
     }
     ngOnDestroy() {
-        this.routerSubcription.unsubcribe();
+        this.routerSubcription.unsubscribe();
     }
 }

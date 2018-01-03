@@ -3,16 +3,13 @@ import { ApiService } from './../../api.service';
 import { User } from './../../main/user/shared/user.model';
 
 import { Response } from '@angular/http';
-// import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
 export class LoginService {
-    ngOnInit() {
-       
-    }
 
     user: User;
-    constructor(private apiService: ApiService) { }
+    constructor(private apiService: ApiService, private cookieService: CookieService) { }
     login(username, password) {
         return new Promise<User>((resolve, reject) => {
             this.apiService.post('api/login', {
@@ -20,6 +17,7 @@ export class LoginService {
                 password: password
             }).then((res: Response) => {
                 this.apiService.token = res.json();
+                this.cookieService.set('Auth-Library', this.apiService.token);
                 this.getAuthorize().then(user  => {
                     resolve(user);
                 }).catch(err => {

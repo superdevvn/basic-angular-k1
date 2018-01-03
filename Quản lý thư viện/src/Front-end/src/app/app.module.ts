@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './authorize/login.component';
 import { LoginService } from './authorize/service/login.service';
 import { MainComponent } from './main/main.component';
+import { CookieService } from 'ngx-cookie-service';
 
 //Dashboard
 import { DashboardComponent } from './main/dashboard.component';
@@ -103,7 +104,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
-  providers: [ApiService, RoleService, CategoryService, UserService, InOutService, BookService, CustomerService, LoginService],
+  providers: [CookieService, ApiService, RoleService, CategoryService,
+     UserService, InOutService, BookService, CustomerService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
