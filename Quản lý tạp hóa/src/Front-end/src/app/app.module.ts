@@ -31,12 +31,16 @@ import { ProductDetailComponent } from './main/product/product-detail.component'
 import { CategoryService } from './main/category/service/category.service';
 import { CategoryDetailComponent } from './main/category/category-detail.component';
 import { LoginService } from './authorize/service/login.service';
+
 import { InOutListComponent } from './main/in-out/in-out-list.component';
 import { InOutDetailComponent } from './main/in-out/in-out-detail.component';
 import { InOutService } from './main/in-out/service/in-out.service';
 import { ManufacturerService } from './main/manufacturer/service/manufacturer.service';
 import { ManufacturerListComponent } from './main/manufacturer/manufacturer-list.component';
 import { ManufacturereDetailComponent } from './main/manufacturer/manufacturer-detail.component';
+
+// import { CookieService } from 'ngx-cookie-service';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -59,8 +63,8 @@ const routes: Routes = [
       { path: 'category-detail/:id', component: CategoryDetailComponent },
       { path: 'in-out-list', component: InOutListComponent },
       { path: 'in-out-detail/:id', component: InOutDetailComponent },
-      { path: 'manufacturer-list', component: ManufacturerListComponent},
-      { path: 'manufacturer-detail/:id', component: ManufacturereDetailComponent}
+      { path: 'manufacturer-list', component: ManufacturerListComponent },
+      { path: 'manufacturer-detail/:id', component: ManufacturereDetailComponent }
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -102,7 +106,10 @@ const routes: Routes = [
   ],
 
   providers: [LoginService, ApiService, SupplierService, RoleService, UserService, UnitService, ProductService,
-    CategoryService, InOutService, ManufacturerService],
+    CategoryService, InOutService, ManufacturerService
+    // CookieService
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

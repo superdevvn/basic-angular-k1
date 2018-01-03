@@ -19,7 +19,7 @@ export class SupplierService {
 
     getList() {
         return new Promise((resolve, reject) => {
-            this.apiService.post('api/getSuppliers',{}).then(res => {
+            this.apiService.post('api/getSuppliers', {}).then(res => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);
@@ -29,7 +29,7 @@ export class SupplierService {
 
     getSupplier(id) {
         return new Promise((resolve, reject) => {
-            this.apiService.get(`api/getSupplier/${id}`).then((res) => {
+            this.apiService.get(`api/getSupplier/${id}`).then(res => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);

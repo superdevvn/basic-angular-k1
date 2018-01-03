@@ -19,7 +19,7 @@ export class UnitService {
 
     getUnit(id) {
         return new Promise((resolve, reject) => {
-            this.apiService.get(`api/getUnit/${id}`).then((res) => {
+            this.apiService.get(`api/getUnit/${id}`).then(res => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);
