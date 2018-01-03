@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { futimes } from 'fs';
+declare var $:any;
 @Component({
     selector: 'main',
     templateUrl:'./main.component.html'
@@ -47,7 +49,15 @@ export class MainComponent {
         
     }
     ngAfterViewInit(){
-        
+        $.getScript("assets/ace-master/js/ace-elements.min.js",function(){
+            console.log("ace-elements.min");
+          $.getScript("assets/ace-master/js/ace.min.js",function(){
+            console.log("ace.min");
+            $.getScript("assets/ace-master/js/load.js",function(){
+                console.log("ace-elements.min");
+              });
+          }); 
+        });
     }
     ngOnDestroy(){
         this.routerSubcription.unsubcribe();

@@ -11,6 +11,7 @@ export class SupplierDetailComponent {
     supplier: Suppiler = new Suppiler();
     id: number = 0;
     routerSubscription: any;
+    title: string;
     constructor(private route: ActivatedRoute, private router: Router, private supplierService: SupplierService) {
     }
 
@@ -18,11 +19,14 @@ export class SupplierDetailComponent {
         this.routerSubscription = this.route.params.subscribe(params => {
             this.id = +params['id']; // (+) converts string 'id' to a number
             if (this.id > 0) {
+                this.title = "Bạn đang chỉnh sửa nhà cung cấp";
                 this.supplierService.getSupplier(this.id).then((res: Suppiler) => {
                     this.supplier = res;
                 }).catch(err => {
                     console.log(err);
                 });
+            } else {
+                this.title = "Bạn đang tạo mới nhà cung cấp";
             }
         });
     }
@@ -31,8 +35,9 @@ export class SupplierDetailComponent {
         this.supplierService.saveSupplier(this.supplier).then((res: Suppiler) => {
             //Server trả về role sau khi save
             //Nếu là tạo role mới thì res sẽ có giá trị id mới thay vì 0
-            this.supplier = res;
-            alert("Save Success");
+            if (this.id == 0) {
+                this.router.navigate(['/main/supplier-detail/',res.Id]);
+            }
         }).catch(err => {
             alert(err);
         })

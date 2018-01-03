@@ -38,6 +38,7 @@ import { WarehouseService } from './warehouse/service/warehouse.service';
 import { WarehouseDetailComponent } from './warehouse/warehouse-detail.component';
 import { WarehouseListComponent } from './warehouse/warehouse-list.component';
 import { CalendarComponent } from './main/calendar.component';
+import { LoginService } from './authorize/service/login.service';
 
 
 const routes: Routes = [
@@ -98,7 +99,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
-  providers: [ApiService,RoleService,UserService,ManufacturerService,UnitService,WarehouseService],
+  providers: [ApiService,RoleService,UserService,ManufacturerService,UnitService,WarehouseService,LoginService],
 
   bootstrap: [AppComponent]
 })
