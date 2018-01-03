@@ -5,7 +5,11 @@ import { Router } from '@angular/router';
 @Injectable()
 export class ApiService {
     
+<<<<<<< HEAD
     host: string = 'http://103.232.121.69:5104/';
+=======
+    host: string = 'http://103.232.121.69:5102/';
+>>>>>>> cd8a2dce1afd751c3220f7a0110d9cab7d13476c
     token: string = "";
     constructor(private router: Router, private http: Http) {
     }

@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+<<<<<<< HEAD
+=======
+import { futimes } from 'fs';
+>>>>>>> cd8a2dce1afd751c3220f7a0110d9cab7d13476c
 declare var $:any;
 @Component({
     selector: 'main',
@@ -48,6 +52,7 @@ export class MainComponent {
         
     }
     ngAfterViewInit(){
+<<<<<<< HEAD
        $.getScript("assets/ace-master/js/ace-elements.min.js", function(){
         $.getScript("assets/ace-master/js/ace.min.js",function(){
         //   $.getScript("app/main/load.main.min.js",function(){
@@ -56,7 +61,19 @@ export class MainComponent {
         });
        });
      }
+=======
+        $.getScript("assets/ace-master/js/ace-elements.min.js",function(){
+            console.log("ace-elements.min");
+          $.getScript("assets/ace-master/js/ace.min.js",function(){
+            console.log("ace.min");
+            $.getScript("assets/ace-master/js/load.js",function(){
+                console.log("ace-elements.min");
+              });
+          }); 
+        });
+    }
+>>>>>>> cd8a2dce1afd751c3220f7a0110d9cab7d13476c
     ngOnDestroy(){
-        this.routerSubcription.unsubcribe();
+        if(this.routerSubcription) this.routerSubcription.unsubscribe();
     }
 }

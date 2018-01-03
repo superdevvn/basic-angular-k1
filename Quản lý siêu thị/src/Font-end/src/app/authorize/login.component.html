@@ -24,18 +24,18 @@
 
 											<div class="space-6"></div>
 
-											<form>
+											
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" />
+															<input type="text" class="form-control" placeholder="Username" [(ngModel)]="username" />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" />
+															<input type="password" class="form-control" placeholder="Password" [(ngModel)]="password"/>
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
 													</label>
@@ -50,13 +50,17 @@
 
 														<button type="button" class="width-35 pull-right btn btn-sm btn-primary">
 															<i class="ace-icon fa fa-key"></i>
+<<<<<<< HEAD
 															<span class="bigger-110" (click)="login()">Login</span>
+=======
+															<span class="bigger-110"(click)="login()">Login</span>
+>>>>>>> cd8a2dce1afd751c3220f7a0110d9cab7d13476c
 														</button>
 													</div>
 
 													<div class="space-4"></div>
 												</fieldset>
-											</form>
+											
 
 											<div class="social-or-login center">
 												<span class="bigger-110">Or Login Using</span>

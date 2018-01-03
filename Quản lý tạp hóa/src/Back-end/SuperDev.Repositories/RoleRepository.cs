@@ -44,5 +44,14 @@ namespace SuperDev.Repositories
                 return context.Roles.Find(id);
             }
         }
+
+        public void DeleteEntity(int id)
+        {
+            using (var context = new SuperDevDbContext())
+            {
+                context.Roles.Remove(context.Roles.Find(id));
+                context.SaveChanges();
+            }
+        }
     }
 }

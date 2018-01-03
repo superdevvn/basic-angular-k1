@@ -14,18 +14,16 @@ export class SupplierListComponent {
     ngOnInit(){
         this.supplierService.getList().then((res:Suppiler[])=>{
             this.suppliers = res;
-            console.log("B");
         }).catch(err=>{
             alert(err);
         });
 
-        console.log("A");
     }
 
     ngAfterViewInit(){
     }
 
     detail(suppiler:Suppiler){
-        this.router.navigate(['/main/supplier-detail',suppiler.id]);
+        this.router.navigate(['/main/supplier-detail',suppiler.Id]);
     }
 }
