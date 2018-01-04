@@ -1,8 +1,8 @@
-﻿using System;
+﻿using SuperDev.Models;
+using SuperDev.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Web;
-using SuperDev.Models;
-using SuperDev.Repositories;
 
 namespace SuperDev.Services
 {
@@ -11,8 +11,19 @@ namespace SuperDev.Services
         public User PersistUser(User user)
         {
             var userRepository = new UserRepository();
-            if (user.Id > 0) return userRepository.Update(user);
-            return userRepository.Create(user);
+            if (user.Id > 0)
+            {
+                var entity = userRepository.GetEntity(user.Id);
+                user.CreatedDate = entity.CreatedDate;
+                user.CreatedBy = entity.CreatedBy;
+                return userRepository.Update(user);
+            }
+            else
+            {
+                user.CreatedDate = DateTime.Now;
+                user.CreatedBy = GetCurrentUser().Id;
+                return userRepository.Create(user);
+            }
         }
 
         public IEnumerable<UserComplex> GetList()

@@ -58,5 +58,13 @@ namespace SuperDev.Repositories
                 return context.Users.Find(id);
             }
         }
+
+        public User GetEntity(string username, string password)
+        {
+            using (var context = new SuperDevDbContext())
+            {
+                return context.Users.Where(entity => entity.Username == username && entity.Password == password).FirstOrDefault();
+            }
+        }
     }
 }
