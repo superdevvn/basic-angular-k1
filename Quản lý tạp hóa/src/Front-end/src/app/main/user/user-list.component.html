@@ -13,39 +13,62 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-md">
-                    <button class="btn btn-primary" [routerLink]="['../user-detail']">Thêm
+                    <button class="btn btn-primary" [routerLink]="['/main/user-detail',0]">Thêm
                         <i class="fa fa-plus"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <table class="table table-bordered table-striped mb-none" id="datatable-default">
+        <table class="table table-bordered table-striped mb-none">
+            <colgroup>
+                <col width="50px"/>
+                <col width="150px"/>
+                <col width="100px"/>
+                <col width="100px"/>
+                <col width="150px"/>
+                <col />
+                <col width="200px"/>
+                <col width="150px"/>
+                <col width="100px"/>
+                <col width="100px"/>
+            </colgroup>
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Họ và tên</th>
+                    <th>Tên tài khoản</th>
+                    <th>Tên</th>
+                    <th>Họ</th>
                     <th>Vai trò</th>
-                    <th>Số điện thoại</th>
-                    <th>Email</th>
-                    <th class="hidden-phone"></th>
-                    <th class="hidden-phone"></th>
+                    <th>Mô tả</th>
+                    <th class="text-center">Ngày tạo</th>
+                    <th class="hidden-phone">Tình trạng</th>
+                    <th class="hidden-phone">Chỉnh sửa</th>
+                    <th class="hidden-phone">Xóa</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="gradeX">
-                    <td>SE90954</td>
-                    <td>Lê Thị Cà Chua</td>
-                    <td>Admin</td>
-                    <td>0123456789</td>
-                    <td>cachua@gmail.com</td>
+                <tr *ngFor="let user of users" class="gradeX" [ngClass]="{'success':user.IsActived,'danger':!user.IsActived}">
+                    <td>{{user.Id}}</td>
+                    <td>{{user.Username}}</td>
+                    <td>{{user.FirstName}}</td>
+                    <td>{{user.LastName}}</td>
+                    <td>{{user.RoleName}}</td>
+                    <td>{{user.Description}}</td>
+                    <td class="text-center">{{user.CreatedDate | date:'dd/MM/yyyy HH:mm'}}</td>
+                    <td class="text-center">
+                        <span [ngClass]="{'label label-success':user.IsActived,'label label-danger':!user.IsActived}">
+                            {{user.IsActived?'Hoạt động':'Khóa'}}
+                        </span>
+                    
+                    </td>
                     <td align="center">
                         <a>
-                            <i class="fa fa-pencil-square-o"></i>
+                            <i style="cursor:pointer" class="fa fa-pencil-square-o" (click)="detail(user)"></i>
                         </a>
                     </td>
                     <td align="center">
                         <a>
-                            <i class="fa fa-trash-o"></i>
+                            <i style="cursor:pointer" class="fa fa-trash-o"></i>
                         </a>
                     </td>
                 </tr>

@@ -1,20 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
+﻿using System.Web.Http;
 using SuperDev.Models;
+using SuperDev.Services;
 
 namespace SuperDev.APIs
 {
-    public class UserApiController:ApiController
+
+    public partial class SuperDevApiController : ApiController
     {
         [HttpPost]
-        [Route("api/persistUser")]
-        public IHttpActionResult PersistUser([FromBody]User user)
+        [Route("api/getUsers")]
+        public IHttpActionResult GetUsers()
         {
-            return Ok(user);
+            var userService = new UserService();
+            return Ok(userService.GetList());
+        }
+
+        [HttpGet]
+        [Route("api/getUser/{id}")]
+        public IHttpActionResult GetUser(int id)
+        {
+            var userService = new UserService();
+            return Ok(userService.GetById(id));
+        }
+
+        [HttpPost]
+        [Route("api/saveUser")]
+        public IHttpActionResult SaveUser([FromBody]User user)
+        {
+            var userService = new UserService();
+            return Ok(userService.PersistUser(user));
         }
     }
 }
