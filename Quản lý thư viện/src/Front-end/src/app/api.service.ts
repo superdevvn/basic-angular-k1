@@ -18,7 +18,7 @@ export class ApiService {
                 .toPromise()
                 .then(res => {
                     if(res.status == 200){
-                        resolve(res);                        
+                        resolve(res);
                     } else {
                         reject("Có lỗi xảy ra");
                     }

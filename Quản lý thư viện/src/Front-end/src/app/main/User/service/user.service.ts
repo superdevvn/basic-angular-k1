@@ -15,7 +15,6 @@ export class UserService {
             });
         });
     }
-
     getList() {
         return new Promise<User[]>((resolve, reject) => {
             this.apiService.post('api/getUsers', {}).then(res => {
