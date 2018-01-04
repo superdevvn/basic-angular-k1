@@ -6,7 +6,7 @@ export class InOut {
     ProductName: string;
     Price: number;
     Quantity: number;
-    Type: number;
+    Type: number = 0;
     Date: Date;
 
     constructor(){
