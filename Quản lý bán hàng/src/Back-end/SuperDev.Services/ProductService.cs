@@ -13,7 +13,7 @@ namespace SuperDev.Services
             return productRepository.Create(product);
         }
 
-        public IEnumerable<Product> GetList()
+        public IEnumerable<ProductComplex> GetList()
         {
             var productRepository = new ProductRepository();
             return productRepository.GetEntities();
