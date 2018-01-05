@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from './shared/user.model';
+import { User } from './shared/User.model';
+
 import { UserService } from './service/user.service';
 @Component({
     selector: 'user-list',

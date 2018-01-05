@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './../../api.service';
-import { User } from './../../main/user/shared/user.model';
+import { User } from './../../main/user/shared/User.model';
 
 import { Response } from '@angular/http';
 import { CookieService } from 'ngx-cookie-service';
