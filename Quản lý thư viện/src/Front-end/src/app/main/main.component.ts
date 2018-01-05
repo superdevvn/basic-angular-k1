@@ -1,51 +1,56 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+declare var $: any;
 @Component({
     selector: 'main',
-    templateUrl:'./main.component.html'
+    templateUrl: './main.component.html'
 })
 export class MainComponent {
-    private routerSubcription:any;
-    title:string;
-    
-    constructor(private route: ActivatedRoute, private router:Router) {
-        this.routerSubcription = this.router.events.subscribe(event=> {
-            if(event.constructor.name === "NavigationEnd") {
+    private routerSubcription: any;
+    title: string;
+
+    constructor(private route: ActivatedRoute, private router: Router) {
+        this.routerSubcription = this.router.events.subscribe(event => {
+            if (event.constructor.name === "NavigationEnd") {
                 let url = this.router.url.toString();
-                switch(url)
-                {
+                switch (url) {
                     case "/main/dashboard": this.title = "Trang chủ";
-                    break;
+                        break;
                     case "/main/role-list": this.title = "Quản lí vai trò";
-                    break;
+                        break;
                     case "/main/category-list": this.title = "Quản lí thể loại sách";
-                    break;
+                        break;
                     case "/main/category-detail": this.title = "Quản lí thể loại sách";
-                    break;
+                        break;
                     case "/main/role-detail": this.title = "Quản lí vai trò";
-                    break;
+                        break;
                     case "/main/user-list": this.title = "Danh sách nhân viên";
-                    break;
+                        break;
                     case "/main/user-detail": this.title = "quản lí nhân viên";
-                    break;
+                        break;
                     case "/main/inout-list": this.title = "Quản lí mượn trả sách";
-                    break;
+                        break;
                     case "/main/inout-detail": this.title = "Quản lí mượn trả sách";
-                    break;
+                        break;
                     default: this.title = "Trang chủ";
-                    break;
+                        break;
                 }
             }
-         });
+        });
     }
 
-    ngOnInit(){
-        
+    ngOnInit() {
+
     }
-    ngAfterViewInit(){
-        
+    ngAfterViewInit() {
+        $.getScript("assets/porto/javascripts/theme.js", function () {
+            $.getScript("assets/porto/javascripts/theme.custom.js", function () {
+                $.getScript("assets/porto/javascripts/theme.init.js", function () {
+                });
+            });
+        });
     }
-    ngOnDestroy(){
+    ngOnDestroy() {
         this.routerSubcription.unsubcribe();
     }
 }

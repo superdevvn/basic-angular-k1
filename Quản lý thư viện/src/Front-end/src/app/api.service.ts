@@ -4,6 +4,7 @@ import { Http, Headers, Response } from '@angular/http';
 @Injectable()
 export class ApiService {
     host:string = 'http://103.232.121.69:5101/';
+    token: string="";
     constructor(private http: Http) { }
     post(url: string, data: any) {
         return new Promise<Response>((resolve, reject) => {
