@@ -19,7 +19,7 @@ export class SupplierService {
 
     getList() {
         return new Promise((resolve, reject) => {
-            this.apiService.post('api/getSuppliers',{}).then(res => {
+            this.apiService.post('api/getSuppliers', {}).then(res => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);

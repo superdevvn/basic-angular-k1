@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorizeFilter.cs" />
-    <Compile Include="AuthorizeApiController.cs" />
     <Compile Include="ManufacturerApiController.cs" />
     <Compile Include="CategoryApiController.cs" />
     <Compile Include="ProductApiController.cs" />

@@ -1,0 +1,9 @@
+diff a/Quản lý siêu thị/src/Font-end/src/app/Manufacturer/manufacturer-list.component.html b/Quản lý siêu thị/src/Font-end/src/app/Manufacturer/manufacturer-list.component.html	(rejected hunks)
+@@ -32,7 +32,6 @@
+                     <td>{{manufacturer.Description}}</td>
+                     <td class="text-center">
+                             <a class="on-default edit-row">          
+-                                <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-pencil" (click)="detail(role)"></i></button>
+                                 <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-pencil" (click)="detail(manufacturer)"></i></button>
+                             </a>
+                             <a class="on-default remove-row">     

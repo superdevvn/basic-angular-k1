@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { futimes } from 'fs';
+declare var $:any;
 @Component({
     selector: 'main',
     templateUrl:'./main.component.html'
@@ -22,7 +24,19 @@ export class MainComponent {
                     break;
                     case "/main/user-list": this.title = "Danh sách người dùng";
                     break;
-                    case "/main/user-detail": this.title = "Chi tiết người dùng";
+                    case "/main/user-detail/0": this.title = "Chi Tiết Người Dùng";
+                    break;
+                    case "/main/manufacturer-list": this.title = "Danh sách nhà sản xuất";
+                    break;
+                    case "/main/manufacturer-detail/0": this.title = "Chi tiết nhà sản xuất";
+                    break;
+                    case "/main/unit-list": this.title = "Danh sách Đơn vị";
+                    break;
+                    case "/main/unit-detail": this.title = "Chi tiết Đơn vị";
+                    break;
+                    case "/main/warehouse-list": this.title = "Danh sách Kho";
+                    break;
+                    case "/main/warehouse-detail/0": this.title = "Chi tiết Kho";
                     break;
                     default: this.title = "Dashboard";
                     break;
@@ -35,9 +49,17 @@ export class MainComponent {
         
     }
     ngAfterViewInit(){
-        
+        $.getScript("assets/ace-master/js/ace-elements.min.js",function(){
+            console.log("ace-elements.min");
+          $.getScript("assets/ace-master/js/ace.min.js",function(){
+            console.log("ace.min");
+            $.getScript("assets/ace-master/js/load.js",function(){
+                console.log("ace-elements.min");
+              });
+          }); 
+        });
     }
     ngOnDestroy(){
-        this.routerSubcription.unsubcribe();
+        if(this.routerSubcription) this.routerSubcription.unsubscribe();
     }
 }

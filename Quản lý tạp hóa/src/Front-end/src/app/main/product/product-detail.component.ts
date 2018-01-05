@@ -37,14 +37,14 @@ export class ProductDetailComponent {
         this.routeSubcription = this.route.params.subscribe(params => {
             this.id = +params['id'];
             if (this.id > 0) {
-                this.title = "Bạn đang chỉnh sửa thông tin hàng hóa";
+                this.title = "Bạn đang chỉnh sửa thông tin sản phẩm";
                 this.productService.getProduct(this.id).then((res: Product) => {
                     this.product = res;
                 }).catch(err => {
                     console.log(err);
                 });
             } else {
-                this.title = "Bạn đang tạo mới hàng hóa";
+                this.title = "Bạn đang tạo mới sản phẩm";
             }
         });
     }
