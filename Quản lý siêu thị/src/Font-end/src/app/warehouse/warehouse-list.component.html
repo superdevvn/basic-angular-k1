@@ -1,0 +1,45 @@
+
+        <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="mb-md">
+                            <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/warehouse-detail',0]">Thêm <i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+        <table class="table table-bordered table-striped mb-none" id="datatable-default">
+            <colgroup>
+                <col style="width:50px" />
+                <col style="width:150px" />
+                <col style="width:150px"/>
+                <col style="width:50px" />
+                <col style="width:50px" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Địa Chỉ</th>
+                    <th>Ghi chú</th>
+                    <th>Sửa/Xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let warehouse of warehouses">
+                    <td>{{warehouse.Id}}</td>
+                    <td>{{warehouse.Name}}</td>
+                    <td>{{warehouse.Address}}</td>
+                    <td>{{warehouse.Description}}</td>
+                    <td class="text-center">
+                            <a class="on-default edit-row">          
+                                <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-pencil" (click)="detail(warehouse)"></i></button>
+                            </a>
+                            <a class="on-default remove-row">     
+                                <button type="button" class="btn btn-success btn-xs"><i class="fa fa-trash-o"></i></button>
+                            </a>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
