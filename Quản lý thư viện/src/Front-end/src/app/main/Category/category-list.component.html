@@ -1,8 +1,11 @@
+
 <section class="panel"  style="margin-top: -20px; margin-left: -20px">
+
     <div class="panel-body">
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-md">
+
                     <button id="addToTable" class="btn btn-info" [routerLink]="['/main/category-detail',0]">Thêm <i class="fa fa-plus"></i></button>
                 </div>
             </div>
@@ -24,20 +27,22 @@
             </thead>
             <tbody>
                 <tr *ngFor="let category of categories">
+
                     <td>{{category.Id}}</td>
                     <td>{{category.Name}}</td>
                     <td>{{category.Description}}</td>
                     <td class="actions">
+
                         <a style="cursor:pointer" (click)="detail(category)">
                             <i class="fa fa-pencil text-primary"></i>
                         </a>
                         <a style="cursor:pointer" (click)="delete(category)">
                             <i class="fa fa-trash text-danger"></i>
+
                         </a>
                     </td>
                 </tr>
             </tbody>
         </table>
-    </div>  
-
+    </div>
 </section>

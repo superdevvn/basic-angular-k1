@@ -54,9 +54,9 @@
     <Compile Include="InOut.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Book.cs" />
-    <Compile Include="Migrations\201712141712258_Init001.cs" />
-    <Compile Include="Migrations\201712141712258_Init001.Designer.cs">
-      <DependentUpon>201712141712258_Init001.cs</DependentUpon>
+    <Compile Include="Migrations\201801050901591_Init001.cs" />
+    <Compile Include="Migrations\201801050901591_Init001.Designer.cs">
+      <DependentUpon>201801050901591_Init001.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Role.cs" />
@@ -70,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712141712258_Init001.resx">
-      <DependentUpon>201712141712258_Init001.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801050901591_Init001.resx">
+      <DependentUpon>201801050901591_Init001.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,11 +1,11 @@
 export class Suppiler{
-    public id:number;
-    public code:string;
-    public name:string;
-    public address:string;
-    public phone:string;
-    public email:string;
-    public description:string;
+    public Id:number;
+    public Code:string;
+    public Name:string;
+    public Address:string;
+    public Phone:string;
+    public Email:string;
+    public Description:string;
     constructor(){
         
     }

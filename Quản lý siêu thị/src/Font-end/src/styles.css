@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+th{text-align: center;}
+.navbar{
+    background-color: white;
+}
+.navbar-brand img{
+    width: 161px;
+    height: 50px;
+}
+.breadcrumbs {
+    background-color: white;
+    border-top : solid 1px rgba(229,229,229,1.00) ; 
+}
+.login-layout{
+    background-image: url(assets/ace-master/images/background.jpg);
+    height: 850px;
+}

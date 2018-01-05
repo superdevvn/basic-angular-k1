@@ -1,17 +1,18 @@
 export class User {
-    id: number;
-    roleId: number;
-    username: string;
-    password: string;
-    firstname: string;
-    lastname: string;
-    description: string;
-    isActived: boolean;
-    isDaleted: boolean;
-    createdDate: Date;
-    createdBy: number;
+    Id: number;
+    RoleName: string;
+    RoleId: number;   
+    Username: string;
+    Password: string;
+    Firstname: string;
+    Lastname: string;
+    Description: string;
+    IsActived: boolean;
+    IsDaleted: boolean;
+    CreatedDate: Date;
+    CreatedBy: number;
 
     constructor(){
-
+       this.CreatedDate = new Date();
     }
 }

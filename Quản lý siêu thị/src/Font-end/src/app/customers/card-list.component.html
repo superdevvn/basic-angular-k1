@@ -6,7 +6,7 @@
                                             <a href="#diamond" data-toggle="tab">Diamond Card</a>
                                         </li>
                                         <li>
-                                            <a href="#gold" data-toggle="tab">Gold Card</a>
+                                            <a href="#gold" data-toggle="tab" routerLink="gold-card">Gold Card</a>
                                         </li>
                                         <li>
                                             <a href="#silver" data-toggle="tab">Silver Card</a>
@@ -15,10 +15,10 @@
                                             <a href="#Copper" data-toggle="tab">Copper Card</a>
                                         </li>
                                     </ul>
-                                    <div class="tab-content" style="height: 1000;width: 500;">
+                                    <div class="tab-content" >
                                         <div id="diamond" class="tab-pane active">
                                            <!-- tag1 -->
-                                      
+                                      <router-outlet></router-outlet>
                                         </div>
                                         <div id="gold" class="tab-pane">
                                             <!-- tag2 -->

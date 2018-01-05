@@ -1,12 +1,12 @@
 export class Product {
-    id: number;
-    manufactureId: number;
-    categoryId: number;
-    unitId: number;
-    code: string;
-    name: string;
-    price: number;
-    description: string;
+    Id: number;
+    ManufactureId: number;
+    CategoryId: number;
+    UnitId: number;
+    Code: string;
+    Name: string;
+    Price: number;
+    Description: string;
 
     constructor(){
         

@@ -6,7 +6,7 @@ import { CategoryService } from './service/category.service';
 
 @Component({
     selector: 'category-list',
-    templateUrl:'./category-list.component.html'
+    templateUrl: './category-list.component.html'
 })
 export class CategoryListComponent {
 categories: Category[]=[];

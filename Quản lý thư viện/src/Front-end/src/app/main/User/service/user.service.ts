@@ -8,17 +8,16 @@ export class UserService {
     constructor(private apiService: ApiService) { }
     saveUser(user: User) {
         return new Promise<User>((resolve, reject) => {
-            this.apiService.post('api/saveUser', user).then(res => {
+            this.apiService.post('api/saveUser', user).then((res) => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);
             });
         });
     }
-
     getList() {
         return new Promise<User[]>((resolve, reject) => {
-            this.apiService.post('api/getUsers', {}).then(res => {
+            this.apiService.post('api/getUsers',{}).then((res) => {
                 resolve(res.json());
             }).catch(err => {
                 reject(err);

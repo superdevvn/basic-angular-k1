@@ -65,8 +65,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorizeApiController.cs" />
+    <Compile Include="AuthorizeFilter.cs" />
     <Compile Include="ManufacturerApiController.cs" />
+    <Compile Include="CategoryApiController.cs" />
+    <Compile Include="CustomerApiController.cs" />
+    <Compile Include="OrderApiController.cs" />
+    <Compile Include="UnitApiController.cs" />
     <Compile Include="SuperDevApiController.cs" />
+    <Compile Include="ProductApiController.cs" />
     <Compile Include="UserApiController.cs" />
     <Compile Include="RoleApiController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

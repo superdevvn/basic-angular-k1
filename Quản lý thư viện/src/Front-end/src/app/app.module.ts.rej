@@ -1,9 +1,0 @@
-diff a/Quản lý thư viện/src/Front-end/src/app/app.module.ts b/Quản lý thư viện/src/Front-end/src/app/app.module.ts	(rejected hunks)
-@@ -29,6 +29,7 @@
- import { ApiService } from './api.service';
- import { RoleService } from './main/Role/service/role.service';
- import { UserService } from './main/User/service/user.service';
-+import { CategoryService } from './main/Category/service/category.service';
- 
- const routes: Routes = [
-   { path: '', redirectTo: 'main', pathMatch: 'full' },
