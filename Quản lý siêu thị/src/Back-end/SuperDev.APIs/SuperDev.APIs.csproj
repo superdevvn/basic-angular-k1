@@ -56,6 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorizeApiController.cs" />
+    <Compile Include="AuthorizeFilter.cs" />
+    <Compile Include="SuperDevApiController.cs" />
     <Compile Include="WarehouseApiController.cs" />
     <Compile Include="ManufacturerApiController.cs" />
     <Compile Include="UnitApiController.cs" />
