@@ -2,6 +2,7 @@
 
 namespace SuperDev.APIs
 {
+    [AuthorizeFilter]
     public partial class SuperDevApiController: ApiController
     {
     }

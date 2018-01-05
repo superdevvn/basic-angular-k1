@@ -69,6 +69,7 @@ namespace SuperDev.Models.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Code = c.String(),
                         Name = c.String(),
+                        Address = c.String(),
                         Description = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
