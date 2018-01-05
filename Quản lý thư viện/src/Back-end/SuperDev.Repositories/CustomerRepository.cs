@@ -4,44 +4,44 @@ using System.Linq;
 
 namespace SuperDev.Repositories
 {
-    public class RoleRepository
+    public class CustomerRepository
     {
-        public Role Create(Role role)
+        public Customer Create(Customer customer)
         {
             using (var context = new SuperDevDbContext())
             {
-                context.Roles.Add(role);
+                context.Customers.Add(customer);
                 context.SaveChanges();
-                context.Entry(role).Reload();
-                return role;
+                context.Entry(customer).Reload();
+                return customer;
             }
         }
 
-        public Role Update(Role role)
+        public Customer Update(Customer customer)
         {
             using (var context = new SuperDevDbContext())
             {
-                var entity = context.Roles.Find(role.Id);
-                context.CloneObject(entity, role);
+                var entity = context.Customers.Find(customer.Id);
+                context.CloneObject(entity, customer);
                 context.SaveChanges();
                 context.Entry(entity).Reload();
                 return entity;
             }
         }
 
-        public IEnumerable<Role> GetList()
+        public IEnumerable<Customer> GetList()
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.Roles.ToList();
+                return context.Customers.ToList();
             }
         }
 
-        public Role GetById(int id)
+        public Customer GetById(int id)
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.Roles.Find(id);
+                return context.Customers.Find(id);
             }
         }
     }

@@ -13,14 +13,15 @@ namespace SuperDev.Models.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         CategoryId = c.Int(nullable: false),
-                        Code = c.String(),
+                        Code = c.String(maxLength: 20),
                         Name = c.String(),
                         Description = c.String(),
                         IsActived = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Category", t => t.CategoryId)
-                .Index(t => t.CategoryId);
+                .Index(t => t.CategoryId)
+                .Index(t => t.Code, unique: true);
             
             CreateTable(
                 "dbo.Category",
@@ -37,12 +38,13 @@ namespace SuperDev.Models.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Code = c.String(),
+                        Code = c.String(maxLength: 20),
                         FirstName = c.String(),
                         LastName = c.String(),
                         Description = c.String(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.Code, unique: true);
             
             CreateTable(
                 "dbo.InOut",
@@ -69,7 +71,7 @@ namespace SuperDev.Models.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         RoleId = c.Int(nullable: false),
-                        Username = c.String(),
+                        Username = c.String(maxLength: 50),
                         Password = c.String(),
                         FirstName = c.String(),
                         LastName = c.String(),
@@ -81,7 +83,8 @@ namespace SuperDev.Models.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Role", t => t.RoleId)
-                .Index(t => t.RoleId);
+                .Index(t => t.RoleId)
+                .Index(t => t.Username, unique: true, name: "IX_UserName");
             
             CreateTable(
                 "dbo.Role",
@@ -126,10 +129,13 @@ namespace SuperDev.Models.Migrations
             DropIndex("dbo.Indemnify", new[] { "BookId" });
             DropIndex("dbo.Indemnify", new[] { "CustomerId" });
             DropIndex("dbo.Indemnify", new[] { "UserId" });
+            DropIndex("dbo.User", "IX_UserName");
             DropIndex("dbo.User", new[] { "RoleId" });
             DropIndex("dbo.InOut", new[] { "BookId" });
             DropIndex("dbo.InOut", new[] { "CustomerId" });
             DropIndex("dbo.InOut", new[] { "UserId" });
+            DropIndex("dbo.Customer", new[] { "Code" });
+            DropIndex("dbo.Book", new[] { "Code" });
             DropIndex("dbo.Book", new[] { "CategoryId" });
             DropTable("dbo.Indemnify");
             DropTable("dbo.Role");
