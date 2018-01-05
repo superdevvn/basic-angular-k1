@@ -1,0 +1,45 @@
+
+ <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mb-md">
+                    <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/manufacturer-detail',0]">Thêm <i class="fa fa-plus"></i></button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped table-condensed mb-none">
+            <colgroup>
+                <col style="width:50px" />
+                <col style="width:150px" />
+                <col style="width:150px"/>
+                <col style="width:50px" />
+                <col style="width:50px" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên Nhà SX</th>
+                    <th>Mã</th>                
+                    <th>Ghi chú</th>
+                    <th>Sửa/Xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let manufacturer of manufacturers">
+                    <td>{{manufacturer.Id}}</td>
+                    <td>{{manufacturer.Name}}</td>
+                    <td>{{manufacturer.Code}}</td>                  
+                    <td>{{manufacturer.Description}}</td>
+                    <td class="text-center">
+                            <a class="on-default edit-row">          
+                                <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-pencil" (click)="detail(role)"></i></button>
+                                <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-pencil" (click)="detail(manufacturer)"></i></button>
+                            </a>
+                            <a class="on-default remove-row">     
+                                <button type="button" class="btn btn-success btn-xs"><i class="fa fa-trash-o"></i></button>
+                            </a>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+</div>

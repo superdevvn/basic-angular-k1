@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WarehourseRepository.cs" />
     <Compile Include="ManufacturerRepository.cs" />
     <Compile Include="UnitRepository.cs" />
     <Compile Include="RoleRepository.cs" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 
@@ -16,6 +17,8 @@ namespace SuperDev.Models
 
         public int RoleId { get; set; }
 
+        [Index("IX_UserName", IsUnique = true)]
+        [MaxLength(50)]
         public string Username { get; set; }
 
         public string Password { get; set; }

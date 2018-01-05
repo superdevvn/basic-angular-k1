@@ -52,7 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InOutApiController.cs" />
+    <Compile Include="CustomerApiController.cs" />
     <Compile Include="CategoryApiController.cs" />
+    <Compile Include="AuthorizeApiController.cs" />
+    <Compile Include="AuthorizeFilter.cs" />
+    <Compile Include="BookApiController.cs" />
     <Compile Include="RoleApiController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuperDevApiController.cs" />

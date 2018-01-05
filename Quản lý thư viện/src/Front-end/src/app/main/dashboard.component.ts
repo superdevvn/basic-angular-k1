@@ -22,7 +22,6 @@ export class DashboardComponent {
         },5000);
     }
     ngAfterViewInit(){
-
     }
     ngOnDestroy(){
 

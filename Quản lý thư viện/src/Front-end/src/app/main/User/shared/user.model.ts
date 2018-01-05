@@ -7,9 +7,7 @@ export class User {
     LastName: string;
     Description: string;
     IsActived: string;
-    CreateDate: Date;
+    CreatedDate: Date;
     CreateBy: string;
-    constructor() {
-        this.CreateDate = new Date();
-    }
+    constructor() {}
 }
