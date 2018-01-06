@@ -13,7 +13,7 @@ namespace SuperDev.Services
             return orderRepository.Create(order);
         }
 
-        public IEnumerable<Order> GetList()
+        public IEnumerable<OrderComplex> GetList()
         {
             var orderRepository = new OrderRepository();
             return orderRepository.GetEntities();
