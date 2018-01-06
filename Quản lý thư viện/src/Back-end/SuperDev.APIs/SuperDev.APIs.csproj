@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IndemnifyApiController.cs" />
     <Compile Include="InOutApiController.cs" />
     <Compile Include="CustomerApiController.cs" />
     <Compile Include="CategoryApiController.cs" />
