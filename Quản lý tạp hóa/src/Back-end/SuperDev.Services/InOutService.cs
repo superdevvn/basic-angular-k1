@@ -9,11 +9,18 @@ namespace SuperDev.Services
         public InOut PersistInOut(InOut inOut)
         {
             var inOutRepository = new InOutRepository();
-            if (inOut.Id > 0) return inOutRepository.Update(inOut);
+            var userService = new UserService();
+            if (inOut.Id > 0)
+            {
+                var entity = inOutRepository.GetEntity(inOut.Id);
+                inOut.UserId = entity.UserId;
+                return inOutRepository.Update(inOut);
+            }
+            inOut.UserId = userService.GetCurrentUser().Id;
             return inOutRepository.Create(inOut);
         }
 
-        public IEnumerable<InOut> GetList()
+        public IEnumerable<InOutComplex> GetList()
         {
             var inOutRepository = new InOutRepository();
             return inOutRepository.GetEntities();
