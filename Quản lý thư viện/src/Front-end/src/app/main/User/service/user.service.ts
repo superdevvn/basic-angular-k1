@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { ApiService } from './../../../api.service';
-import { User } from '../shared/user.model';
+import { User } from '../shared/User.model';
 
 @Injectable()// dùng để chưa sẽ tài nguyên khác dùng chung ví dụ: Role,.
 export class UserService {
@@ -15,7 +15,6 @@ export class UserService {
             });
         });
     }
-
     getList() {
         return new Promise<User[]>((resolve, reject) => {
             this.apiService.post('api/getUsers',{}).then((res) => {

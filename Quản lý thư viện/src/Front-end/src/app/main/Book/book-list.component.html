@@ -1,0 +1,70 @@
+
+<section class="panel"  style="margin-top: -20px; margin-left: -20px">
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="mb-md">
+ 
+                        <button id="addToTable" class="btn btn-info" [routerLink]="['/main/book-detail',0]">Thêm <i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered table-striped table-condensed mb-none table-hover">
+                <colgroup>
+                    <col  style="width:50px"/>
+                    <col style="width: 130px"/>
+                    <col  style="width:100px" />
+                    <col  style="width: 200px"/>
+                    <col style="width: 400px"/>
+                    <col style="width: 60px"/>
+                    <col  style="width: 60px"/>
+                </colgroup>
+                <thead>
+                    <tr class="primary">
+                        <th>Mã </th>
+                        <th>Tên thể loại</th>
+                        <th>Số seri</th>
+                        <th>Tên sách</th>
+                        <th>Mô tả</th>
+                        <th>Có sẵn</th>
+                        <th>Sửa/xóa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of books">
+    
+                        <td>{{book.Id}}</td>
+                        <td>{{book.CategoryName}}</td>
+                        <td>{{book.Code}}</td>
+                        <td>{{book.Name}}</td>
+                        <td>{{book.Description}}</td>
+                        <td>
+
+                                <span [ngClass]="{'success':book.IsActived, 'danger': !book.IsActived}">
+                                        <div class="form-group">
+            
+                                            <div class="col-md-6">
+                                                <div class="input-group input-group-icon">
+                                                    <input [disabled]="true" type="checkbox" [(ngModel)]="book.IsActived" id="checkboxExample3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span>
+
+                        </td>
+                        <td class="actions">
+  
+                            <a style="cursor:pointer" (click)="detail(book)">
+                                <i class="fa fa-pencil text-primary"></i>
+                            </a>
+                            <a style="cursor:pointer" (click)="delete(book)">
+                                <i class="fa fa-trash text-danger"></i>
+    
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>

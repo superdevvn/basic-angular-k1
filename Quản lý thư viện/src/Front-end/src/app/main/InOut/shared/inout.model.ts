@@ -3,7 +3,7 @@ export class InOut{
     CusomerId: number = 0;
     UserId: number = 0;
     BookId: number = 0;
-    FromDate: string;
-    ToDate: string;
+    FromDate: Date;
+    ToDate: Date;
     constructor(){}
 }
