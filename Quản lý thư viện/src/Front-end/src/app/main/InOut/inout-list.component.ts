@@ -7,11 +7,11 @@ import { InOut } from './Shared/inout.model';
     templateUrl: './inout-list.component.html'
 })
 export class InOutListComponent {
-    inout: InOut[] = [];
+    inouts: InOut[] = [];
     constructor(private router: Router, private inoutService: InOutService) { }
     ngOnInit() {
         this.inoutService.getList().then((res: InOut[]) => {
-            this.inout = res;
+            this.inouts = res;
         }).catch(err => {
             alert(err);
         });
