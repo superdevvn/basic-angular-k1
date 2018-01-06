@@ -47,7 +47,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let user of users" class="gradeX" [ngClass]="{'success':user.IsActived,'danger':!user.IsActived}">
+                <tr *ngFor="let user of users" class="gradeX">
                     <td>{{user.Id}}</td>
                     <td>{{user.Username}}</td>
                     <td>{{user.FirstName}}</td>
@@ -56,10 +56,9 @@
                     <td>{{user.Description}}</td>
                     <td class="text-center">{{user.CreatedDate | date:'dd/MM/yyyy HH:mm'}}</td>
                     <td class="text-center">
-                        <span [ngClass]="{'label label-success':user.IsActived,'label label-danger':!user.IsActived}">
+                        <div class="grid-status" [ngClass]="{'bg-primary':user.IsActived,'bg-danger':!user.IsActived}">
                             {{user.IsActived?'Hoạt động':'Khóa'}}
-                        </span>
-                    
+                        </div>
                     </td>
                     <td align="center">
                         <a>

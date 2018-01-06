@@ -5,7 +5,8 @@ import { User } from './user/shared/user.model';
 declare var $: any;
 @Component({
     selector: 'main',
-    templateUrl: './main.component.html'
+    templateUrl: './main.component.html',
+    styleUrls:['main.component.css']
 })
 export class MainComponent {
     currentUser: User = new User();
