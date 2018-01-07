@@ -40,6 +40,8 @@ import { ManufacturerListComponent } from './main/manufacturer/manufacturer-list
 import { ManufacturereDetailComponent } from './main/manufacturer/manufacturer-detail.component';
 
 import { CookieService } from 'ngx-cookie-service';
+import { LoadingService } from './main/service/loadingService';
+import { NotificationService } from './main/service/notification.service';
 
 
 const routes: Routes = [
@@ -105,7 +107,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
-  providers: [LoginService, ApiService, SupplierService, RoleService, UserService, UnitService, ProductService,
+  providers: [NotificationService, LoadingService, LoginService, ApiService, SupplierService, RoleService, UserService, UnitService, ProductService,
     CategoryService, InOutService, ManufacturerService,
     CookieService
   ],
