@@ -17,7 +17,7 @@ export class ApiService {
             this.http.post(this.host + url, data, { headers: headers })
                 .toPromise()
                 .then(res => {
-                    if(res.status == 200){
+                    if (res.status == 200) {
                         resolve(res);
                     } else {
                         reject("Có lỗi xảy ra");

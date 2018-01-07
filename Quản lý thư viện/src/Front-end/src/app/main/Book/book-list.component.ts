@@ -8,11 +8,11 @@ import { BookService } from './service/book.service';
     templateUrl: './book-list.component.html'
 })
 export class BookListComponent {
-    book: Book[] = [];
+    books: Book[] = [];
     constructor(private router: Router, private bookService: BookService) { }
     ngOnInit() {
         this.bookService.getList().then((res: Book[]) => {
-            this.book = res;
+            this.books = res;
         }).catch(err => {
             alert(err);
         });

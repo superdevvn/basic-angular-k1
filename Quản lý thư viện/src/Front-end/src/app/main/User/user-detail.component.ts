@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { InOut } from '../InOut/Shared/inout.model';
-import { User } from './shared/UserStyle.model';
+import { User } from './../User/shared/User.model';
 import { UserService } from './service/user.service';
 import { RoleService } from '../Role/service/role.service';
 import { Role } from '../Role/shared/role.model';

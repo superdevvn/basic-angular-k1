@@ -44,6 +44,9 @@ import { BookService } from './main/Book/service/book.service';
 import { CustomerListComponent } from './main/Customer/customer-list.component';
 import { CustomerDetailComponent } from './main/Customer/customer-detail.component';
 import { CustomerService } from './main/Customer/service/customer.service';
+//loadingservice
+import { LoadingService } from './main/loadingService/loading.service';
+import { NotificationService } from './main/loadingService/notification.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -105,7 +108,8 @@ const routes: Routes = [
   ],
 
   providers: [CookieService, ApiService, RoleService, CategoryService,
-     UserService, InOutService, BookService, CustomerService, LoginService],
+     UserService, InOutService, BookService, CustomerService, LoginService,
+      LoadingService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
