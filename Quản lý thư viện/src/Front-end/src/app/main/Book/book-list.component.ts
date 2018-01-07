@@ -18,6 +18,6 @@ export class BookListComponent {
         });
     }
     detail(book: Book) {
-        this.router.navigate(['/main/book-detail', book.id]);
+        this.router.navigate(['/main/book-detail', book.Id]);
     }
 }

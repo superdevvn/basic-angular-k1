@@ -1,5 +1,5 @@
 export class Book {
-    id: number= 0;
+    Id: number= 0;
     CategoryId: number = 0;
     CategoryName: string;
     Code: number = 0;
