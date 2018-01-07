@@ -67,5 +67,14 @@ namespace SuperDev.Repositories
                 return context.Users.Where(entity => entity.Username == username && entity.Password == password).FirstOrDefault();
             }
         }
+
+        public void DeleteEntity(int id)
+        {
+            using (var context = new SuperDevDbContext())
+            {
+                context.Users.Remove(context.Users.Find(id));
+                context.SaveChanges();
+            }
+        }
     }
 }

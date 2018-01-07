@@ -29,5 +29,14 @@ namespace SuperDev.APIs
             var roleService = new RoleService();
             return Ok(roleService.GetList());
         }
+
+        [HttpDelete]
+        [Route("api/deleteRole/{id}")]
+        public IHttpActionResult DeleteRole(int id)
+        {
+            var roleService = new RoleService();
+            roleService.Delete(id);
+            return Ok();
+        }
     }
 }

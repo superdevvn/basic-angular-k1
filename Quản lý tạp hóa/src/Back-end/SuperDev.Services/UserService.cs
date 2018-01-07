@@ -38,6 +38,12 @@ namespace SuperDev.Services
             return userRepository.GetEntity(id);
         }
 
+        public void Delete(int id)
+        {
+            var userRepository = new UserRepository();
+            userRepository.DeleteEntity(id);
+        }
+
         public User Login(string username, string password)
         {
             var userRepository = new UserRepository();

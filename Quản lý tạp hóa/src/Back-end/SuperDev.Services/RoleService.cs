@@ -24,5 +24,11 @@ namespace SuperDev.Services
             var roleRepository = new RoleRepository();
             return roleRepository.GetEntity(id);
         }
+
+        public void Delete(int id)
+        {
+            var roleRepository = new RoleRepository();
+            roleRepository.DeleteEntity(id);
+        }
     }
 }
