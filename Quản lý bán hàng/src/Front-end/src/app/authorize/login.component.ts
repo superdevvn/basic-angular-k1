@@ -22,7 +22,7 @@ export class LoginComponent {
     $('#login-area').css('opacity', 0);
     setTimeout(() => {
       $('#login-area').css('opacity', 1);
-      $('#login-area').css('transition', '1.5s');
+      $('#login-area').css('transition', '1s');
     }, 500);
   }
 

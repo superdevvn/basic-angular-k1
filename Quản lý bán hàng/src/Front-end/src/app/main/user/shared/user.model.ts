@@ -5,8 +5,8 @@ export class User {
     Username: string;
     Password: string;
     CreatorName:string;
-    FirstName: string;
-    LastName: string;
+    FirstName: string = '';
+    LastName: string = '';
     Description: string;
     IsActive: boolean;
     IsDeleted: boolean;

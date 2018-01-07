@@ -1,6 +1,6 @@
 import * as jquery from 'jquery';
 import { Injectable } from '@angular/core';
-import { setTimeout } from 'timers';
+
 
 @Injectable()
 export class NotificationSerivce {
