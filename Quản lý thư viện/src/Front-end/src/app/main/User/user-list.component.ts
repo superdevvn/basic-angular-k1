@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from './shared/User.model';
+import { User } from './shared/UserStyle.model';
 import { LoadingService } from './../loadingService/loading.service';
 import { NotificationService } from './../loadingService/notification.service';
 import { UserService } from './service/user.service';
