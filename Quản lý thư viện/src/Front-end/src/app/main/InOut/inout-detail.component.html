@@ -8,36 +8,41 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label text-primary">Tên nhân viên</label>
                     <div class="col-md-6">
+                        <select class="form-control" [(ngModel)]="inout.UserId">
+                            <option *ngFor="let user of users" [ngValue]="user.Id">{{user.LastName}}</option>
+                        </select>
 
-                        <input type="text" class="form-control" [(ngModel)]="user.Id">
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label class="col-md-2 control-label text-primary">Tên người mượn</label>
                     <div class="col-md-6">
-
-                        <input type="text" class="form-control" [(ngModel)]="customer.Id">
+                        <select class="form-control" [(ngModel)]="inout.CustomerId">
+                            <option *ngFor="let customer of customers" [ngValue]="customer.Id">{{customer.LastName}}</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label text-primary">Tên sách</label>
                     <div class="col-md-6">
-
-                        <input type="text" class="form-control" [(ngModel)]="book.Id"/>
+                        <select class="form-control" [(ngModel)]="inout.BookId">
+                            <option *ngFor="let book of books" [ngValue]="book.Id">{{book.Name}}</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label text-primary">Từ ngày</label>
                     <div class="col-md-4">
                         <input type="date" class="form-control" [(ngModel)]="inout.fromDate"/>
-                    </div>
+                   
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-2 control-label text-primary">Đến ngày</label>
                     <div class="col-md-4">
                         <input type="date" class="form-control" [(ngModel)]="inout.toDate"/>
-                    </div>
+                   
                 </div>
             </div>
 
