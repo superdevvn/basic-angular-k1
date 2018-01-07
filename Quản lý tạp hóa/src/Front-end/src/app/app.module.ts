@@ -40,7 +40,8 @@ import { ManufacturerListComponent } from './main/manufacturer/manufacturer-list
 import { ManufacturereDetailComponent } from './main/manufacturer/manufacturer-detail.component';
 
 import { CookieService } from 'ngx-cookie-service';
-import { LoadingService } from './main/service/loadingService';
+
+import { LoadingService } from './main/service/loading.service';
 import { NotificationService } from './main/service/notification.service';
 
 

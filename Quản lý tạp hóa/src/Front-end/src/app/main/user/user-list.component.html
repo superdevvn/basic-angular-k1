@@ -21,16 +21,16 @@
         </div>
         <table class="table table-bordered table-striped mb-none">
             <colgroup>
-                <col width="50px"/>
-                <col width="150px"/>
-                <col width="100px"/>
-                <col width="100px"/>
-                <col width="150px"/>
+                <col width="50px" />
+                <col width="150px" />
+                <col width="100px" />
+                <col width="100px" />
+                <col width="150px" />
                 <col />
-                <col width="200px"/>
-                <col width="150px"/>
-                <col width="100px"/>
-                <col width="100px"/>
+                <col width="200px" />
+                <col width="150px" />
+                <col width="100px" />
+                <col width="100px" />
             </colgroup>
             <thead>
                 <tr>
@@ -55,13 +55,15 @@
                     <td>{{user.LastName}}</td>
                     <td>{{user.RoleName}}</td>
                     <td>{{user.CreatorName}}</td>
-                    <td>{{user.Description}}</td>                
+                    <td>{{user.Description}}</td>
                     <td class="text-center">{{user.CreatedDate | date:'dd/MM/yyyy'}}</td>
                     <td class="text-center">
-                        <span [ngClass]="{'bg-primary':user.IsActived,'bg-danger':!user.IsActived}">
+                        <!-- <span [ngClass]="{'bg-primary':user.IsActived,'bg-danger':!user.IsActived}"> -->
+
+                        <div class="grid-status" [ngClass]="{'bg-primary':user.IsActived,'bg-danger':!user.IsActived}">
+
                             {{user.IsActived?'Hoạt động':'Khóa'}}
-                        </span>
-                    
+                        </div>
                     </td>
                     <td align="center">
                         <a>

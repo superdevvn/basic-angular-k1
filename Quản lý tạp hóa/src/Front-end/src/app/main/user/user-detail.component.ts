@@ -5,7 +5,7 @@ import { UserService } from './service/user.service';
 import { User } from './shared/user.model';
 import { RoleService } from '../role/service/role.service';
 import { Role } from '../role/shared/role.model';
-import { LoadingService } from '../service/loadingService';
+import { LoadingService } from '../service/loading.service';
 @Component({
     selector: 'user-detail',
     templateUrl: './user-detail.component.html'
@@ -24,7 +24,7 @@ export class UserDetailComponent {
         this.router.navigate(['/main/user-list']);
     }
     ngOnInit() {
-        this.loadingService.start();
+        // this.loadingService.start();
         this.roleService.getList().then((res: Role[]) => {
             this.roles = res;
             console.log(this.roles);
@@ -35,7 +35,7 @@ export class UserDetailComponent {
             this.id = +params['id']; // (+) converts string 'id' to a number
             this.roleService.getList().then((roles: Role[]) => {
                 this.roles = roles;
-                this.loadingService.stop();
+                // this.loadingService.stop();
                 if (this.id == 0) this.user.RoleId = roles[0].Id;
             });
             if (this.id > 0) {
