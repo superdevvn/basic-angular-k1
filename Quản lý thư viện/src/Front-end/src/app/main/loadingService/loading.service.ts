@@ -17,11 +17,8 @@ export class LoadingService {
     opacity:0.6;
     background: #FFFFFF;
     z-index: 99999;
-    
     background-position: center;
     background-repeat: no repeat;"></any>`);
-
-
     }
     stop() {
         $('#globalloading').remove();

@@ -24,11 +24,11 @@
             <tbody>
                 <tr *ngFor="let inout of inouts">
                     <td>{{inout.Id}}</td>
-                    <td>{{user.Id}}</td>
-                    <td>{{customer.Id}}</td>
-                    <td>{{book.Id}}</td>
-                    <td>{{inout.fromDate | date:'dd/MM/yyy HH:mm'}}</td>
-                    <td>{{inout.toDate | date:'dd/MM/yyy HH:mm'}}</td>
+                    <td>{{inout.UserId}}</td>
+                    <td>{{inout.CustomerId}}</td>
+                    <td>{{inout.BookId}}</td>
+                    <td>{{inout.FromDate | date:'dd/MM/yyy '}}</td>
+                    <td>{{inout.ToDate | date:'dd/MM/yyy '}}</td>
                     <td class="actions">
                         <a class="on-default text-primary edit-row">
                             <i class="fa fa-pencil" (click)="detail(inout)"></i>

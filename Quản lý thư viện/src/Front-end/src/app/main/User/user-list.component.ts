@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from './shared/User.model';
+import { User } from './shared/UserStyle.model';
 import { LoadingService } from './../loadingService/loading.service';
 import { NotificationService } from './../loadingService/notification.service';
 import { UserService } from './service/user.service';
@@ -8,6 +8,7 @@ import { UserService } from './service/user.service';
     selector: 'user-list',
     templateUrl: './user-list.component.html'
 })
+
 export class UserListComponent {
     users: User[] = [];
 
@@ -28,6 +29,14 @@ export class UserListComponent {
     }
 
     ngAfterViewInit() {
+        // $.getScript('assets/porto/javascripts/theme.js', function(){
+        //     $.getScript('assets/porto/javascripts/theme.custom.js', function(){
+        //       $.getScript('assets/porto/javascripts/theme.init.js', function(){
+        //           $.getScript('assets/porto/javascripts/dashboard/examples.dashboard.js', function(){
+        //           });
+        //         });
+        //     });
+        //   });
     }
 
     detail(user: User) {
