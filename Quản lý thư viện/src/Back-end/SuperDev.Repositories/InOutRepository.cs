@@ -29,11 +29,21 @@ namespace SuperDev.Repositories
             }
         }
 
-        public IEnumerable<InOut> GetList()
+        public IEnumerable<InOutComplex> GetList()
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.InOuts.ToList();
+                return context.InOuts.Select(entity=> new InOutComplex{
+                    Id = entity.Id,
+                    BookId = entity.BookId,
+                    BookName = entity.Book.Name,
+                    CustomerId = entity.CustomerId,
+                    CustomerName = entity.Customer.FirstName + " " + entity.Customer.LastName,
+                    UserId = entity.UserId,
+                    Username = entity.User.Username,
+                    FromDate = entity.FromDate,
+                    ToDate = entity.ToDate
+                }).ToList();
             }
         }
 

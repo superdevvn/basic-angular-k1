@@ -40,7 +40,7 @@ export class InOutDetailComponent {
             this.customerService.getList().then((customer: Customer[]) => {
                 this.customers = customer;
                 console.log(this.customers);
-                if (this.id == 0) this.inout.CusomerId = customer[0].Id;
+                if (this.id == 0) this.inout.CustomerId = customer[0].Id;
             });
             this.bookService.getList().then((book: Book[]) => {
                 this.books = book;

@@ -13,7 +13,7 @@ namespace SuperDev.Services
             return bookRepository.Create(book);
         }
 
-        public IEnumerable<Book> GetList()
+        public IEnumerable<BookComplex> GetList()
         {
             var bookRepository = new BookRepository();
             return bookRepository.GetList();
