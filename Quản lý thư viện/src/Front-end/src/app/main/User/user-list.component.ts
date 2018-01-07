@@ -8,6 +8,7 @@ import { UserService } from './service/user.service';
     selector: 'user-list',
     templateUrl: './user-list.component.html'
 })
+
 export class UserListComponent {
     users: User[] = [];
 
@@ -28,6 +29,14 @@ export class UserListComponent {
     }
 
     ngAfterViewInit() {
+        // $.getScript('assets/porto/javascripts/theme.js', function(){
+        //     $.getScript('assets/porto/javascripts/theme.custom.js', function(){
+        //       $.getScript('assets/porto/javascripts/theme.init.js', function(){
+        //           $.getScript('assets/porto/javascripts/dashboard/examples.dashboard.js', function(){
+        //           });
+        //         });
+        //     });
+        //   });
     }
 
     detail(user: User) {

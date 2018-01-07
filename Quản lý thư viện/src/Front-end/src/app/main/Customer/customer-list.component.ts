@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Customer } from './shared/customer.model';
 import { Router } from '@angular/router';
-
+import { LoadingService } from './../loadingService/loading.service';
+import { NotificationService } from './../loadingService/notification.service';
 import { CustomerService } from './service/customer.service';
 
 @Component({
@@ -10,14 +11,19 @@ import { CustomerService } from './service/customer.service';
 })
 export class CustomerListComponent {
 customers: Customer[] = [];
-constructor(private router: Router, private customerService: CustomerService) {
+constructor(private router: Router, private customerService: CustomerService,   private loadingService: LoadingService,
+    private notification: NotificationService) {
 }
 
 ngOnInit() {
+    this.loadingService.start();
     this.customerService.getList().then((res: Customer[]) => {
         this.customers = res;
+        this.loadingService.stop();
+        this.notification.success('Success');
     }).catch(err => {
         alert(err);
+        this.loadingService.stop();
     });
 
     console.log("A");
