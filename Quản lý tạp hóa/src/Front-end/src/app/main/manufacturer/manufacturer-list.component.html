@@ -21,26 +21,23 @@
         </div>
         <table class="table table-bordered table-striped mb-none">
             <colgroup>
-                <col width="50px"/>
                 <col width="250px"/>
                 <col width="250px"/>
                 <col />
-                <col width="100px"/>
-                <col width="100px"/>
+                <col width="50px"/>
+                <col width="50px"/>
             </colgroup>
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Mã nhà sản xuất</th>
                     <th>Tên</th>
                     <th>Mô tả</th>
-                    <th class="hidden-phone">Chỉnh sửa</th>
-                    <th class="hidden-phone">Xóa</th>
+                    <th class="hidden-phone"></th>
+                    <th class="hidden-phone"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let manufacturer of manufacturers" class="gradeX">
-                    <td>{{manufacturer.Id}}</td>
                     <td>{{manufacturer.Code}}</td>
                     <td>{{manufacturer.Name}}</td>
                     <td>{{manufacturer.Description}}</td>                   
@@ -51,7 +48,7 @@
                     </td>
                     <td align="center">
                         <a>
-                            <i style="cursor:pointer" class="fa fa-trash-o"></i>
+                            <i style="cursor:pointer" class="fa fa-trash-o text-danger"></i>
                         </a>
                     </td>
                 </tr>

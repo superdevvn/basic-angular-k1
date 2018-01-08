@@ -34,7 +34,7 @@
                             <span class="required">*</span>
                         </label>
                         <div class="col-sm-9">
-                            <input type="text" [(ngModel)]="product.Price" class="form-control" required/>
+                            <input type="number" [(ngModel)]="product.Price" class="form-control" required/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -44,6 +44,28 @@
                         <div class="col-sm-9">
                             <select [(ngModel)]="product.CategoryId" class="form-control">
                                 <option *ngFor="let category of categories" [ngValue]="category.Id">{{category.Name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Nhà sản xuất
+                            <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <select [(ngModel)]="product.ManufacturerId" class="form-control">
+                                <option value="" disabled selected>Vui lòng chọn...</option>
+                                <option *ngFor="let manufacturer of manufacturers" [ngValue]="manufacturer.Id">{{manufacturer.Name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Nhà cung cấp
+                            <span class="required">*</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <select [(ngModel)]="product.SupplierId" class="form-control">
+                                <option value="" disabled selected>Vui lòng chọn...</option>
+                                <option *ngFor="let supplier of suppliers" [ngValue]="supplier.Id">{{supplier.Name}}</option>
                             </select>
                         </div>
                     </div>

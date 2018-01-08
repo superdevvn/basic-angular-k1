@@ -1,6 +1,9 @@
 export class Product {
     Id: number;
-    ManufactureId: number;
+    ManufacturerId: number;
+    ManufacturerName: string;
+    SupplierId: number;
+    SupplierName: string;
     CategoryId: number;
     UnitId: number;
     Code: string;

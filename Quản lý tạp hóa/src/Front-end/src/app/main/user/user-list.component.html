@@ -21,38 +21,33 @@
         </div>
         <table class="table table-bordered table-striped mb-none">
             <colgroup>
-                <col width="50px" />
                 <col width="150px" />
-                <col width="100px" />
-                <col width="100px" />
+                <col width="150px" />
+                <col width="150px" />
+                <col width="150px" />
                 <col width="150px" />
                 <col />
-                <col width="200px" />
                 <col width="150px" />
-                <col width="100px" />
-                <col width="100px" />
+                <col width="50px" />
+                <col width="50px" />
             </colgroup>
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Tên tài khoản</th>
-                    <th>Tên</th>
-                    <th>Họ</th>
+                    <th>Họ và tên</th>
                     <th>Vai trò</th>
                     <th>Người tạo</th>
                     <th>Mô tả</th>
                     <th class="text-center">Ngày tạo</th>
                     <th class="hidden-phone">Tình trạng</th>
-                    <th class="hidden-phone">Chỉnh sửa</th>
-                    <th class="hidden-phone">Xóa</th>
+                    <th class="hidden-phone"></th>
+                    <th class="hidden-phone"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let user of users" class="gradeX">
-                    <td>{{user.Id}}</td>
                     <td>{{user.Username}}</td>
-                    <td>{{user.FirstName}}</td>
-                    <td>{{user.LastName}}</td>
+                    <td>{{user.LastName + ' ' + user.FirstName}}</td>
                     <td>{{user.RoleName}}</td>
                     <td>{{user.CreatorName}}</td>
                     <td>{{user.Description}}</td>
@@ -72,7 +67,7 @@
                     </td>
                     <td align="center">
                         <a>
-                            <i style="cursor:pointer" class="fa fa-trash-o"></i>
+                            <i style="cursor:pointer" class="fa fa-trash-o text-danger" (click)="delete(role)"></i>
                         </a>
                     </td>
                 </tr>

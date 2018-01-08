@@ -25,12 +25,12 @@ export class UserDetailComponent {
     }
     ngOnInit() {
         // this.loadingService.start();
-        this.roleService.getList().then((res: Role[]) => {
-            this.roles = res;
-            console.log(this.roles);
-        }).catch(err => {
-            alert(err);
-        });
+        // this.roleService.getList().then((res: Role[]) => {
+        //     this.roles = res;
+        //     console.log(this.roles);
+        // }).catch(err => {
+        //     alert(err);
+        // });
         this.routerSubcription = this.route.params.subscribe(params => {
             this.id = +params['id']; // (+) converts string 'id' to a number
             this.roleService.getList().then((roles: Role[]) => {
