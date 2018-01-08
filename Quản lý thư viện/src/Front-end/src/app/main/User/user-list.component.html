@@ -12,13 +12,14 @@
         <table class="table table-bordered table-striped mb-none" id="datatable-default">
             <colgroup>
                 <col style="width:10px" />
-                <col />
-                <col />
-                <col />
-                <col />
-                <col />
+                <col style="width: 80px"/>
+                <col style="width: 80px"/>
+                <col style="width: 80px"/>
+                <col style="width: 80px"/>
+                <col style="width: 80px" />
                 <col style="width: 130px" />
                 <col style="width: 80px" />
+                <col />
                 <col style="width: 50px" />
             </colgroup>
             <thead>
@@ -30,6 +31,7 @@
                     <th>Vai trò</th>
                     <th>Mô tả</th>
                     <th>Ngày Tạo</th>
+                    <th>Người Tạo</th>
                     <th>Hoạt động</th>
                     <th>Sửa/xóa</th>
 
@@ -47,6 +49,7 @@
                     <!-- <td>
                         <input [disabled]="true" type="checkbox" [ngModel]="user.IsActived"/>
                     </td> -->
+                    <td>{{user.CreatorName}}</td>
                     <td>
                         <span [ngClass]="{'success':user.IsActived, 'danger': !user.IsActived}">
                             <div class="form-group">

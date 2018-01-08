@@ -3,8 +3,8 @@ export class User {
     RoleId: number = 0;
     RoleName: string;
     Username: string;
-    FirstName: string;
-    LastName: string;
+    FirstName: string = '';
+    LastName: string = '';
     Description: string;
     IsActived: string;
     CreatedDate: Date;

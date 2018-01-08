@@ -23,7 +23,7 @@ namespace SuperDev.Services
             }
         }
 
-        public IEnumerable<InOut> GetList()
+        public IEnumerable<InOutComplex> GetList()
         {
             var inOutRepository = new InOutRepository();
             return inOutRepository.GetList();

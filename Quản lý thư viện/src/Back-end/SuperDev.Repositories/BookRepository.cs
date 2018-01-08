@@ -29,11 +29,19 @@ namespace SuperDev.Repositories
             }
         }
 
-        public IEnumerable<Book> GetList()
+        public IEnumerable<BookComplex> GetList()
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.Books.ToList();
+                return context.Books.Select(entity=>new BookComplex {
+                    Id = entity.Id,
+                    CategoryId = entity.CategoryId,
+                    CategoryName = entity.Category.Name,
+                    Code = entity.Code,
+                    Name = entity.Name,
+                    Description = entity.Description,
+                    IsActived = entity.IsActived
+                }).ToList();
             }
         }
 
