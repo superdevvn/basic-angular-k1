@@ -34,4 +34,13 @@ export class UserService {
             });
         });
     }
+    deleteUser(id) {
+        return new Promise<User>((resolve, reject) => {
+            this.apiService.get(`api/deteleUser/${id}`).then((res: Response) => {
+                resolve();
+            }).catch(err => {
+                reject(err);
+            });
+        });
+    }
 }

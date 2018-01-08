@@ -29,7 +29,8 @@ export class InOutDetailComponent {
         private userService: UserService,
         private customerService: CustomerService,
         private bookService: BookService,
-        private notification: NotificationService
+        private notification: NotificationService,
+        
      ) { }
 
     ngOnInit() {
@@ -64,7 +65,7 @@ export class InOutDetailComponent {
     save() {
         this.inoutService.saveInOut(this.inout).then((res: InOut) => {
             this.inout = res;
-            this.notification.success('Success');
+            this.notification.success('Saved');
         }).catch(err => {
             alert(err);
         })

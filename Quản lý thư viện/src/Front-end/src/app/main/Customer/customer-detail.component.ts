@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Customer } from './shared/customer.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from './service/customer.service';
+import { NotificationService } from '../loadingService/notification.service';
 
 @Component({
     selector: 'customer-detail',
@@ -11,7 +12,8 @@ export class CustomerDetailComponent {
     customer: Customer = new Customer();
     id: number = 0;
     routerSubscription: any;
-    constructor(private route: ActivatedRoute, private router: Router, private customerService: CustomerService) { }
+    constructor(private route: ActivatedRoute, private router: Router, private customerService: CustomerService,
+    private notification: NotificationService) { }
 
     ngOnInit() {
         this.routerSubscription = this.route.params.subscribe(params => {//
@@ -29,7 +31,7 @@ export class CustomerDetailComponent {
     save() {
         this.customerService.saveCustomer(this.customer).then(res => {
             this.customer = res;
-            alert("Save Success");
+            this.notification.success('Saved');
         }).catch(err => {
             alert(err);
         });

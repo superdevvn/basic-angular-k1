@@ -20,7 +20,7 @@ export class UserListComponent {
         this.loadingService.start();
         this.userService.getList().then((res: User[]) => {
             this.loadingService.stop();
-       
+            // this.notification.success('Welcome');
             this.users = res;
         }).catch(err => {
             alert(err);
@@ -41,5 +41,10 @@ export class UserListComponent {
 
     detail(user: User) {
         this.router.navigate(['/main/user-detail', user.Id]);
+    }
+    delete(user: User) {
+        this.userService.deleteUser(user.Id).then(() => {
+            this.router.navigate(['./main/user-list']);
+        });
     }
 }

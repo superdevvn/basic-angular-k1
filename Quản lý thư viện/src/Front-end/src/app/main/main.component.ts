@@ -57,14 +57,6 @@ export class MainComponent {
 
   
     ngAfterViewInit() {
-        $.getScript('assets/porto/javascripts/theme.js', function(){
-          $.getScript('assets/porto/javascripts/theme.custom.js', function(){
-            $.getScript('assets/porto/javascripts/theme.init.js', function(){
-                $.getScript('assets/porto/javascripts/dashboard/examples.dashboard.js', function(){
-                });
-              });
-          });
-        });
     }
     ngOnDestroy() {
         this.routerSubcription.unsubscribe();

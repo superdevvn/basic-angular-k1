@@ -32,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let book of books">
+                    <tr *ngFor="let book of books" [ngClass]="{'warning':!book.IsActived}">
     
                         <td>{{book.Id}}</td>
                         <td>{{book.CategoryName}}</td>

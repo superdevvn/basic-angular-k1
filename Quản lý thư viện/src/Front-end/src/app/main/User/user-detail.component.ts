@@ -5,6 +5,7 @@ import { User } from './../User/shared/UserStyle.model';
 import { UserService } from './service/user.service';
 import { RoleService } from '../Role/service/role.service';
 import { Role } from '../Role/shared/role.model';
+import { NotificationService } from '../loadingService/notification.service';
 @Component({
     selector: 'user-detail',
     templateUrl: './user-detail.component.html'
@@ -17,7 +18,8 @@ export class UserDetailComponent {
     constructor(private route: ActivatedRoute,
         private router: Router,
         private userService: UserService,
-        private roleService: RoleService) {
+        private roleService: RoleService,
+        private nitification: NotificationService) {
     }
 
     ngOnInit() {
@@ -43,7 +45,7 @@ export class UserDetailComponent {
             //Server trả về role sau khi save
             //Nếu là tạo role mới thì res sẽ có giá trị id mới thay vì 0
             this.user = res;
-            alert("Save Success");
+            this.nitification.success('Saved');
         }).catch(err => {
             alert(err);
         })

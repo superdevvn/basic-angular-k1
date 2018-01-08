@@ -6,20 +6,18 @@ declare var $: any;
 export class NotificationService {
     constructor() { }
 
-    success(message: string) {
-        $('body').append(`<div id="notification" style="
-       position:fixed;
-       top:20px;
-       right:20px;
-       width:100px;
-       height:50px;
-       background-color:green;
-       z-index:99999;
-       color: red;
-       ">${message}</div>`);
-           setTimeout(() => {
-            $('#notification').slideToggle('slow');
-               $('#notification').remove();
-           }, 2500);
+    success(message: string){
+        $('body').append(`<div class="alert alert-success" id="notificationSuccess" style="
+        position:fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 99999;
+        display:none;
+        "><strong>Report:</strong> ${message}</div>`);
+        $('#notificationSuccess').slideToggle('slow');
+        setTimeout(() => {
+            $('#notificationSuccess').fadeOut(2500);
+            // $('#notificationSuccess').remove();
+        }, 500);
     }
 }

@@ -22,15 +22,14 @@ export class RoleListComponent {
         this.loadingService.start();
         this.roleService.getList().then((res: Role[]) => {
             this.roles = res;
-            console.log("B");
             this.loadingService.stop();
-            this.notification.success('Success');
+            this.notification.success('Welcome');
         }).catch(err => {
             alert(err);
             this.loadingService.stop();
         });
 
-        console.log("A");
+     
     }
 
     ngAfterViewInit() {

@@ -21,13 +21,13 @@ export class CategoryListComponent {
         this.categoryService.getList().then((res: Category[]) => {
             this.categories = res;
             this.loadingService.stop();
-            this.notification.success('Success');
+            // this.notification.success('Welcome');
         }).catch(err => {
             alert(err);
             this.loadingService.stop();
         });
 
-        console.log("A");
+     
     }
     ngAfterViewInit() {
     }

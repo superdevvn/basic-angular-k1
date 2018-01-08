@@ -18,8 +18,8 @@ export class BookListComponent {
         this.loadingService.start();
         this.bookService.getList().then((res: Book[]) => {
             this.books = res;
-            this.notification.success('Success');
             this.loadingService.stop();
+            // this.notification.success('Welcome');
         }).catch(err => {
             alert(err);
             this.loadingService.stop();

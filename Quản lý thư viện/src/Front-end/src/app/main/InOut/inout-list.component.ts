@@ -10,15 +10,15 @@ import { NotificationService } from '../loadingService/notification.service';
 })
 export class InOutListComponent {
     inouts: InOut[] = [];
-    constructor(private router: Router, private inoutService: InOutService,   private loadingService: LoadingService,
+    constructor(private router: Router, private inoutService: InOutService, private loadingService: LoadingService,
         private notification: NotificationService) { }
     ngOnInit() {
         this.loadingService.start();
-   
-             this.inoutService.getList().then((res: InOut[]) => {
+
+        this.inoutService.getList().then((res: InOut[]) => {
             this.inouts = res;
             this.loadingService.stop();
-                
+            // this.notification.success('Welcome');
         }).catch(err => {
             alert(err);
             this.loadingService.stop();
@@ -28,5 +28,7 @@ export class InOutListComponent {
     detail(inout: InOut) {
         this.router.navigate(['/main/inout-detail', inout.Id]);
     }
+    
+
 }
 

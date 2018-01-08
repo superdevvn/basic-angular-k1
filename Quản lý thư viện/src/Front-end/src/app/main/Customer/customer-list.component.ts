@@ -20,15 +20,21 @@ ngOnInit() {
     this.customerService.getList().then((res: Customer[]) => {
         this.customers = res;
         this.loadingService.stop();
-        this.notification.success('Success');
+        // this.notification.success('Welcome');
     }).catch(err => {
         alert(err);
         this.loadingService.stop();
     });
-
-    console.log("A");
 }
     detail(customer: Customer) {
         this.router.navigate(['/main/customer-detail', customer.Id]);
     }
+    delete(customer: Customer) {
+        this.customerService.delete(customer.Id).then(() => {
+            this.router.navigate(['./main/customer-list']);
+
+        });
+    
+    }
+
 }
