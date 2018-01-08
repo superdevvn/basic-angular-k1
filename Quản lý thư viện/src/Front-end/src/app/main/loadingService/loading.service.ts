@@ -18,7 +18,9 @@ export class LoadingService {
     background: #FFFFFF;
     z-index: 99999;
     background-position: center;
+    background-img: url('./../../../assets/porto/images/Wedges.gif');
     background-repeat: no repeat;"></any>`);
+    
     }
     stop() {
         $('#globalloading').remove();

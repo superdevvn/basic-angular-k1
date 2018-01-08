@@ -20,7 +20,7 @@ export class UserListComponent {
         this.loadingService.start();
         this.userService.getList().then((res: User[]) => {
             this.loadingService.stop();
-            this.notification.success('Success');
+       
             this.users = res;
         }).catch(err => {
             alert(err);

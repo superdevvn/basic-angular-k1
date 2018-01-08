@@ -14,10 +14,11 @@ export class InOutListComponent {
         private notification: NotificationService) { }
     ngOnInit() {
         this.loadingService.start();
+   
              this.inoutService.getList().then((res: InOut[]) => {
             this.inouts = res;
             this.loadingService.stop();
-            this.notification.success('Success');
+                
         }).catch(err => {
             alert(err);
             this.loadingService.stop();

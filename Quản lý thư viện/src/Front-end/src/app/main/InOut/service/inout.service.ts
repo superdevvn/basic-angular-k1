@@ -35,5 +35,14 @@ export class InOutService {
             });
         });
     }
+    delete(id) {
+        return new Promise((resolve, reject) => {
+            this.apiService.post(`api/deleteInOut/${id}`, {}).then(res => {
+                resolve();
+            }).catch(err => {
+                reject(err);
+            });
+        });
+    }
 
 }

@@ -8,6 +8,7 @@ import { Book } from '../Book/shared/book.model';
 import { UserService } from '../User/service/user.service';
 import { CustomerService } from '../Customer/service/customer.service';
 import { BookService } from '../Book/service/book.service';
+import { NotificationService } from './../loadingService/notification.service';
 
 @Component({
     selector: 'inout-detail',
@@ -27,7 +28,9 @@ export class InOutDetailComponent {
         private inoutService: InOutService,
         private userService: UserService,
         private customerService: CustomerService,
-        private bookService: BookService) { }
+        private bookService: BookService,
+        private notification: NotificationService
+     ) { }
 
     ngOnInit() {
         this.routerSubscription = this.route.params.subscribe(params => {
@@ -40,7 +43,7 @@ export class InOutDetailComponent {
             this.customerService.getList().then((customer: Customer[]) => {
                 this.customers = customer;
                 console.log(this.customers);
-                if (this.id == 0) this.inout.CusomerId = customer[0].Id;
+                if (this.id == 0) this.inout.CustomerId = customer[0].Id;
             });
             this.bookService.getList().then((book: Book[]) => {
                 this.books = book;
@@ -61,7 +64,7 @@ export class InOutDetailComponent {
     save() {
         this.inoutService.saveInOut(this.inout).then((res: InOut) => {
             this.inout = res;
-            alert("Save Success");
+            this.notification.success('Success');
         }).catch(err => {
             alert(err);
         })

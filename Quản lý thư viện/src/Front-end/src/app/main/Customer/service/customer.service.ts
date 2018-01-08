@@ -35,4 +35,13 @@ export class CustomerService {
             });
         });
     }
+    delete(id) {
+        return new Promise((resolve, reject) => {
+            this.apiService.post(`api/deleteCustomer/${id}`, {}).then(res => {
+                resolve();
+            }).catch(err => {
+                reject(err);
+            });
+        });
+    }
 }
