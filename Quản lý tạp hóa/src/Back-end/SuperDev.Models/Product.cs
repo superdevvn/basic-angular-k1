@@ -41,4 +41,33 @@ namespace SuperDev.Models
         [ForeignKey("SupplierId")]
         public virtual Supplier Supplier { get; set; }
     }
+
+    public class ProductComplex
+    {
+        public int Id { get; set; }
+
+        public int? ManufacturerId { get; set; }
+
+        public string ManufacturerName { get; set; }
+
+        public int? SupplierId { get; set; }
+
+        public string SupplierName { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public string CategoryName { get; set; }
+
+        public int UnitId { get; set; }
+
+        public string UnitName { get; set; }
+
+        public string Code { get; set; }
+
+        public string Name { get; set; }
+
+        public decimal Price { get; set; }
+
+        public string Description { get; set; }
+    }
 }

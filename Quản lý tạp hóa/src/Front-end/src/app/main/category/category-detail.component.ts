@@ -20,14 +20,14 @@ export class CategoryDetailComponent {
         this.routerSubcription = this.route.params.subscribe(params => {
             this.id = +params['id']; // (+) converts string 'id' to a number
             if (this.id > 0) {
-                this.title = "Bạn đang chỉnh sửa vai trò";
+                this.title = "Bạn đang chỉnh sửa loại sản phẩm";
                 this.categoryService.getCate(this.id).then((res: Category) => {
                     this.category = res;
                 }).catch(err => {
                     console.log(err);
                 });
             } else {
-                this.title = "Bạn đang tạo mới vai trò";
+                this.title = "Bạn đang tạo mới loại sản phẩm";
             }
         });
     }

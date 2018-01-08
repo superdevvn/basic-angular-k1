@@ -15,6 +15,7 @@ export class ProductListComponent {
     ngOnInit() {
         this.productService.getList().then((res: Product[]) => {
             this.products = res;
+            console.log(this.products);
         }).catch (err => {
             console.log(err);
         });

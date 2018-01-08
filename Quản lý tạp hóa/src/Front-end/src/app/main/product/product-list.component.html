@@ -18,31 +18,34 @@
         </div>
         <table class="table table-bordered table-striped mb-none">
             <colgroup>
-                <col width="50px" />
+                <col width="150px" />
+                <col width="150px" />
                 <col width="150px" />
                 <col width="150px" />
                 <col width="150px" />
                 <col />
-                <col width="100px" />
-                <col width="100px" />
+                <col width="50px" />
+                <col width="50px" />
             </colgroup>
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Mã sản phẩm</th>
                     <th>Tên</th>
                     <th>Giá</th>
+                    <th>Nhà cung cấp</th>
+                    <th>Nhà sản xuất</th>
                     <th>Mô tả</th>
-                    <th class="hidden-phone">Chỉnh sửa</th>
-                    <th class="hidden-phone">Xóa</th>
+                    <th class="hidden-phone"></th>
+                    <th class="hidden-phone"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let product of products" class="gradeX">
-                    <td>{{product.Id}}</td>
                     <td>{{product.Code}}</td>
                     <td>{{product.Name}}</td>
                     <td>{{product.Price}}</td>
+                    <td>{{product.SupplierName}}</td>
+                    <td>{{product.ManufacturerName}}</td>
                     <td>{{product.Description}}</td>                
                     <td align="center">
                         <a>
@@ -51,7 +54,7 @@
                     </td>
                     <td align="center">
                         <a>
-                            <i style="cursor:pointer" class="fa fa-trash-o"></i>
+                            <i style="cursor:pointer" class="fa fa-trash-o text-danger"></i>
                         </a>
                     </td>
                 </tr>

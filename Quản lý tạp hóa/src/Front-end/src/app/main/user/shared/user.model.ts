@@ -11,6 +11,7 @@ export class User {
     IsDaleted: boolean;
     CreatedDate: Date;
     CreatedBy: number;
+    CreatorName: string;
 
     constructor(){
        this.CreatedDate = new Date();

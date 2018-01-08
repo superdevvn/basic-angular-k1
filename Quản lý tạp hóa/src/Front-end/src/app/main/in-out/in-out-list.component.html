@@ -21,32 +21,29 @@
         </div>
         <table class="table table-bordered table-striped mb-none">
             <colgroup>
-                <col width="50px"/>
                 <col width="150px"/>
                 <col width="150px"/>
                 <col width="100px"/>
                 <col width="100px"/>
                 <col />
                 <col width="200px"/>
-                <col width="100px"/>
-                <col width="100px"/>
+                <col width="50px"/>
+                <col width="50px"/>
             </colgroup>
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Khách hàng</th>
                     <th>Sản phẩm</th>
                     <th>Gía</th>
                     <th>Số lượng</th>
                     <th>Hình thức</th>
                     <th>Ngày</th>
-                    <th class="hidden-phone">Chỉnh sửa</th>
-                    <th class="hidden-phone">Xóa</th>
+                    <th class="hidden-phone"></th>
+                    <th class="hidden-phone"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let inOut of inOuts" class="gradeX">
-                    <td>{{inOut.Id}}</td>
                     <td>{{inOut.Username}}</td>
                     <td>{{inOut.ProductName}}</td>
                     <td>{{inOut.Price}}</td>      
@@ -60,7 +57,7 @@
                     </td>
                     <td align="center">
                         <a>
-                            <i style="cursor:pointer" class="fa fa-trash-o"></i>
+                            <i style="cursor:pointer" class="fa fa-trash-o text-danger"></i>
                         </a>
                     </td>
                 </tr>

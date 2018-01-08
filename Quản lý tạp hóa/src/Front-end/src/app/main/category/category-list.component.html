@@ -18,24 +18,21 @@
         </div>
         <table class="table table-bordered table-striped mb-none">
             <colgroup>
-                <col width="50px" />
                 <col width="350px" />
                 <col />
-                <col width="100px" />
-                <col width="100px" />
+                <col width="50px" />
+                <col width="50px" />
             </colgroup>
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Loại sản phẩm</th>
                     <th>Mô tả</th>
-                    <th class="hidden-phone">Chỉnh sửa</th>
-                    <th class="hidden-phone">Xóa</th>
+                    <th class="hidden-phone"></th>
+                    <th class="hidden-phone"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let category of categories" class="gradeX">
-                    <td>{{category.Id}}</td>
                     <td>{{category.Name}}</td>
                     <td>{{category.Description}}</td>                
                     <td align="center">
@@ -45,7 +42,7 @@
                     </td>
                     <td align="center">
                         <a>
-                            <i style="cursor:pointer" class="fa fa-trash-o"></i>
+                            <i style="cursor:pointer" class="fa fa-trash-o text-danger"></i>
                         </a>
                     </td>
                 </tr>

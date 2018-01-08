@@ -17,21 +17,30 @@ export class RoleListComponent {
     ngOnInit() {
         this.roleService.getList().then((res: Role[]) => {
             this.roles = res;
-            console.log("B");
-            console.log(this.roles);
+            // console.log(this.roles);
         }).catch(err => {
             alert(err);
         });
-
-        console.log("A");
     }
+
 
 
     ngAfterViewInit() {
 
     }
 
-    detail(role:Role){
+    detail(role: Role) {
         this.router.navigate(['/main/role-detail', role.Id]);
+    }
+
+    delete(role: Role) {
+        this.roleService.deleteRole(role.Id).then(() => {
+            this.roleService.getList().then((res: Role[]) => {
+                this.roles = res;
+                // console.log(this.roles);
+            }).catch(err => {
+                alert(err);
+            });
+        });
     }
 }

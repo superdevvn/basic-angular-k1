@@ -29,11 +29,26 @@ namespace SuperDev.Repositories
             }
         }
 
-        public IEnumerable<Product> GetEntities()
+        public IEnumerable<ProductComplex> GetEntities()
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.Products.ToList();
+                return context.Products.Select(entity => new ProductComplex
+                {
+                    Id = entity.Id,
+                    CategoryId = entity.CategoryId,
+                    CategoryName = entity.Category.Name,
+                    UnitId = entity.UnitId,
+                    UnitName = entity.Unit.Name,
+                    ManufacturerId = entity.ManufacturerId,
+                    ManufacturerName = entity.ManufacturerId == null ? string.Empty : entity.Manufacturer.Name,
+                    SupplierId = entity.SupplierId,
+                    SupplierName = entity.SupplierId == null ? string.Empty : entity.Supplier.Name,
+                    Code = entity.Code,
+                    Name = entity.Name,
+                    Price = entity.Price,
+                    Description = entity.Description
+                }).ToList();
             }
         }
 

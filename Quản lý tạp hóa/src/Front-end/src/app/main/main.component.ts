@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-declare var $:any;
+import { LoginService } from '../authorize/service/login.service';
+import { User } from './user/shared/user.model';
+declare var $: any;
 @Component({
     selector: 'main',
     templateUrl: './main.component.html'
 })
 export class MainComponent {
+    currentUser: User = new User();
     private routerSubcription: any;
     title: string;
-    constructor(private route: ActivatedRoute, private router: Router) {
+    constructor(private route: ActivatedRoute, private router: Router, private loginService: LoginService) {
         var a = this.router.events.subscribe(event => {
             if (event.constructor.name === "NavigationEnd") {
                 let url = this.router.url.toString();
@@ -32,13 +35,17 @@ export class MainComponent {
     }
 
     ngOnInit() {
-
+        this.loginService.getAuthorize().catch(() => {
+            this.router.navigate(["login"]);
+        });
+        this.currentUser = this.loginService.user;
+        console.log(this.currentUser);
     }
     ngAfterViewInit() {
         // Lazy load js
-        $.getScript("assets/porto/javascripts/theme.js", function(){
-            $.getScript("assets/porto/javascripts/theme.custom.js", function(){
-                $.getScript("assets/porto/javascripts/theme.init.js", function(){
+        $.getScript("assets/porto/javascripts/theme.js", function () {
+            $.getScript("assets/porto/javascripts/theme.custom.js", function () {
+                $.getScript("assets/porto/javascripts/theme.init.js", function () {
 
                 });
             });

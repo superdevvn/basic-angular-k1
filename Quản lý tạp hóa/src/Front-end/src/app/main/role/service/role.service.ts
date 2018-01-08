@@ -35,4 +35,14 @@ export class RoleService {
             });
         });
     }
+
+    deleteRole(id){
+        return new Promise((resolve, reject) => {
+            this.apiService.get(`api/deleteRole/${id}`).then(res =>{
+                
+            }).catch(err => {
+                reject(err);
+            })
+        })
+    }
 }
