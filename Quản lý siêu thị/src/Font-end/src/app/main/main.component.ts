@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-<<<<<<< HEAD
-=======
-import { futimes } from 'fs';
->>>>>>> cd8a2dce1afd751c3220f7a0110d9cab7d13476c
+// import { futimes } from 'fs';
+import { LoginService } from '../authorize/service/login.service';
 declare var $:any;
 @Component({
     selector: 'main',
-    templateUrl:'./main.component.html'
+    templateUrl:'./main.component.html',
 })
 export class MainComponent {
     private routerSubcription:any;
     title:string;
     
-    constructor(private route: ActivatedRoute, private router:Router) {
+    constructor(private route: ActivatedRoute, private router:Router,private LoginService:LoginService) {
         this.routerSubcription = this.router.events.subscribe(event=> {
             if(event.constructor.name === "NavigationEnd") {
                 let url = this.router.url.toString();
@@ -49,31 +47,33 @@ export class MainComponent {
     }
 
     ngOnInit(){
-        
-    }
-    ngAfterViewInit(){
-<<<<<<< HEAD
-       $.getScript("assets/ace-master/js/ace-elements.min.js", function(){
-        $.getScript("assets/ace-master/js/ace.min.js",function(){
-        //   $.getScript("app/main/load.main.min.js",function(){
-
-        //   });  
-        });
-       });
-     }
-=======
-        $.getScript("assets/ace-master/js/ace-elements.min.js",function(){
-            console.log("ace-elements.min");
-          $.getScript("assets/ace-master/js/ace.min.js",function(){
-            console.log("ace.min");
-            $.getScript("assets/ace-master/js/load.js",function(){
-                console.log("ace-elements.min");
-              });
-          }); 
+        this.LoginService.getAuthorize().catch(()=>{
+            this.router.navigate(['login']);
         });
     }
->>>>>>> cd8a2dce1afd751c3220f7a0110d9cab7d13476c
+    ngAfterViewInit(){   
+        // $.getScript("assets/ace-master/js/ace-elements.min.js",function(){
+        //     console.log("ace-elements.min");
+        //   $.getScript("assets/ace-master/js/ace.min.js",function(){
+        //     console.log("ace.min");
+            // $.getScript("assets/ace-master/js/load.js",function(){
+            //     console.log("load");
+            // $.getScript("assets/ace-master/js/jquery-2.1.4.min.js",function(){
+            //     console.log("jquery-2.1.4");
+            //   $.getScript("assets/ace-master/js/bootstrap.min.js",function(){
+            //             console.log("bootstrap.min");              
+                //   });
+            //   });
+            //   });
+        //   }); 
+        // });
+    }
     ngOnDestroy(){
         if(this.routerSubcription) this.routerSubcription.unsubscribe();
     }
 }
+// <script src="assets/ace-master/js/jquery-ui.custom.min.js"></script>
+// <script src="assets/ace-master/js/jquery.ui.touch-punch.min.js"></script>
+// <script src="assets/ace-master/js/moment.min.js"></script>
+// <script src="assets/ace-master/js/fullcalendar.min.js"></script>
+// <script src="assets/ace-master/js/bootbox.js"></script>

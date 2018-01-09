@@ -1,21 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Router } from '@angular/router';
-
+import { CookieService} from 'ngx-cookie-service';
 @Injectable()
 export class ApiService {
     
-<<<<<<< HEAD
     host: string = 'http://103.232.121.69:5104/';
-=======
-    host: string = 'http://103.232.121.69:5102/';
->>>>>>> cd8a2dce1afd751c3220f7a0110d9cab7d13476c
-    token: string = "";
-    constructor(private router: Router, private http: Http) {
+    token: string = "none";
+    constructor(private router: Router, private http: Http,private cookieService:CookieService) {
+        if(this.cookieService.check("Auth-SuperDev"))this.token = this.cookieService.get("Auth-SuperDev");
     }
 
     post(url: string, data: any) {
-        return new Promise<Response>((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
             headers.append("Auth-SuperDev", this.token);
             this.http.post(this.host + url, data, { headers: headers })
@@ -34,7 +31,7 @@ export class ApiService {
     }
 
     get(url: string) {
-        return new Promise<Response>((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
             headers.append("Auth-SuperDev", this.token);
             this.http.get(this.host + url, { headers: headers })

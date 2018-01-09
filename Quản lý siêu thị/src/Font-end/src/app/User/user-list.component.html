@@ -53,8 +53,8 @@
                     <!-- <td>
                         <input [disabled]="true" type="checkbox" [ngModel]="user.IsActived"/>
                     </td> -->
-                    <td class="text-center">
-                        <span [ngClass]="{'label label-danger arrowed' : !user.IsActived,'label label-info arrowed-right arrowed-in' : user.IsActived}">
+                    <td class="text-center" >
+                        <span class="disable"  [ngClass]="{'label label-danger arrowed' : !user.IsActived,'label label-info arrowed-right arrowed-in' : user.IsActived}">
                             {{user.IsActived? 'Hoạt Động':'Khóa'}}
                         </span>
                     </td>
