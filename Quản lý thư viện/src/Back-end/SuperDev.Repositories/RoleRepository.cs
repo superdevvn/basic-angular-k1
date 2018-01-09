@@ -1,9 +1,6 @@
-﻿using System;
+﻿using SuperDev.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SuperDev.Models;
 
 namespace SuperDev.Repositories
 {

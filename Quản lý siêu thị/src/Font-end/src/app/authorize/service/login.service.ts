@@ -32,7 +32,11 @@ export class LoginService {
 
     getAuthorize(){
         return new Promise<User>((resolve, reject) => {
+<<<<<<< HEAD
             this.apiService.get(`api/authorize/${this.apiService.token}`).then(res => {
+=======
+            this.apiService.get(`api/authorize/ ${this.apiService.token}`).then((res:Response) =>{
+>>>>>>> 31ecb4387c48ccf56bdeff4efb62e6919bbbda15
                 this.user = res.json();
                 resolve(this.user);
             }).catch(err => {

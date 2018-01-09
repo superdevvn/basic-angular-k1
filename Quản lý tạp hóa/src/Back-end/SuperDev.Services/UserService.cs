@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using SuperDev.Models;
+﻿using SuperDev.Models;
 using SuperDev.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Web;
 
 namespace SuperDev.Services
 {
@@ -10,8 +11,19 @@ namespace SuperDev.Services
         public User PersistUser(User user)
         {
             var userRepository = new UserRepository();
-            if (user.Id > 0) return userRepository.Update(user);
-            return userRepository.Create(user);
+            if (user.Id > 0)
+            {
+                var entity = userRepository.GetEntity(user.Id);
+                user.CreatedDate = entity.CreatedDate;
+                user.CreatedBy = entity.CreatedBy;
+                return userRepository.Update(user);
+            }
+            else
+            {
+                user.CreatedDate = DateTime.Now;
+                user.CreatedBy = GetCurrentUser().Id;
+                return userRepository.Create(user);
+            }
         }
 
         public IEnumerable<UserComplex> GetList()
@@ -36,7 +48,7 @@ namespace SuperDev.Services
 
         public string Encrypt(User user)
         {
-            return user.Username +";"+ user.Password;
+            return user.Username + ";" + user.Password;
         }
 
         public User Decrypt(string token)
@@ -45,6 +57,12 @@ namespace SuperDev.Services
             string username = token.Split(';')[0];
             string password = token.Split(';')[1];
             return userRepository.GetEntity(username, password);
+        }
+
+        public User GetCurrentUser()
+        {
+            var token = HttpContext.Current.Request.Headers.Get("Auth-SuperDev").ToString();
+            return Decrypt(token);
         }
     }
 }

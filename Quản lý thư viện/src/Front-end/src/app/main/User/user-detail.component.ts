@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { InOut } from '../InOut/Shared/inout.model';
-import { User } from './shared/user.model';
+import { User } from './../User/shared/User.model';
 import { UserService } from './service/user.service';
 import { RoleService } from '../Role/service/role.service';
 import { Role } from '../Role/shared/role.model';
@@ -21,12 +21,13 @@ export class UserDetailComponent {
     }
 
     ngOnInit() {
-        this.roleService.getList().then((roles: Role[]) => {
-            this.roles = roles;
-            console.log(this.roles);
-        });
         this.routerSubscription = this.route.params.subscribe(params => {
             this.id = +params['id']; // (+) converts string 'id' to a number
+            this.roleService.getList().then((roles: Role[]) => {
+                this.roles = roles;
+                console.log(this.roles);
+                if (this.id == 0) this.user.RoleId = roles[0].Id;
+            });
             if (this.id > 0) {
                 this.userService.getUser(this.id).then((res: User) => {
                     this.user = res;

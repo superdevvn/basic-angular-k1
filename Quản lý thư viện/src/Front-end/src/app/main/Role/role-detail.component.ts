@@ -16,7 +16,7 @@ export class RoleDetailComponent {
     }
 
     ngOnInit() {
-        this.routerSubscription = this.route.params.subscribe(params => {
+        this.routerSubscription = this.route.params.subscribe(params => {//
             this.id = +params['id']; // (+) converts string 'id' to a number
             if (this.id > 0) {
                 this.roleService.getRole(this.id).then((res: Role) => {
@@ -29,7 +29,7 @@ export class RoleDetailComponent {
     }
 
     save() {
-        this.roleService.saveRole(this.role).then((res: Role) => {
+        this.roleService.saveRole(this.role).then(res => {
             //Server trả về role sau khi save
             //Nếu là tạo role mới thì res sẽ có giá trị id mới thay vì 0
             this.role = res;

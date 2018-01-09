@@ -12,7 +12,11 @@ export class ApiService {
     }
 
     post(url: string, data: any) {
+<<<<<<< HEAD
         return new Promise<>((resolve, reject) => {
+=======
+        return new Promise((resolve, reject) => {
+>>>>>>> 31ecb4387c48ccf56bdeff4efb62e6919bbbda15
             let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
             headers.append("Auth-SuperDev", this.token);
             this.http.post(this.host + url, data, { headers: headers })
@@ -31,7 +35,7 @@ export class ApiService {
     }
 
     get(url: string) {
-        return new Promise<Response>((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
             headers.append("Auth-SuperDev", this.token);
             this.http.get(this.host + url, { headers: headers })

@@ -31,7 +31,7 @@
                         />
                     </figure>
                     <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-                        <span class="name">Sơn Nguyễn</span>
+                        <span class="name">Admin Library</span>
                         <span class="role">administrator</span>
                     </div>
 
@@ -50,7 +50,7 @@
                                 <i class="fa fa-lock"></i> Lock Screen</a>
                         </li>
                         <li>
-                            <a role="menuitem" tabindex="-1" href="pages-signin.html">
+                            <a role="menuitem" tabindex="-1" href="/login">
                                 <i class="fa fa-power-off"></i> Logout</a>
                         </li>
                     </ul>
@@ -90,63 +90,83 @@
                                     <span>Homework</span>
                                 </a>
                             </li> -->
+                            <li>
+                                <a [routerLink]="['/main/user-list']">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                    <span>Tài khoản</span>
+                                </a>
+                            </li>
                             <li class="nav-parent">
                                 <a>
-                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <i class="fa fa-slideshare" aria-hidden="true"></i>
                                     <span>Quản lí thư viện</span>
                                 </a>
                                 <ul class="nav nav-children">
-                                        <li>
-                                                <a [routerLink]="['/main/category-list']">
-                                                    <i class="fa fa-bars" aria-hidden="true"></i>
-                                                    <span>Category</span>
+
+                                    <li class="nav-parent">
+                                        <a>
+                                            <i class="fa fa-tasks" aria-hidden="true"></i>
+                                            <span>Quản lí hệ thống</span>
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <li>
+                                                <a [routerLink]="['/main/customer-list']">
+                                                    <i class="fa fa-qq" aria-hidden="true"></i>
+                                                    <span>Quản lí bạn đọc</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="['/main/user-list']">
+                                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                                    <span>Quản lí nhân viên</span>
                                                 </a>
                                             </li>
 
-                                    <li>
-                                        <a [routerLink]="['/main/role-list']">
-                                            <i class="fa fa-bars" aria-hidden="true"></i>
-                                            <span>Role</span>
-                                        </a>
+                                        </ul>
                                     </li>
-                                  
-                                  
-                                    <li>
-                                        <a [routerLink]="['/main/user-list']">
-                                            <i class="fa fa-user" aria-hidden="true"></i>
-                                            <span>Quản lí bạn đọc</span>
+
+                                    <li class="nav-parent">
+                                        <a>
+                                            <i class="fa fa-book" aria-hidden="true"></i>
+                                            <span>Quản lí sách</span>
                                         </a>
+                                        <ul class="nav nav-children">
+                                            <li>
+                                                <a [routerLink]="['/main/book-list']">
+                                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                                    <span>Quản lí sách</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="['/main/category-list']">
+                                                    <i class="fa fa-cubes" aria-hidden="true"></i>
+                                                    <span>Thể loại sách</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a [routerLink]="['/main/inout-list']">
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                    <span>Quản lí mượn trả sách</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a [routerLink]="['/main/indemtify-list']">
+                                                    <i class="fa fa-share-square-o" aria-hidden="true"></i>
+                                                    <span>Quản lí bồi thường</span>
+                                                </a>
+                                            </li>
+
+                                        </ul>
                                     </li>
-                                    <li>
-                                        <a [routerLink]="['/main/user-list']">
-                                            <i class="fa fa-bars" aria-hidden="true"></i>
-                                            <span>Quản lí bồi thường</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a [routerLink]="['/main/inout-list']">
-                                            <i class="fa fa-bars" aria-hidden="true"></i>
-                                            <span>Quản lí mượn trả sách</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a [routerLink]="['/main/role-list']">
-                                            <i class="fa fa-user" aria-hidden="true"></i>
-                                            <span>Quản lí nhân viên</span>
-                                        </a>
-                                    </li>
+
                                     <li>
                                         <a [routerLink]="['/main/role-list']">
                                             <i class="fa fa-search" aria-hidden="true"></i>
-                                            <span>Báo cáo thống kê</span>
+                                            <span>Vai trò</span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a [routerLink]="['/main/user-list']">
-                                            <i class="fa fa-lock" aria-hidden="true"></i>
-                                            <span>Tài khoản</span>
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </li>
                         </ul>

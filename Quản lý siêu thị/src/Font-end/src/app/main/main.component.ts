@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+<<<<<<< HEAD
 import { futimes } from 'fs';
+=======
+// import { futimes } from 'fs';
+>>>>>>> 31ecb4387c48ccf56bdeff4efb62e6919bbbda15
 import { LoginService } from '../authorize/service/login.service';
 declare var $:any;
 @Component({
     selector: 'main',
-    templateUrl:'./main.component.html'
+    templateUrl:'./main.component.html',
 })
 export class MainComponent {
     private routerSubcription:any;
@@ -49,6 +53,7 @@ export class MainComponent {
     ngOnInit(){
         this.LoginService.getAuthorize().catch(()=>{
             this.router.navigate(['login']);
+<<<<<<< HEAD
         })
     }
     ngAfterViewInit(){
@@ -60,9 +65,33 @@ export class MainComponent {
                 console.log("ace-elements.min");
               });
           }); 
+=======
+>>>>>>> 31ecb4387c48ccf56bdeff4efb62e6919bbbda15
         });
+    }
+    ngAfterViewInit(){   
+        // $.getScript("assets/ace-master/js/ace-elements.min.js",function(){
+        //     console.log("ace-elements.min");
+        //   $.getScript("assets/ace-master/js/ace.min.js",function(){
+        //     console.log("ace.min");
+            // $.getScript("assets/ace-master/js/load.js",function(){
+            //     console.log("load");
+            // $.getScript("assets/ace-master/js/jquery-2.1.4.min.js",function(){
+            //     console.log("jquery-2.1.4");
+            //   $.getScript("assets/ace-master/js/bootstrap.min.js",function(){
+            //             console.log("bootstrap.min");              
+                //   });
+            //   });
+            //   });
+        //   }); 
+        // });
     }
     ngOnDestroy(){
         if(this.routerSubcription) this.routerSubcription.unsubscribe();
     }
 }
+// <script src="assets/ace-master/js/jquery-ui.custom.min.js"></script>
+// <script src="assets/ace-master/js/jquery.ui.touch-punch.min.js"></script>
+// <script src="assets/ace-master/js/moment.min.js"></script>
+// <script src="assets/ace-master/js/fullcalendar.min.js"></script>
+// <script src="assets/ace-master/js/bootbox.js"></script>

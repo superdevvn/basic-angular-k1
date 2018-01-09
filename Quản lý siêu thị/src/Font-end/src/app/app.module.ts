@@ -41,8 +41,12 @@ import { CalendarComponent } from './main/calendar.component';
 import { LoginService } from './authorize/service/login.service';
 import { CookieService } from 'ngx-cookie-service';
 import { LoadingService } from './service/loading.service';
+<<<<<<< HEAD
 import { NotificationService } from './main/service/notification.service';
 
+=======
+import { NotificationService } from './service/notification.service';
+>>>>>>> 31ecb4387c48ccf56bdeff4efb62e6919bbbda15
 
 const routes: Routes = [
   { path: '', redirectTo:'main',pathMatch:'full' },
@@ -102,7 +106,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
+<<<<<<< HEAD
   providers: [ApiService,RoleService,UserService,NotificationService,LoadingService,ManufacturerService,CookieService,UnitService,WarehouseService,LoginService],
+=======
+  providers: [ApiService,RoleService,UserService,ManufacturerService,CookieService,UnitService,WarehouseService,LoginService,LoadingService,NotificationService],
+>>>>>>> 31ecb4387c48ccf56bdeff4efb62e6919bbbda15
 
   bootstrap: [AppComponent]
 })

@@ -6,7 +6,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './authorize/login.component';
+import { LoginService } from './authorize/service/login.service';
 import { MainComponent } from './main/main.component';
+import { CookieService } from 'ngx-cookie-service';
 
 //Dashboard
 import { DashboardComponent } from './main/dashboard.component';
@@ -24,14 +26,30 @@ import { CategoryListComponent } from './main/Category/category-list.component';
 import { CategoryDetailComponent } from './main/Category/category-detail.component';
 
 //InOut
-import { InOutListComponent } from './main/InOut/inout-list.component'
-import { InOutDetailComponent } from './main/InOut/inout-detail.component'
+import { InOutListComponent } from './main/InOut/inout-list.component';
+import { InOutDetailComponent } from './main/InOut/inout-detail.component';
 import { ApiService } from './api.service';
 import { RoleService } from './main/Role/service/role.service';
+
+
+import { CategoryService } from './main/Category/service/category.service';
 import { UserService } from './main/User/service/user.service';
+import { InOutService } from './main/InOut/service/inout.service';
+//Book
+import { BookListComponent } from './main/Book/book-list.component';
+import { BookDetailComponent } from './main/Book/book-detail.component';
+import { BookService } from './main/Book/service/book.service';
+//customer
+
+import { CustomerListComponent } from './main/Customer/customer-list.component';
+import { CustomerDetailComponent } from './main/Customer/customer-detail.component';
+import { CustomerService } from './main/Customer/service/customer.service';
+//loadingservice
+import { LoadingService } from './main/loadingService/loading.service';
+import { NotificationService } from './main/loadingService/notification.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'main', component: MainComponent,
     children: [
@@ -46,10 +64,17 @@ const routes: Routes = [
       { path: 'user-detail/:id', component: UserDetailComponent },
       //category
       { path: 'category-list', component: CategoryListComponent },
-      { path: 'category-detail', component: CategoryDetailComponent },
+      { path: 'category-detail/:id', component: CategoryDetailComponent },
       //inout
       { path: 'inout-list', component: InOutListComponent },
-      { path: 'inout-detail', component: InOutDetailComponent },
+      { path: 'inout-detail/:id', component: InOutDetailComponent },
+      //book
+
+       { path: 'book-list', component: BookListComponent },
+       { path: 'book-detail/:id', component: BookDetailComponent },
+       //customer
+       { path : 'customer-list', component: CustomerListComponent },
+       { path : 'customer-detail/:id', component: CustomerDetailComponent },
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -70,6 +95,10 @@ const routes: Routes = [
     CategoryDetailComponent,
     InOutListComponent,
     InOutDetailComponent,
+    BookListComponent,
+    BookDetailComponent,
+    CustomerListComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +106,10 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService, RoleService, UserService],
+
+  providers: [CookieService, ApiService, RoleService, CategoryService,
+     UserService, InOutService, BookService, CustomerService, LoginService,
+      LoadingService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
