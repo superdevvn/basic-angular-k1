@@ -46,7 +46,8 @@ namespace SuperDev.Repositories
                     IsActived = entity.IsActived,
                     IsDeleted = entity.IsDeleted,
                     CreatedDate = entity.CreatedDate,
-                    CreatedBy = entity.CreatedBy
+                    CreatedBy = entity.CreatedBy,
+                    CreatorName = entity.CreatedBy == null ? string.Empty : context.Users.FirstOrDefault(e => e.Id == entity.CreatedBy.Value).Username
                 }).ToList();
             }
         }
@@ -56,6 +57,14 @@ namespace SuperDev.Repositories
             using (var context = new SuperDevDbContext())
             {
                 return context.Users.Find(id);
+            }
+        }
+
+        public User GetEntity(string username, string password)
+        {
+            using (var context = new SuperDevDbContext())
+            {
+                return context.Users.Where(entity => entity.Username == username && entity.Password == password).FirstOrDefault();
             }
         }
     }
