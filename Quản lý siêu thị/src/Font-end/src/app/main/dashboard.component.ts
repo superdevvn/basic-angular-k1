@@ -22,22 +22,21 @@ export class DashboardComponent {
             this.input1="Test Hello";
         },5000);
     }
-    ngAfterViewInit(){
-        $.getScript("assets/ace-master/js/ace-elements.min.js",function(){
-            console.log("ace-elements.min");
-          $.getScript("assets/ace-master/js/ace.min.js",function(){
-            console.log("ace.min");
-            $.getScript("assets/ace-master/js/load.js",function(){
-                console.log("ace-elements.min");
-              });
-          }); 
-        });
+    // ngAfterViewInit(){
+    //     $.getScript("assets/ace-master/js/ace-elements.min.js",function(){
+    //         console.log("ace-elements.min");
+    //       $.getScript("assets/ace-master/js/ace.min.js",function(){
+    //         console.log("ace.min");
+    //         $.getScript("assets/ace-master/js/load.js",function(){
+    //             console.log("ace-elements.min");
+    //           });
+    //       }); 
+    //     });
 
-    }
+    // }
     ngOnDestroy(){
 
     }
-
     onClick(){
         alert(this.input1);
         alert(this.user.username);

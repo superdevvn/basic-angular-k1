@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { futimes } from 'fs';
+import { LoginService } from '../authorize/service/login.service';
 declare var $:any;
 @Component({
     selector: 'main',
@@ -10,7 +11,7 @@ export class MainComponent {
     private routerSubcription:any;
     title:string;
     
-    constructor(private route: ActivatedRoute, private router:Router) {
+    constructor(private route: ActivatedRoute, private router:Router,private LoginService:LoginService) {
         this.routerSubcription = this.router.events.subscribe(event=> {
             if(event.constructor.name === "NavigationEnd") {
                 let url = this.router.url.toString();
@@ -46,7 +47,9 @@ export class MainComponent {
     }
 
     ngOnInit(){
-        
+        this.LoginService.getAuthorize().catch(()=>{
+            this.router.navigate(['login']);
+        })
     }
     ngAfterViewInit(){
         $.getScript("assets/ace-master/js/ace-elements.min.js",function(){

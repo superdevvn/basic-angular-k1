@@ -39,6 +39,9 @@ import { WarehouseDetailComponent } from './warehouse/warehouse-detail.component
 import { WarehouseListComponent } from './warehouse/warehouse-list.component';
 import { CalendarComponent } from './main/calendar.component';
 import { LoginService } from './authorize/service/login.service';
+import { CookieService } from 'ngx-cookie-service';
+import { LoadingService } from './service/loading.service';
+import { NotificationService } from './main/service/notification.service';
 
 
 const routes: Routes = [
@@ -99,7 +102,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
 
-  providers: [ApiService,RoleService,UserService,ManufacturerService,UnitService,WarehouseService,LoginService],
+  providers: [ApiService,RoleService,UserService,NotificationService,LoadingService,ManufacturerService,CookieService,UnitService,WarehouseService,LoginService],
 
   bootstrap: [AppComponent]
 })
