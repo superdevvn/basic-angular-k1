@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
 import { InOut } from './shared/in-out.model';
 import { InOutService } from './service/in-out.service';
+import { ProductService } from '../product/service/product.service';
+import { Product } from '../product/shared/product.model';
 
 @Component({
     selector: 'in-out-detail',
@@ -13,10 +15,19 @@ export class InOutDetailComponent {
     routerSubcription: any;
     id: number = 0;
     title: string;
-    constructor(private route: ActivatedRoute, private router: Router, private inOutService: InOutService) {
+    products: Product[] = [];
+    constructor(private route: ActivatedRoute, private router: Router, private inOutService: InOutService,
+        private productService: ProductService) {
     }
 
     ngOnInit() {
+        this.productService.getList().then((res: Product[]) => {
+            this.products = res;
+            if (this.id == 0) this.inOut.ProductId = this.products[0].Id;
+            console.log(this.products);
+        }).catch(err => {
+            alert(err);
+        });
         this.routerSubcription = this.route.params.subscribe(params => {
             this.id = +params['id']; // (+) converts string 'id' to a number
             if (this.id > 0) {
@@ -34,7 +45,7 @@ export class InOutDetailComponent {
     save() {
         this.inOutService.saveInOut(this.inOut).then((res: InOut) => {
             if (this.id == 0) {
-                this.router.navigate(['/main/in-out-detail/',res.Id]);
+                this.router.navigate(['/main/in-out-detail/', res.Id]);
             }
         }).catch(err => {
             alert(err);

@@ -29,7 +29,9 @@
                             <span class="required">*</span>
                         </label>
                         <div class="col-sm-9">
-                            <input type="text" [(ngModel)]="inOut.ProductName" class="form-control" required/>
+                            <select class="form-control" [(ngModel)]="inOut.ProductId">
+                                <option *ngFor="let product of products" [ngValue]="product.Id">{{product.Name}}</option>
+                            </select>
                         </div>
                     </div>
 

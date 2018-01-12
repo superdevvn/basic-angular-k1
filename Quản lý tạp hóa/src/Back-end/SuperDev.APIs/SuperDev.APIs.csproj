@@ -53,7 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorizeApiController.cs" />
     <Compile Include="AuthorizeFilter.cs" />
     <Compile Include="ManufacturerApiController.cs" />
     <Compile Include="CategoryApiController.cs" />

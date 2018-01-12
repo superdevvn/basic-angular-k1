@@ -19,16 +19,14 @@
         <table class="table table-bordered table-striped mb-none" >
         <!-- id="datatable-default"> -->
             <colgroup >
-                <col width="50"/>
-                <col width="350"/>
+                <col width="350px"/>
                 <col />
-                <col width="50"/>
-                <col width="50"/>
+                <col width="50px"/>
+                <col width="50px"/>
                 <!-- <col style="width:150"/> -->
             </colgroup>
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Vai trò</th>
                     <th>Mô tả</th>
                     <th class="hidden-phone"></th>
@@ -37,7 +35,6 @@
             </thead>
             <tbody>
                 <tr class="gradeX" *ngFor="let role of roles">
-                    <td>{{role.Id}}</td>
                     <td>{{role.Name}}</td>
                     <td>{{role.Description}}</td>
                     <td align="center">
@@ -47,7 +44,7 @@
                     </td>
                     <td align="center">
                         <a>
-                            <i style="cursor:pointer" class="fa fa-trash-o text-danger"></i>
+                            <i style="cursor:pointer" class="fa fa-trash-o text-danger" (click)="delete(role)"></i>
                         </a>
                     </td>
                 </tr>
