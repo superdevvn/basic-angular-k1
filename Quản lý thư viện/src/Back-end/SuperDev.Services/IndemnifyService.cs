@@ -13,7 +13,7 @@ namespace SuperDev.Services
             if (indemnify.Id > 0)
             {
                 var entity = indemnifyRepository.GetById(indemnify.Id);
-                indemnify.UserId = entity.Id;
+                indemnify.UserId = entity.UserId;
                 return indemnifyRepository.Update(indemnify);
             }
             else
@@ -23,7 +23,7 @@ namespace SuperDev.Services
             }
         }
 
-        public IEnumerable<Indemnify> GetList()
+        public IEnumerable<IndemnifyComplex> GetList()
         {
             var indemnifyRepository = new IndemnifyRepository();
             return indemnifyRepository.GetList();
