@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-md">
-                    <a class="btn btn-success" [routerLink]="['/main/role-detail',0]">Thêm
+                    <a class="btn btn-primary" [routerLink]="['/main/role-detail',0]">Thêm
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
@@ -17,7 +17,7 @@
                 <col style="width: 30px" />
             </colgroup>
             <thead>
-                <tr class="success">
+                <tr class="primary">
                     <th>Mã</th>
                     <th>Vai trò</th>
                     <th>Ghi chú</th>
@@ -29,9 +29,9 @@
                     <td>{{role.Id}}</td>
                     <td>{{role.Name}}</td>
                     <td>{{role.Description}}</td>
-                    <td>
+                    <td class="text-center actions">
                         <a class="on-default edit-row">
-                            <i class="fa fa-pencil text-success" style="cursor:pointer" (click)="detail(role)"></i>
+                            <i class="fa fa-pencil text-primary" style="cursor:pointer" (click)="detail(role)"></i>
                         </a>
 
                         <a class="on-default text-danger remove-row">

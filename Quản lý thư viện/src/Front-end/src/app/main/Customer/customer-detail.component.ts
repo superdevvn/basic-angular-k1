@@ -23,7 +23,7 @@ export class CustomerDetailComponent {
                     this.customer = res;
                 }).catch(err => {
                     console.log(err);
-                });
+           });
             }
         });
     }

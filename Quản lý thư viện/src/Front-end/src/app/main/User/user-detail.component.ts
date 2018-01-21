@@ -54,4 +54,14 @@ export class UserDetailComponent {
     back() {
         this.router.navigate(['/main/user-list']);
     }
+    ngAfterViewInit(){
+        $.getScript('assets/porto/javascripts/theme.js', function(){
+            $.getScript('assets/porto/javascripts/theme.custom.js', function(){
+              $.getScript('assets/porto/javascripts/theme.init.js', function(){
+                  $.getScript('assets/porto/javascripts/dashboard/examples.dashboard.js', function(){
+                  });
+                });
+            });
+          });
+    }
 }

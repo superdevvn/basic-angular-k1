@@ -29,14 +29,14 @@ export class UserListComponent {
     }
 
     ngAfterViewInit() {
-        // $.getScript('assets/porto/javascripts/theme.js', function(){
-        //     $.getScript('assets/porto/javascripts/theme.custom.js', function(){
-        //       $.getScript('assets/porto/javascripts/theme.init.js', function(){
-        //           $.getScript('assets/porto/javascripts/dashboard/examples.dashboard.js', function(){
-        //           });
-        //         });
-        //     });
-        //   });
+        $.getScript('assets/porto/javascripts/theme.js', function(){
+            $.getScript('assets/porto/javascripts/theme.custom.js', function(){
+              $.getScript('assets/porto/javascripts/theme.init.js', function(){
+                  $.getScript('assets/porto/javascripts/dashboard/examples.dashboard.js', function(){
+                  });
+                });
+            });
+          });
     }
 
     detail(user: User) {

@@ -32,9 +32,7 @@ ngOnInit() {
     delete(customer: Customer) {
         this.customerService.delete(customer.Id).then(() => {
             this.router.navigate(['./main/customer-list']);
-
         });
-    
     }
 
 }

@@ -3,16 +3,27 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="mb-md">
-                    <button id="addToTable" class="btn btn-info" [routerLink]="['/main/inout-detail',0]">Thêm
+                    <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/inout-detail',0]">Thêm
                         <i class="fa fa-plus"></i>
                     </button>
                 </div>
             </div>
         </div>
         <table class="table table-bordered table-striped mb-none" id="datatable-editable">
+                <colgroup>
+
+                    <col style="width:10px" />
+                    <col style="width:120px" />
+                    <col style="width:150px"/>
+                    <col />
+                    <col style="width:100px" />
+                    <col style="width:100px"/>
+                    <col style="width:10px" />
+                </colgroup>
             <thead>
+                
                 <tr class="primary">
-                    <th>Mã</th>
+                    <th>Stt</th>
                     <th>Tên nhân viên</th>
                     <th>Tên người mượn</th>
                     <th>Tên sách</th>
@@ -27,9 +38,9 @@
                     <td>{{inout.Username}}</td>
                     <td>{{inout.CustomerName}}</td>
                     <td>{{inout.BookName}}</td>
-                    <td>{{inout.FromDate | date:'dd/MM/yyy '}}</td>
-                    <td>{{inout.ToDate | date:'dd/MM/yyy '}}</td>
-                    <td class="actions">
+                    <td class="text-center">{{inout.FromDate | date:'dd/MM/yyy '}}</td>
+                    <td class="text-center">{{inout.ToDate | date:'dd/MM/yyy '}}</td>
+                    <td class="actions text-center">
                         <a class="on-default text-primary edit-row">
                             <i class="fa fa-pencil" (click)="detail(inout)"></i>
                         </a>

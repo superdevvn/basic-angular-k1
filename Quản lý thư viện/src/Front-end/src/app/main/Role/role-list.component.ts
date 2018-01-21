@@ -23,7 +23,7 @@ export class RoleListComponent {
         this.roleService.getList().then((res: Role[]) => {
             this.roles = res;
             this.loadingService.stop();
-            this.notification.success('Welcome');
+         
         }).catch(err => {
             alert(err);
             this.loadingService.stop();

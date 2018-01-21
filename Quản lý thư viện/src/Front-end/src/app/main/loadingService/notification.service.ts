@@ -20,4 +20,18 @@ export class NotificationService {
             // $('#notificationSuccess').remove();
         }, 500);
     }
+    fail(message: string){
+        $('body').append(`<div class="alert alert-danger" id="notificationFail" style="
+        position:fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 99999;
+        display:none;
+        "><strong>Report:</strong> ${message}</div>`);
+        $('#notificationSuccess').slideToggle('slow');
+        setTimeout(() => {
+            $('#notificationFail').fadeOut(2500);
+            // $('#notificationSuccess').remove();
+        }, 500);
+    }
 }
