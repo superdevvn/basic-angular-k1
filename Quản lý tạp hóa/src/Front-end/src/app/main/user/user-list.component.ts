@@ -41,4 +41,9 @@ export class UserListComponent {
     detail(user: User) {
         this.router.navigate(['/main/user-detail', user.Id]);
     }
+    delete(user: User) {
+        this.userService.deleteUser(user.Id).then(() => {
+            this.router.navigate(['./main/user-list']);
+        });
+    }
 }
