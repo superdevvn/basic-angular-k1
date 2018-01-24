@@ -44,7 +44,13 @@ import { BookService } from './main/Book/service/book.service';
 import { CustomerListComponent } from './main/Customer/customer-list.component';
 import { CustomerDetailComponent } from './main/Customer/customer-detail.component';
 import { CustomerService } from './main/Customer/service/customer.service';
-
+//loadingservice
+import { LoadingService } from './main/loadingService/loading.service';
+import { NotificationService } from './main/loadingService/notification.service';
+//indemnify
+import { IndemnifyListComponent } from "./main/Indemtify/indemnify-list.component";
+import { IndemnifyDetailComponnet } from "./main/Indemtify/indemnify-detail.component";
+import { IndemnifyService } from "./main/Indemtify/service/indemnify.service";
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
@@ -72,6 +78,9 @@ const routes: Routes = [
        //customer
        { path : 'customer-list', component: CustomerListComponent },
        { path : 'customer-detail/:id', component: CustomerDetailComponent },
+       //indemnify
+       { path : 'indemnify-list', component: IndemnifyListComponent},
+       { path : 'indemnify-detail/:id', component: IndemnifyDetailComponnet}
     ]
   },
   { path: 'login', component: LoginComponent },
@@ -95,7 +104,9 @@ const routes: Routes = [
     BookListComponent,
     BookDetailComponent,
     CustomerListComponent,
-    CustomerDetailComponent
+    CustomerDetailComponent,
+    IndemnifyListComponent,
+    IndemnifyDetailComponnet
   ],
   imports: [
     BrowserModule,
@@ -105,7 +116,8 @@ const routes: Routes = [
   ],
 
   providers: [CookieService, ApiService, RoleService, CategoryService,
-     UserService, InOutService, BookService, CustomerService, LoginService],
+     UserService, InOutService, BookService, CustomerService, LoginService,
+      LoadingService, NotificationService, IndemnifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

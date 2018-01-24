@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { Role } from './shared/role.model';
 import { RoleService } from './service/role.service';
+import { NotificationService } from '../loadingService/notification.service';
 
 @Component({
     selector: 'role-detail',
@@ -12,7 +13,8 @@ export class RoleDetailComponent {
     role: Role = new Role();
     id: number = 0;
     routerSubscription: any;
-    constructor(private route: ActivatedRoute, private router: Router, private roleService: RoleService) {
+    constructor(private route: ActivatedRoute, private router: Router, private roleService: RoleService,
+    private notification: NotificationService) {
     }
 
     ngOnInit() {
@@ -33,10 +35,10 @@ export class RoleDetailComponent {
             //Server trả về role sau khi save
             //Nếu là tạo role mới thì res sẽ có giá trị id mới thay vì 0
             this.role = res;
-            alert("Save Success");
+            this.notification.success('Saved');
         }).catch(err => {
             alert(err);
-        })
+        });
     }
 
     back() {

@@ -6,21 +6,21 @@
                 <div class="col-sm-6">
                     <div class="mb-md">
     
-                        <button id="addToTable" class="btn btn-info" [routerLink]="['/main/customer-detail',0]">Thêm <i class="fa fa-plus"></i></button>
+                        <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/customer-detail',0]">Thêm <i class="fa fa-plus"></i></button>
                     </div>
                 </div>
             </div>
             <table class="table table-bordered table-striped table-condensed mb-none table-hover">
                 <colgroup>
-                    <col style="width:20px" />
+                  
                     <col style="width:80px" />
-                    <col style="width:80px"/>
-                    <col style="width:150px" />
-                    <col style="width:50px" />
+                    <col style="width:120px"/>
+                    <col  />
+                    <col style="width:20px" />
                 </colgroup>
                 <thead>
                     <tr class="primary">
-                        <th>Mã</th>
+                      
                         <th>Họ</th>
                         <th>Tên</th>
                         <th>Mô tả</th>
@@ -30,18 +30,17 @@
                 <tbody>
                     <tr *ngFor="let customer of customers">
     
-                        <td>{{customer.Id}}</td>
+                      
                         <td>{{customer.FirstName}}</td>
                         <td>{{customer.LastName}}</td>
                         <td>{{customer.Description}}</td>
-                        <td class="actions">
+                        <td class="actions text-center">
     
                             <a style="cursor:pointer" (click)="detail(customer)">
                                 <i class="fa fa-pencil text-primary"></i>
                             </a>
                             <a style="cursor:pointer" (click)="delete(customer)">
                                 <i class="fa fa-trash text-danger"></i>
-    
                             </a>
                         </td>
                     </tr>

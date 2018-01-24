@@ -30,4 +30,24 @@ namespace SuperDev.Models
         [ForeignKey("BookId")]
         public virtual Book Book { get; set; }
     }
+
+    public class IndemnifyComplex
+    {
+
+        public int Id { get; set; }
+
+        public int UserId { get; set; }
+
+        public string Username { get; set; }
+
+        public int CustomerId { get; set; }
+
+        public string CustomerName { get; set; }
+
+        public int BookId { get; set; }
+
+        public string BookName { get; set; }
+
+        public string Description { get; set; }
+    }
 }

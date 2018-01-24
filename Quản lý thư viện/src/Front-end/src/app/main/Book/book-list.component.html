@@ -6,7 +6,7 @@
                 <div class="col-sm-6">
                     <div class="mb-md">
  
-                        <button id="addToTable" class="btn btn-info" [routerLink]="['/main/book-detail',0]">Thêm <i class="fa fa-plus"></i></button>
+                        <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/book-detail',0]">Thêm <i class="fa fa-plus"></i></button>
                     </div>
                 </div>
             </div>
@@ -16,32 +16,32 @@
                     <col style="width: 130px"/>
                     <col  style="width:100px" />
                     <col  style="width: 200px"/>
-                    <col style="width: 400px"/>
+                    <col />
                     <col style="width: 60px"/>
-                    <col  style="width: 60px"/>
+                    <col  style="width: 20px"/>
                 </colgroup>
                 <thead>
                     <tr class="primary">
-                        <th>Mã </th>
+                        <th>Stt </th>
                         <th>Tên thể loại</th>
                         <th>Số seri</th>
                         <th>Tên sách</th>
                         <th>Mô tả</th>
-                        <th>Có sẵn</th>
+                        <th>Có</th>
                         <th>Sửa/xóa</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let book of books">
+                    <tr *ngFor="let book of books" [ngClass]="{'warning':!book.IsActived}">
     
                         <td>{{book.Id}}</td>
                         <td>{{book.CategoryName}}</td>
                         <td>{{book.Code}}</td>
                         <td>{{book.Name}}</td>
                         <td>{{book.Description}}</td>
-                        <td>
+                        <td class="text-center">
 
-                                <span [ngClass]="{'success':book.IsActived, 'danger': !book.IsActived}">
+                                <!-- <span [ngClass]="{'success':book.IsActived, 'danger': !book.IsActived}"> -->
                                         <div class="form-group">
             
                                             <div class="col-md-6">
@@ -50,10 +50,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </span>
+                                    <!-- </span> -->
 
                         </td>
-                        <td class="actions">
+                        <td class="actions text-center">
   
                             <a style="cursor:pointer" (click)="detail(book)">
                                 <i class="fa fa-pencil text-primary"></i>
