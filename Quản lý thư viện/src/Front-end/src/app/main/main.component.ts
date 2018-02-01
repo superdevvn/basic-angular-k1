@@ -48,6 +48,10 @@ export class MainComponent {
                     break;
                     case "/main/customer-detail": this.title = "Quản lí bạn đọc";
                     break;
+                    case "/main/indemtify-list": this.title = "Quản lí bồi thường";
+                    break;
+                    case "/main/indemtify-detail": this.title = "Quản lí bồi thường";
+                    break;
                     default: this.title = "Trang chủ";
                     break;
                 }
@@ -57,14 +61,6 @@ export class MainComponent {
 
   
     ngAfterViewInit() {
-        $.getScript('assets/porto/javascripts/theme.js', function(){
-          $.getScript('assets/porto/javascripts/theme.custom.js', function(){
-            $.getScript('assets/porto/javascripts/theme.init.js', function(){
-                $.getScript('assets/porto/javascripts/dashboard/examples.dashboard.js', function(){
-                });
-              });
-          });
-        });
     }
     ngOnDestroy() {
         this.routerSubcription.unsubscribe();

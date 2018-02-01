@@ -1,0 +1,55 @@
+
+<section class="panel"  style="margin-top: -20px; margin-left: -20px">
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="mb-md">
+    
+                        <button id="addToTable" class="btn btn-primary" [routerLink]="['/main/indemnify-detail',0]">Thêm <i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered table-striped table-condensed mb-none table-hover">
+                <colgroup>
+                  
+                    <col style="width:10px" />
+                    <col style="width:150px"/>
+                    <col style="width:150px"/>
+                    <col style="width:220px"/>
+                    <col  />
+                    <col style="width:20px" />
+                </colgroup>
+                <thead>
+                    <tr class="primary">
+                        <th>Stt</th>
+                        <th>Tên nhân viên</th>
+                        <th>Tên bạn đọc</th>
+                        <th>Tên Sách</th>
+                        <th>Mô tả</th>
+                        <th>Sửa/xóa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let indemnify of indemnifies">
+
+                      
+                        <td>{{indemnify.Id}}</td>
+                        <td>{{indemnify.Username}}</td>
+                        <td>{{indemnify.CustomerName}}</td>
+                        <td>{{indemnify.BookName}}</td>
+                        <td>{{indemnify.Description}}</td>
+                        <td class="actions text-center">
+    
+                            <a style="cursor:pointer" (click)="detail(indemnify)">
+                                <i class="fa fa-pencil text-primary"></i>
+                            </a>
+                            <a style="cursor:pointer" (click)="delete(indemnify)">
+                                <i class="fa fa-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>

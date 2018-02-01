@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { BookService } from './service/book.service';
 import { CategoryService } from '../Category/service/category.service';
 import { Category } from '../Category/shared/category.model';
+import { NotificationService } from '../loadingService/notification.service';
 
 @Component({
     selector: 'book-detail',
@@ -15,9 +16,10 @@ export class BookDetailComponent {
     id: number = 0;
     routerSubcription: any;
     constructor(private route: ActivatedRoute,
-                private router: Router,
-                private bookService: BookService,
-                private categoryService: CategoryService) { }
+        private router: Router,
+        private bookService: BookService,
+        private categoryService: CategoryService,
+        private notification: NotificationService) { }
     ngOnInit() {
         this.routerSubcription = this.route.params.subscribe(params => {
             this.id = +params['id'];
@@ -39,7 +41,7 @@ export class BookDetailComponent {
     save() {
         this.bookService.saveBook(this.book).then((res: Book) => {
             this.book = res;
-            alert("Save book's information successed");
+            this.notification.success('Saved');
         }).catch(err => {
             alert(err);
         });
