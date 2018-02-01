@@ -1,18 +1,58 @@
-
-<div class="col-md-4">
-    <input-control [label]="'Username'" [(model)]="user.username"></input-control>
-</div>
-
-<div class="col-md-4">
-    <input-control [type]="'password'" [label]="'Password'" [(model)]="user.password"></input-control>
-</div>
-<!-- 
-<input class="form-control" [(ngModel)]="input1" />
-<input class="form-control" [(ngModel)]="user.username" />
-<input class="form-control" [(ngModel)]="user.password" />
-<button class="btn btn-primary" (click)="onClick()">Click me</button> -->
-
-<div class="col-md-12">
-    <br/>
-    <button class="btn btn-primary" (click)="onClick()">Click me</button>
-</div>
+<!-- This is User List Page
+<!-- <dashboard></dashboard> -->
+<!-- <test-selector></test-selector> -->
+<section class="panel">
+    <header class="panel-heading">
+        <div class="panel-actions">
+            <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+            <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+        </div>
+        <h2 class="panel-title">Danh sách nhà sản xuất</h2>
+    </header>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="mb-md">
+                    <button class="btn btn-primary" [routerLink]="['/main/manufacturer-detail',0]">Thêm
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped mb-none">
+            <colgroup>
+                <col width="250px"/>
+                <col width="250px"/>
+                <col />
+                <col width="50px"/>
+                <col width="50px"/>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Mã nhà sản xuất</th>
+                    <th>Tên</th>
+                    <th>Mô tả</th>
+                    <th class="hidden-phone">Edit</th>
+                    <th class="hidden-phone">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let manufacturer of manufacturers" class="gradeX">
+                    <td>{{manufacturer.Code}}</td>
+                    <td>{{manufacturer.Name}}</td>
+                    <td>{{manufacturer.Description}}</td>                   
+                    <td align="center">
+                        <a>
+                            <i style="cursor:pointer" class="fa fa-pencil-square-o" (click)="detail(manufacturer)"></i>
+                        </a>
+                    </td>
+                    <td align="center">
+                        <a>
+                            <i style="cursor:pointer" class="fa fa-trash-o text-danger"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
