@@ -6,7 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 @Injectable()
 export class ApiService {
 
-    host: string = 'http://103.232.121.69:5102/';
+    host: string = 'http://localhost:64029/';
     token: string = "none";
     constructor(private router: Router, private http: Http, private cookieService: CookieService) {
         if (this.cookieService.check("Auth-SuperDev")) this.token = this.cookieService.get("Auth-SuperDev");
