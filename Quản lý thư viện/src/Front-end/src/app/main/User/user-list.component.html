@@ -1,0 +1,74 @@
+<section class="panel" style="margin-top: -20px; margin-left: -20px">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mb-md">
+                    <button id="addToTable" class="btn btn-warning" [routerLink]="['/main/user-detail',0]">Thêm
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped mb-none" id="datatable-default">
+            <colgroup>
+                <col style="width:10px" />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col style="width: 130px" />
+                <col style="width: 80px" />
+                <col style="width: 50px" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Mã</th>
+                    <th>Tên đăng nhập</th>
+                    <th>Họ</th>
+                    <th>Tên</th>
+                    <th>Vai trò</th>
+                    <th>Mô tả</th>
+                    <th>Ngày Tạo</th>
+                    <th>Hoạt động</th>
+                    <th>Sửa/xóa</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users" [ngClass]="{'warning':!user.IsActived}">
+                    <td class="text-center">{{user.Id}}</td>
+                    <td>{{user.Username}}</td>
+                    <td>{{user.FirstName}}</td>
+                    <td>{{user.LastName}}</td>
+                    <td>{{user.RoleName}}</td>
+                    <td>{{user.Description}}</td>
+                    <td>{{user.CreatedDate | date:'dd/MM/yyy HH:mm'}}</td>
+                    <!-- <td>
+                        <input [disabled]="true" type="checkbox" [ngModel]="user.IsActived"/>
+                    </td> -->
+                    <td>
+                        <span [ngClass]="{'success':user.IsActived, 'danger': !user.IsActived}">
+                            <div class="form-group">
+
+                                <div class="col-md-6">
+                                    <div class="input-group input-group-icon">
+                                        <input [disabled]="true" type="checkbox" [(ngModel)]="user.IsActived" id="checkboxExample3">
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                    </td>
+                    <td>
+                        <a class="on-default edit-row">
+                            <i class="fa fa-pencil text-success" style="cursor:pointer" (click)="detail(user)"></i>
+                        </a>
+                        <a class="on-default text-danger remove-row">
+                            <i class="fa fa-trash-o" style="cursor:pointer"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+<section class="panel" style="margin-top: -20px; margin-left: -20px">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mb-md">
+                    <button id="addToTable" class="btn btn-info" [routerLink]="['/main/inout-detail',0]">Thêm
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped mb-none" id="datatable-editable">
+            <thead>
+                <tr class="primary">
+                    <th>Mã</th>
+                    <th>Tên nhân viên</th>
+                    <th>Tên người mượn</th>
+                    <th>Tên sách</th>
+                    <th>Từ ngày</th>
+                    <th>Đến ngày</th>
+                    <th>Sửa/xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let inout of inouts">
+                    <td>{{inout.Id}}</td>
+                    <td>{{user.Id}}</td>
+                    <td>{{customer.Id}}</td>
+                    <td>{{book.Id}}</td>
+                    <td>{{inout.fromDate | date:'dd/MM/yyy HH:mm'}}</td>
+                    <td>{{inout.toDate | date:'dd/MM/yyy HH:mm'}}</td>
+                    <td class="actions">
+                        <a class="on-default text-primary edit-row">
+                            <i class="fa fa-pencil" (click)="detail(inout)"></i>
+                        </a>
+                        <a class="on-default text-danger remove-row">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

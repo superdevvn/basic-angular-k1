@@ -1,0 +1,45 @@
+<section class="panel" style="margin-top: -20px; margin-left: -20px">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mb-md">
+                    <a class="btn btn-success" [routerLink]="['/main/role-detail',0]">Thêm
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped mb-none" id="datatable-editable">
+            <colgroup>
+                <col style="width:20px" />
+                <col style="width: 200px" />
+                <col />
+                <col style="width: 30px" />
+            </colgroup>
+            <thead>
+                <tr class="success">
+                    <th>Mã</th>
+                    <th>Vai trò</th>
+                    <th>Ghi chú</th>
+                    <th>Sửa/xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let role of roles">
+                    <td>{{role.Id}}</td>
+                    <td>{{role.Name}}</td>
+                    <td>{{role.Description}}</td>
+                    <td>
+                        <a class="on-default edit-row">
+                            <i class="fa fa-pencil text-success" style="cursor:pointer" (click)="detail(role)"></i>
+                        </a>
+
+                        <a class="on-default text-danger remove-row">
+                            <i class="fa fa-trash-o" style="cursor:pointer"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

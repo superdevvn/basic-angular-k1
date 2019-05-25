@@ -1,0 +1,47 @@
+import { Injectable } from "@angular/core";
+import { ApiService } from "./../../api.service";
+import { User } from "./../../user/shared/user.model";
+import { Response } from "@angular/http";
+import { CookieService } from 'ngx-cookie-service';
+
+@Injectable()
+export class LoginService {
+
+    user: User;
+    constructor(private apiService: ApiService,private cookieService:CookieService) { }
+    login(username, password) {
+        return new Promise((resolve, reject) => {
+            this.apiService.post('api/login', {
+                username: username,
+                password: password
+            }).then((res:Response) => {
+                this.apiService.token = res.json();
+                this.cookieService.set("Auth-SuperDev",this.apiService.token);
+                this.getAuthorize().then(user=>{
+                    resolve(user);
+                }).catch(err=>{
+                    reject(err);
+                });
+
+                
+            }).catch(err => {
+                reject(err);
+            });
+        });
+    }
+
+    getAuthorize(){
+        return new Promise<User>((resolve, reject) => {
+<<<<<<< HEAD
+            this.apiService.get(`api/authorize/${this.apiService.token}`).then(res => {
+=======
+            this.apiService.get(`api/authorize/ ${this.apiService.token}`).then((res:Response) =>{
+>>>>>>> 31ecb4387c48ccf56bdeff4efb62e6919bbbda15
+                this.user = res.json();
+                resolve(this.user);
+            }).catch(err => {
+                reject(err);
+            });
+        });
+    }
+}
